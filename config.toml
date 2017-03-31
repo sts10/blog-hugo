@@ -1,4 +1,4 @@
 languageCode = "en-us"
 title = "Prevent Default"
 theme = "beautifulhugo"
-baseURL = "http://example.org/"
+baseURL = "https://sts10.github.io/"
