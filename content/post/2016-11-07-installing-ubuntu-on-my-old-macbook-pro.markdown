@@ -66,6 +66,7 @@ Alright, with all that said here's what I think I would do if I were starting fr
 8. We now need to boot Ubuntu in [recovery mode](https://wiki.ubuntu.com/RecoveryMode). To do this, as the computer is starting up again after restart, right after you hear the Apple/Mac start-up sound, hold the SHIFT key. Repeat step #3 above if you're presented with the EFI option. Once you're at a text-only menu, press `e` and add `nomodeset` to the line of code discussed above. Then press the key(s) to boot. Ubuntu should boot up-- though the display may be screwy. In either case, we're not done yet.
 9. Now we need to make that `nomodeset` setting permanent. Open terminal (ctrl+option+t) and run `sudo nano /etc/default/grub`. ([Reference](https://askubuntu.com/questions/38780/how-do-i-set-nomodeset-after-ive-already-installed-ubuntu#38782))
 10. In that file, add `nomodeset` to `GRUB_CMDLINE_LINUX_DEFAULT` as seen below:
+
 ```
 GRUB_DEFAULT=0
 GRUB_HIDDEN_TIMEOUT=0
@@ -75,6 +76,7 @@ GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"
 GRUB_CMDLINE_LINUX=""
 ```
+
 11. Save this text file by hitting Ctrl+O, then exit nano with Ctrl+X, then, back in Terminal, run: `sudo update-grub`
 12. Restart the computer (the menu for which is in the top-right corner of Ubuntu 16).
 
