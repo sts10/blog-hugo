@@ -1,0 +1,45 @@
++++
+date = "2017-03-30T22:28:41-04:00"
+title = "Moving to Hugo"
+tags = []
+subtitle = ""
+
++++
+
+A couple of weeks ago I was [proud of myself for switching from RVM to rbenv](https://twitter.com/sts10/status/839933857679949829). The reason I made the switch was that I wanted something light-weight and I didn't like the RVM installation process, specifically the need to use GPG. 
+
+The problem was that after I installed a fresh copy of Ruby 2.4.0 with rbenv, I wasn't able to deploy this blog using my very old version of Octopress. I got an error that some specific version of a gem was not avaiable. The gem that it couldn't find must have been a dependency of one of the other gems. Anyway, I wsa stuck, unable to update my blog. I had been meaning to move off of Octopress anyway, since it had been so long since I set it up I was worried that if I moved to a new computer I'd be stuck. This gem problem was a good impetus as any. 
+
+After also no research and a random call out tweet, I decided on [Hugo](https://gohugo.io). The only way I had heard of it was because it's the static site generator that [the Ricochet IM site](https://ricochet.im/) uses. I like those developers, so I figured they had chosen a good, new static site generator, so I went with it. 
+
+For now I'm using the [Beautiful Hugo](http://themes.gohugo.io/beautifulhugo/) theme... think it looks pretty good! Unofrtuantely the URL sturcture is different than when I used Octorpess, so any and all external and even internal links are going to be busted. I'll try to fix them as I find them. I also decided to wipe my tag data cuz I was lazy making the transition. The only thing left to do is to add Disqus comments.
+
+
+For posterity, here are some notes I took when I made the move: 
+
+## Setting Up the Hugo Blog
+
+I went [here](https://gohugo.io/tutorials/github-pages-blog/) and followed the instructions under "Hosting Personal/Organization Pages". Though I running `rm -rf public` when they said to through things off?
+
+1. Delete sts10.github.io repo from Github
+2. Create on Github "blog-hugo" repo. Add remote to current blog-hugo directory.
+3. Preview it with `hugo server`. Once good, run `rm -rf public`
+4. Create on Github "sts10.github.io" repo
+5. `git submodule add -b master git@github.com:sts10/sts10.github.io.git public`
+6. Set `deploy.sh` script
+7. `./deploy.sh "Your optional commit message"`
+
+## Creating a New Post
+
+`hugo new post/good-to-great.md`
+
+Then go open the file and edit it in your preferred text editor.
+
+## Deploying new blog
+
+`/.deploy.sh`
+
+Then, optionally, commit and push the home (bigger) repo.
+
+
+
