@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Formatting Text in OS X</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Formatting Text in OS X" />
+  
+
+  
+    <meta property="og:description" content="Note: Neither of the solutions presented herein are quite right, so like, read through the post before you just start installing stuff.
+I was poking around Life Hacker just now and found an interesting post on an Automator workflow called TextFlow. LH claimed that it allowed users to quickly and easily format text with options like &ldquo;sentence case&rdquo; or &ldquo;title case,&rdquo; something that I&rsquo;ve been meaning to research for a while now.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2015-05-22-textflow/" />
+    <link rel="canonical" href="http://example.org/post/2015-05-22-textflow/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Formatting Text in OS X" />
+  
+
+  
+    <meta name="twitter:description" content="Note: Neither of the solutions presented herein are quite right, so like, read through the post before you just start installing stuff.
+I was poking around Life Hacker just now and found an interesting post on an Automator workflow called TextFlow. LH claimed that it allowed users to quickly and easily format text with options like &ldquo;sentence case&rdquo; or &ldquo;title case,&rdquo; something that I&rsquo;ve been meaning to research for a while now.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Formatting Text in OS X</h1>
+                
+                
+                  <span class="post-meta">Posted on May 22, 2015</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><em>Note: Neither of the solutions presented herein are quite right, so like, read through the post before you just start installing stuff.</em></p>
+
+<p>I was poking around Life Hacker just now and found <a href="http://lifehacker.com/textflow-adds-tons-of-text-formatting-options-to-os-x-1706298617">an interesting post</a> on an Automator workflow called <a href="https://github.com/vmdanilov/TextFlow">TextFlow</a>. LH claimed that it allowed users to quickly and easily format text with options like &ldquo;sentence case&rdquo; or &ldquo;title case,&rdquo; something that I&rsquo;ve been meaning to research for a while now. I found success with <a href="http://lifehacker.com/quickly-change-os-xs-default-screenshot-format-and-loc-1489014578">a Life Hacker post on saving screenshots</a> a while back, so I was down to try this out.</p>
+
+<!-- more -->
+
+<p>First off, I didn&rsquo;t even know OS X had a built-in application called <a href="http://en.wikipedia.org/wiki/Automator_%28software%29">Automator</a> until I read this post. Definitely something to check out going forward. But for now let&rsquo;s talk about TextFlow.</p>
+
+<h3 id="why-i-want-this-functionality">Why I Want This Functionality</h3>
+
+<p>At work I often have to convert headline case into more-soothing-to-read sentence case for Tweets or Facebook posts. I also sometimes have to change smart punctuation to &ldquo;dumb&rdquo; punctuation. Note that these aren&rsquo;t needs I have when coding&ndash; it&rsquo;s usually during general usage or social media stuff.</p>
+
+<p>I&rsquo;ve always meant to investigate a method for doing this more efficiently than the arrow keys or, in Sublime Text using Command+d, but I had never really found one that worked&hellip;</p>
+
+<h3 id="textflow-installation-experience">TextFlow Installation Experience</h3>
+
+<p>Intrigued by the promises made in the Life Hacker post, I headed on over to <a href="https://github.com/vmdanilov/TextFlow">the TextFlow github repo page</a> and followed the installation instructions. I then chose to only install &ldquo;Paste and Transform Text&rdquo; and &ldquo;Transform Selected Text&rdquo;. I installed these two &ldquo;workflows&rdquo; by simply double clicking those files and selecting the install option. I avoided installing the &ldquo;Paste as Plan Text&rdquo; workflow because I&rsquo;ve grown quite used to OS X&rsquo;s default &ldquo;paste as plain text&rdquo; functionality (invoked via the Shift + Command + v shortcut) and didn&rsquo;t want to screw with that.</p>
+
+<p>Once I had installed those two workflows, I restarted Chrome, typed some text into a new GMail window, highlighted the text and went up to Chrome &gt; Services &gt; Transform Selected Text. And I think on the first try I was presented with the menu that the <a href="https://github.com/vmdanilov/TextFlow/raw/master/screenshots/screenshot-textflow-transforms.png">GitHub readme describes</a>, with options like &ldquo;Sentence Case&rdquo; and &ldquo;Title Case&rdquo;. And it seemed to work, but&hellip;</p>
+
+<h3 id="problems-with-textflow">Problems with TextFlow</h3>
+
+<p>Strangely, when I converted some text to Title Case and then tried to convert the same text to Sentence Case, nothing happened. I then learned that Life Hacker had picked this up from <a href="https://news.ycombinator.com/item?id=9585115">a Hacker News post from a day ago</a>. I then re-examined <a href="https://github.com/vmdanilov/TextFlow">the GitHub repo</a> and realized this thing is pretty new and thus bugs may be present. However I submitted <a href="https://github.com/vmdanilov/TextFlow/issues/3">an issue</a> to the repo and <a href="https://github.com/vmdanilov">vmdanilov</a> fixed it promptly. I re-installed and it&rsquo;s working better now.</p>
+
+<h3 id="an-alfred-workflow">An Alfred Workflow</h3>
+
+<p>Discouraged by this solution after finding a bug so quickly, I Googled for another way to transform text quickly. I came upon this <a href="http://www.alfredforum.com/topic/2180-case-converter-including-title-case/">pair of Alfred workflows</a> and decided to give them a try (note: Alfred work-flows are, I believe, only available if you buy the <a href="http://www.alfredapp.com/powerpack/">PowerPack</a>, which is totally worth it for clipboard history alone).</p>
+
+<p>I installed both the standard version and the hotkey version. On the standard version I made the one that simply &lsquo;changes the case of the text on the clipboard&rsquo; from &ldquo;case&rdquo; to &ldquo;casec&rdquo; and the one that converts the clipboard text AND pastes from &ldquo;casep&rdquo; to &ldquo;case&rdquo; since I figured I&rsquo;d use that more often. Then on the hotkey version I made paste in sentence case (the last hotkey -&gt; script listed) Control + Option + Command + v and paste in title case (the first hotkey -&gt; script listed) Control + Shift + Option + Command + v.</p>
+
+<p><img src="http://dl.dropboxusercontent.com/s/vagqvtrtjjvcjho/2015-05-22%20at%2010.28%20PM.png" alt="Alfred Case Hotkeys settings" /></p>
+
+<p>However this solution isn&rsquo;t as smooth as I&rsquo;d want it to be either. The hotkeys work in Chrome but there&rsquo;s a bit of a lag (by design I think) and seem to either insert a carriage return at the end of the pasted text or navigate the cursor one line down. The standard version works in Sublime (no shortcut overlap) and is a bit quicker I think, if you can accept having to call Alfred and type &ldquo;case&rdquo; each time.</p>
+
+<p>Going forward the Alfred route isn&rsquo;t bad, but I think the search continues. Ultimately I want one that uses the OS X dictionary when applying sentence case, so that proper nouns (places, famous and common names, etc.) get or stay capitalized. If you have an a solution that you like, <a href="http://twitter.com/sts10">hit me up on Twitter</a>.</p>
+
+<h3 id="update">Update</h3>
+
+<p>As I mentioned above, I submitted <a href="https://github.com/vmdanilov/TextFlow/issues/3">a GitHub issue</a> for TextFlow and the sentence case works great now. I changed the keyboard shortcuts to Option + Control + v for paste and Option + Control + t for transform. It&rsquo;s working in Google Chrome (where I thin kI need it most often), but not in Sublime Text 2&ndash; again, perhaps due to shortcut overlap problems.</p>
+
+<p>But yeah, if you just want to use this in your browser(s), I&rsquo;d recommend the new version of <a href="https://github.com/vmdanilov/TextFlow">TextFlow</a>, roughly following the installation process I outline above (though I&rsquo;d check the GitHub page to see if anything has changed since I wrote this).</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2015-05-20-url-parameters-as-user-settings/" data-toggle="tooltip" data-placement="top" title="URL Parameters as Semi-Permanent User Settings">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2015-05-27-negate-gods-raise-rocks-and-hate-lies/" data-toggle="tooltip" data-placement="top" title="Negate Gods, Raise Rocks, and Hate Lies">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

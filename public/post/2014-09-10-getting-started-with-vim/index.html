@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Getting Started With Vim</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Getting Started With Vim" />
+  
+
+  
+    <meta property="og:description" content="Since 2012-ish I&rsquo;ve been using Sublime Text 2 as my primary text editor. It&rsquo;s very simple out of the box, but also allows for a fair amount of customization through its packages, settings, snippets, and custom keybindings. I&rsquo;ve written about how I use Sublime Text before, and I still think it&rsquo;s a super powerful editor.
+However after meeting and talking to some Emacs and Vim users, I figured I should at least explore those two options.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-09-10-getting-started-with-vim/" />
+    <link rel="canonical" href="http://example.org/post/2014-09-10-getting-started-with-vim/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Getting Started With Vim" />
+  
+
+  
+    <meta name="twitter:description" content="Since 2012-ish I&rsquo;ve been using Sublime Text 2 as my primary text editor. It&rsquo;s very simple out of the box, but also allows for a fair amount of customization through its packages, settings, snippets, and custom keybindings. I&rsquo;ve written about how I use Sublime Text before, and I still think it&rsquo;s a super powerful editor.
+However after meeting and talking to some Emacs and Vim users, I figured I should at least explore those two options.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Getting Started With Vim</h1>
+                
+                
+                  <span class="post-meta">Posted on September 10, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Since 2012-ish I&rsquo;ve been using Sublime Text 2 as my primary text editor. It&rsquo;s very simple out of the box, but also allows for a fair amount of customization through its packages, settings, snippets, and custom keybindings. I&rsquo;ve written about <a href="http://sts10.github.io/blog/2014/03/01/some-sublime-text-tips-and-tricks/">how I use Sublime Text</a> before, and I still think it&rsquo;s a super powerful editor.</p>
+
+<p>However after meeting and talking to some Emacs and Vim users, I figured I should at least explore those two options. First, I looked into Emacs.</p>
+
+<!-- more -->
+
+<h2 id="emacs">Emacs</h2>
+
+<p>There&rsquo;s a lot to say about <a href="http://en.wikipedia.org/wiki/Emacs">Emacs</a>: it&rsquo;s written in or runs on a programming language called Lisp, the original version started to be developed in 1976, it&rsquo;s still very much in use today, etc.</p>
+
+<p>As I understand it, the word &ldquo;Emacs&rdquo; actually refers to a &ldquo;family&rdquo; of text editors, connected at least by a protocol that uses the control key for navigation and shortcuts. Some implementations of Emacs run in your terminal, while others you can download and install as stand-alone applications. The users I met used it in their terminal (either OS X&rsquo;s Terminal application or <a href="http://iterm2.com/">iTerm2</a>), so that&rsquo;s what I wanted to try first.</p>
+
+<p>So I booted up Terminal and, figuring it came with my Macbook, typed in <code>emacs</code> and, lo and behold, a program opened in the terminal window. Emacs uses the control key for basically everything, including basic navigation that the arrow keys would usually be used for (control+f is right, control+b is left, control+b is up, and control+p is up).</p>
+
+<p>I took some time to learn <a href="http://www.rgrjr.com/emacs/emacs_cheat.html">the basics</a> and after a few days the basic navigation and cut and paste (&ldquo;kill&rdquo; and &ldquo;yank&rdquo;) started to sort of feel natural to me. I took some steps forward from there: I got into window management a little, I updated my version of emacs that ran in the terminal to GNU Emacs 24.3.1 in order to get better syntax highlighting (the version that came with my computer couldn&rsquo;t highlight Ruby for example).</p>
+
+<p>(I unfortunately don&rsquo;t remember how I upgraded it but here&rsquo;s <a href="http://www.gnu.org/software/emacs/">the GNU Emacs website</a> and here&rsquo;s the alias I had to put in my <code>~/.bash_profile</code> to make my terminal open the new version when I typed <code>emacs</code>):</p>
+
+<pre><code>alias emacs=&quot;/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw&quot;
+</code></pre>
+
+<p>I even <a href="http://stackoverflow.com/questions/15435253/how-to-remap-the-caps-lock-key-to-control-in-os-x-10-8">switched my control and caps lock keys</a>, which was super helpful for Emacs but also other shortcuts that use control.</p>
+
+<p>But after playing around with some small Ruby scripts it just didn&rsquo;t take. I went back to Sublime, which, I learned has the basic emacs navigation commands built in (so for example Ctrl+f goes forward, Ctrl+b goes back), so I tried to use those and avoid the arrow keys when I used Sublime. But seeing as how spread out those keys are (and knowing the Vim alternative was more efficient) it didn&rsquo;t feel like that much of an advantage. So I went back to Sublime, but I was still open to trying new things. (Oh and I totally kept the caps lock and control key switch&ndash; highly recommended even if you&rsquo;re using Sublime Text.)</p>
+
+<h2 id="flirting-with-vim-sublime-text-s-vintage-package">Flirting with Vim: Sublime Text&rsquo;s Vintage Package</h2>
+
+<p>Upon returning to the safety of Sublime, I decided I wanted to be a bit more adventurous. So I went into my User setting and unignored the <a href="https://www.sublimetext.com/docs/2/vintage.html">&ldquo;Vintage&rdquo; package</a>. Sublime Text ships with a package called Vintage, which emulates Vim&rsquo;s insert/command modes. By default it is ignored so first-time users don&rsquo;t mistakenly get stuck in command mode. But once you remove it (or comment it out) from your ignored packages in your user settings, hitting Escape in Sublime will take you into a &ldquo;command mode&rdquo; that emulates Vim&rsquo;s command mode.</p>
+
+<p>Here&rsquo;s <a href="https://www.youtube.com/watch?v=U5ZYOmo0KuI">Jeffrey Way&rsquo;s video tutorial on Vintage Mode</a>. He also goes over the basic vi navigation (h j k l) and some more vi basics.</p>
+
+<p>So for a few days or weeks I kept using Sublime but tried not to use the arrow keys (i.e. tried to use it as if it was Vim). I know a programmer who uses this setup&ndash; Sublime Text 2 with Vintage mode enabled&ndash; so I figure it&rsquo;s pretty legit. You still get all the good stuff in Sublime (like the awesome Cmd+d functionality), but you also get the cool, simple Vim commands like &ldquo;change&rdquo; and &ldquo;yank&rdquo;.</p>
+
+<p>Hoping this might be my new jam as well, I searched Google for some good additional keybindings or packages to use on top of the Vintage package. Rather than finding good tips, I came upon this Quora thread where a user asked <a href="http://www.quora.com/Is-Sublime-Texts-vintage-mode-a-clever-way-to-learn-Vim">&ldquo;Is Sublime Text&rsquo;s &ldquo;vintage mode&rdquo; a clever way to learn Vim?&rdquo;</a>.</p>
+
+<p>I read Sandeep Shete&rsquo;s answer, which concludes with the sentiment: &ldquo;If you want to learn Vim then I guess one-two weeks with Vintage mode in Sublime is enough to not make you feel lost in Vim. Staying with Vintage mode any longer won&rsquo;t make you better at Vim anymore than you already would be.&rdquo; Clearly there are parts of Vi/Vim that simply cannot be replicated in Sublime Text, and it seems logical that those are the very parts that make Vi/Vim such a powerful, time-saving editor.</p>
+
+<p>So this past week and weekend, stuck in a programming rut, I decided to at least setup my Vi/Vim environment and see how it went.</p>
+
+<h2 id="vi-vim">Vi/Vim</h2>
+
+<p>First, I ran <code>vi</code> in my terminal. I was greeted with a centered introductory screen that begins: &ldquo;VIM - Vi IMproved version 7.3&rdquo;.</p>
+
+<p>Apparently &ldquo;Since MacOS 10.3 the &lsquo;vi&rsquo; program is actually a console version of Vim 6.2 or later.&rdquo; That quote is from <a href="http://www.vim.org/download.php#mac">the vim.org download page</a>. Therefore from now on in this blog post, in attempt to minimize confusion, I&rsquo;m just going to use &ldquo;Vim&rdquo; (as opposed to vi) to refer to the editor.</p>
+
+<p>Apparently the current release of Vim is 7.4 but I chose not to try to upgrade my version, again figuring that jump from 7.3 to 7.4 was minor and that upgrading would be a complicated operation.</p>
+
+<h2 id="actually-learning-vim">Actually Learning Vim</h2>
+
+<p>Now I had to actually learn Vim for real. Derek Wyatt has <a href="http://derekwyatt.org/vim/tutorials/novice/#Welcome">a great series of online videos</a> that served as my proper introduction to Vim.</p>
+
+<p>Obviously I could write out a bunch of Vim commands here but I don&rsquo;t think that would be useful for you. I&rsquo;d say my basic tips are (1) not to get flustered by visual mode and its 3 variants, (2) commands that start with a colon &lsquo;:&rsquo; are like file level commands (save file, quit Vim, change a setting, etc.) and (3) these colon commands can be run on an individual file, or they can be pasted into your .vimrc to be made to run for every Vim file when it starts. But honestly you should just go through his videos.</p>
+
+<p>Below, though, is more about how I setup my Vim environment.</p>
+
+<h2 id="setting-up-my-vim-environment">Setting Up My Vim Environment</h2>
+
+<p>Right, so the disclaimer here is that I learned all of the following from the Internet in the last four days. So, you know, grain of salt. But it might help you get started. Note: I&rsquo;m running OS X 10.9.4.</p>
+
+<h3 id="the-vimrc-file">The .vimrc File</h3>
+
+<p>All of your personal Vim configuration stuff goes into a file called .vimrc which should be located in your home directory, i.e. <code>~/.vimrc</code>. I&rsquo;m not sure, but I may have had to create this file with <code>touch ~/.vimrc</code>, but I&rsquo;m not sure&ndash; it might have already been there.</p>
+
+<p>The .vimrc file is like a combination of your Sublime Text 2 User Preferences and your User keybindings. This is where you&rsquo;ll set options like your tab width, default color scheme, and your line break preference, as well as your keybindings.</p>
+
+<p>Here is <a href="https://github.com/sts10/terminal_and_vim_settings/blob/master/vimrc">my current .vimrc file</a> (Note that in the repo I removed the leading dot in the file name so I could push it to Git more easily). That might not be much help to you, so here&rsquo;s Derek Wyatt&rsquo;s <a href="http://derekwyatt.org/2009/08/20/the-vimrc-file.html">explanation of the vimrc file</a> and his recommendation for <a href="http://derekwyatt.org/2009/08/20/the-absolute-bare-minimum">an absolute bare minimum vimrc file</a>. Both are super helpful (for example <strong>syntax highlighting</strong>, by default is turned OFF!).</p>
+
+<h3 id="a-custom-keybinding-of-note">A Custom Keybinding of Note</h3>
+
+<p>So in standard Vim you hit <code>i</code> to enter Insert mode and <code>Escape</code> to exit Insert mode and return to Command mode. I found the escape key to be a bit of a reach for me, plus on my Macbook Air keyboard it&rsquo;s physically pretty small. So I pasted a custom keybinding into my .vimrc file to make a quick double-tap of <code>i</code> exit Insert mode. Here&rsquo;s the line:</p>
+
+<p><code>imap ii &lt;Esc&gt;</code></p>
+
+<p>However this binding does have a few draw backs, namely if you want to type 2 i&rsquo;s quickly in your text, and there&rsquo;s obviously a bit of a delay before i&rsquo;s appear on the screen. But also, slightly more seriously, if you ever want to paste text that had two i&rsquo;s next to each other from the system clipboard into Vim, Vim freaks out and exits Insert mode. I&rsquo;m still weighing whether this is a problem large enough for me to change the keybinding.</p>
+
+<h3 id="pathogen-and-nerdtree">Pathogen and NERDTree</h3>
+
+<p>Next I wanted to add a sidebar to manage multiple files in multiple windows (like in Sublime Text). To do this I decided to install the <a href="https://github.com/scrooloose/nerdtree">NERDTree plugin</a>. However, as you&rsquo;ll notice in the installation section of NERDTree&rsquo;s readme on Github, it recommends using something called pathogen.vim. <a href="https://github.com/tpope/vim-pathogen">Pathogen</a> is apparently the go-to package/plugin manager for Vim, and installing it is delightfully easy. After installing it I added the line <code>execute pathogen#infect()</code> to my .vimrc file as instructed in the Pathogen readme.</p>
+
+<p>After reading the NERDTree readme I also decided to paste these two lines to my .vimrc file as well:</p>
+
+<pre><code>&quot; Control + n to toggle NERDTree sidebar
+map &lt;C-n&gt; :NERDTreeToggle&lt;CR&gt;
+
+&quot; Allows you to quit Vim if the only window left open is a NERDTree (https://github.com/scrooloose/nerdtree) 
+autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;&amp; exists(&quot;b:NERDTreeType&quot;) &amp;&amp; b:NERDTreeType == &quot;primary&quot;) | q | endif
+</code></pre>
+
+<p>So now Control+n opens the NERDTree sidebar, and Vim closes if the NERDTree sidebar is the only window left.</p>
+
+<p>NERDTree has been working really well. You navigate to it like any other window (control+w then the direction to the window), then use j and k to navigate between the files in the directory. I open files with either <code>i</code> or <code>s</code>, depending if I want the new files to split the current window configuration vertically or horizontally (for more on window management in Vim, checkout Derek Wyatt&rsquo;s section on <a href="http://derekwyatt.org/vim/tutorials/novice/#Many_Files_3">Working with Many Files (Screencast 3)</a>).</p>
+
+<p>NERDTree also has allowed me to not have to deal with the Vim buffer, which, when I watched the Wyatt video covering it, seemed cool but un-Sublime like to me. Honestly I&rsquo;m glad I can seemingly avoid learning its ins and outs for now.</p>
+
+<h3 id="color-schemes">Color Schemes</h3>
+
+<p>Of course you can just roll with your terminal colors and the default Vim syntax highlighting. But I knew that if I actually wanted to use Vim instead of Sublime to code, I&rsquo;d have to make it look and feel like <a href="http://sts10.github.io/blog/2014/02/14/my-current-coding-setup/">my Sublime Text</a>. I set my Terminal font-face to <a href="http://dejavu-fonts.org/wiki/Download">DejaVu Sans Mono</a>, so that my Vim running in Terminal would also use it. But I also needed to get the colors right to emulate my favorite Sublime theme, <a href="http://devthemez.com/themes/mustard">Mustard</a>.</p>
+
+<p>I had a tough time figuring out how color schemes work in Vim. Part of my confusion stems from the fact that some color schemes you can download for Vim require your terminal have access to 256 colors rather than the usual 16.</p>
+
+<p>Remember, I&rsquo;m choosing to run Vim through the OS X&rsquo;s Terminal app, which I believe can only ever handle 16 colors. You can run Vim with 256 colors by downloading and running <a href="https://code.google.com/p/macvim/">MacVim</a>, but I just didn&rsquo;t want to do that (note that MacVim is also known as Cocoa Gui, or gvim. More info <a href="http://www.vim.org/download.php#mac">here</a>).</p>
+
+<p>Further adding to my confusion was <a href="http://iterm2.com/">iTerm2</a>&rsquo;s promise of being able to run Vim with 256 colors&ndash; I just could not get that to work as expected. Maybe you&rsquo;ll have more luck. UPDATE: To get this feature, even as of December 2015, <a href="http://sts10.github.io/blog/2015/10/24/true-hex-colors-with-neovim-and-iterm2/">you need to use iTerm2&rsquo;s Nightly build</a> and probably use Neovim.</p>
+
+<p>Thankfully the basic methodology for installing and loading a colorscheme seems to be the same no matter if you&rsquo;re using Terminal, iTerm, or MacVim. You simply mkdir a directory <code>~/.vim/colors</code> and then you drop special <code>.vim</code> files in there. Once there in the <code>colors</code> directory, you can run <code>:colorscheme colorschemename</code> in your vim buffer or, to set the default color scheme, just put that same line your <code>.vimrc</code> file.</p>
+
+<p>I needed some base16 Vim color schemes and I eventually found <a href="https://github.com/chriskempson/base16-vim">this git repo</a> that claimed to be full of them, but when I loaded them their colors were off. This was probably due to the fact that I had modified the 16 ANSI colors in my Terminal preferences to suit <a href="http://sts10.github.io/blog/2014/02/05/flatiron-day-two/">my Terminal setup</a>.</p>
+
+<p>So I set out to make my own base16 color scheme, based off the one I&rsquo;ve been using in Sublime Text for months, which is called <a href="http://devthemez.com/themes/mustard">Mustard</a>. It took me a few hours to figure what color affected what part of Ruby, Python, and HTML code, but I ended up with a pretty good match&ndash; <a href="https://github.com/sts10/terminal_and_vim_settings/blob/master/mustard.vim">here&rsquo;s the mustard.vim file I created</a>.</p>
+
+<p>If you actually want to use my colorscheme, you should know 2 things: (1) as it says on line 2 of the file, you need to <code>:set background=dark</code> to get the colors I picked to emulate the original Mustard theme.</p>
+
+<p>And (2) note that to get the alterations to the 16 default Terminal colors necessary to make it actually look like the Mustard Sublime theme, you may have to load <a href="https://github.com/sts10/terminal_and_vim_settings/blob/master/sts_sep_2014.terminal">my Terminal settings</a> as well (note: these setting cannot be loaded into iTerm2, only OS X&rsquo;s Terminal app).</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Well that&rsquo;s about it for now. I know this ran pretty long, as usual. I typed this in Vim though, so it was good practice! No promises if I&rsquo;ll use Vim for coding going forward, but every day it&rsquo;s starting to feel more natural.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-05-30-strike-9-game/" data-toggle="tooltip" data-placement="top" title="Strike 9 Game">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2014-10-12-some-tips-for-more-efficient-mac-os-usage/" data-toggle="tooltip" data-placement="top" title="Some Tips for More Efficient Mac OS Usage">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

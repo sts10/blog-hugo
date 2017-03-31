@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>From Terminal Vim to MacVim</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="From Terminal Vim to MacVim" />
+  
+
+  
+    <meta property="og:description" content="On my work computer I&rsquo;ve been having some trouble getting the 2015 MacBook Pro&rsquo;s Terminal Vim to access the system clipboard. There is a chance that the version of Vim that shipped with the computer does not support the feature in which the * register is connected to the system clipboard. (I&rsquo;ll note the version number next time I&rsquo;m in the office.)
+For the record, at home, where the * register works great, I&rsquo;m running Vim 7.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2015-08-07-from-terminal-vim-to-mac-vim/" />
+    <link rel="canonical" href="http://example.org/post/2015-08-07-from-terminal-vim-to-mac-vim/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="From Terminal Vim to MacVim" />
+  
+
+  
+    <meta name="twitter:description" content="On my work computer I&rsquo;ve been having some trouble getting the 2015 MacBook Pro&rsquo;s Terminal Vim to access the system clipboard. There is a chance that the version of Vim that shipped with the computer does not support the feature in which the * register is connected to the system clipboard. (I&rsquo;ll note the version number next time I&rsquo;m in the office.)
+For the record, at home, where the * register works great, I&rsquo;m running Vim 7.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>From Terminal Vim to MacVim</h1>
+                
+                
+                  <span class="post-meta">Posted on August 7, 2015</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>On my work computer I&rsquo;ve been having some trouble getting the 2015 MacBook Pro&rsquo;s Terminal Vim to access the system clipboard. There is a chance that the version of Vim that shipped with the computer does not support the feature in which the <code>*</code> register is connected to the system clipboard. (I&rsquo;ll note the version number next time I&rsquo;m in the office.)</p>
+
+<!-- more -->
+
+<p>For the record, at home, where the <code>*</code> register works great, I&rsquo;m running <code>Vim 7.4.488</code> in the Terminal. If the problem with the work machine is that the shipped version of Vim is 7.2 or 7.3, I could do what I did on my home machine to upgrade Vim&ndash; <a href="http://www.prioritized.net/blog/upgrading-vim-on-os-x/">using homebrew to install Vim</a> (not MacVim) and then add <code>alias vim=&quot;/usr/local/Cellar/vim/7.4.488/bin/vim&quot;</code> to my <code>.bash_profile</code>, although that sucks because the version number is hard-coded&hellip;</p>
+
+<p>If that doesn&rsquo;t fix the system clipboard problem, or we just object to hard-coding the Vim version number into our <code>.bash_profile</code>, another fall back for the work computer is to just use MacVim.</p>
+
+<p>Obviously, besides the actual MacVim editor, I also need to be able to launch it from the command line as easily as Terminal Vim or Sublime Text. For that, I found <a href="http://michaellee.co/launch-macvim-from-terminal/">this simple but excellent blog post</a>.</p>
+
+<p>The blog post links to <a href="https://github.com/b4winckler/macvim/releases">this snapshot of MacVim</a> on GitHub, HOWEVER <a href="https://github.com/macvim-dev/macvim/releases/">this seems to be a newer, more active fork</a> of the project. I&rsquo;ve since switched to this fork, and am now running VIM 7.4.769. Also the icon is nicer and more modern: a better fit for OS X Yosemite.</p>
+
+<p>(P.S. There&rsquo;s also <a href="http://www.macupdate.com/app/mac/25988/macvim">a link on macupdate.com</a>, but that active fork on GitHub is probably way better.)</p>
+
+<p>In that release, besides the actual text editor application which (I think) you install like any other OS X application, there&rsquo;s a shell script called <code>mvim</code>. To set up the ability to open files from the command line with the command <code>mvim</code>, simply move that <code>mvim</code> script to <code>/usr/local/bin</code>. If you&rsquo;re in the downloaded directory, you can run:</p>
+
+<pre><code>mv mvim /usr/local/bin/
+</code></pre>
+
+<p>After restarting Terminal (probably), you should be able to run <code>mvim filename.rb</code> to open files in MacVim. Best of all, no changes needed to your <code>.bash_profile</code>.</p>
+
+<h2 id="thoughts-on-actually-using-macvim-as-compared-to-vim-in-terminal">Thoughts on Actually Using MacVim, As Compared to Vim in Terminal</h2>
+
+<p>Today I started work on a new Ruby CLI allowing the user to play <a href="https://github.com/sts10/connect_four">Connect Four</a> and used MacVim as an experiment. I really liked it&ndash; having the mouse, normal OS X commands, and easy access to the system clipboard was definitely nice.</p>
+
+<p>When I <a href="http://sts10.github.io/blog/2014/09/10/getting-started-with-vim/">first started experimenting with Vim</a> I decided to be &ldquo;hardcore&rdquo; and only use it in the Terminal. And I suppose using Vim for the first 11 months (on and off) in the Terminal did two things: (1) Program me not rely on either the mouse (in any way), or on very common OS X commands like Cmd + v or Cmd + a, and (2) made me comfortable in times when I&rsquo;ll <em>need</em> to use Vim in a console, like on a remote box (which I have had to do for work and <a href="http://sts10.github.io/blog/2014/10/15/totally-nuclear-and-radiation/">Totally Nuclear Club stuff</a>).</p>
+
+<p>But at this point I&rsquo;m decently comfortable using Vim commands and working with files in Vim rather than Sublime Text. This comfort has led me to see and understand the advantages to the commands better. The reasons that I will occasionally choose to open a project in Sublime over Vim have now shrunk, though sometimes I do run Sublime, mostly when I know I&rsquo;ll be dealing with a lot of files and a good amount of complex clipboard work.</p>
+
+<p>I certainly <em>could</em> get &ldquo;good enough&rdquo; with Terminal Vim to be able to manage tons of files and move big blocks of preciously sweated-over-and-not-well-backed-up code around flawlessly. But MacVim&rsquo;s advantages in terms of system clipboard integration AND some nice mouse highlighting, easy window resizing with the mouse, and scrolling compatibility make these problems more manageable. In fact MacVim feels closer to Sublime-in-Vintage-Mode (or at least closer than Terminal Vim), but of course you still get full-featured Vim, with all of your <code>vimrc</code> settings and keymapping, and plug-ins coming with you.</p>
+
+<p>As a side note, I actually, for the first time, used <a href="http://www.watchpeoplecode.com/">WatchPeopleCode</a> to livestream my work on the Connect Four game using MacVim and Terminal side-by-side (<a href="http://www.watchpeoplecode.com/streamer/sts10">here&rsquo;s my WPC page</a>). To do this I only needed one new piece of software: <a href="https://obsproject.com/">Open Broadcast Software</a>. It took up more CPU processing power than I thought I would, and the lag when sending the video to WPC was sometimes more than a minute or two. But it&rsquo;s good to know how to do it, and be set up.</p>
+
+<h2 id="lingering-questions-about-macvim">Lingering Questions about MacVim</h2>
+
+<p>What is the process for upgrading MacVim if you use this method? MacVim does have a checkbox preference that asks whether we want to check for updates when the application launches, so my hope is that that would catch new versions. We&rsquo;d also have to hope that that <code>mvim</code> shell script will work for subsequent versions, but that could be the case! I&rsquo;m running some version of 7.4.X so that&rsquo;s probably good for a while.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2015-08-04-where-wizards-stay-up-late/" data-toggle="tooltip" data-placement="top" title="Where Wizards Stay Up Late">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2015-08-11-google-doc-spreadsheet-if-statements/" data-toggle="tooltip" data-placement="top" title="Google Doc Spreadsheet IF Statements">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

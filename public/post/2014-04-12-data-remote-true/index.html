@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>How We Used the Data-Remote=True Pattern for AJAXing New Comments in XP</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="How We Used the Data-Remote=True Pattern for AJAXing New Comments in XP" />
+  
+
+  
+    <meta property="og:description" content="For xp (GitHub Repo), our skillshare-like web app for the Flatiron community, Daniel and I knew that we had to make it easy for students and teachers to coordinate lesson logistics. They would need a place and a way to hash out details like what a lesson would cover, where and when it would meet, how long it would last, etc. One way I thought we could do this is to give users the ability to comment on individual lessons.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-04-12-data-remote-true/" />
+    <link rel="canonical" href="http://example.org/post/2014-04-12-data-remote-true/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="How We Used the Data-Remote=True Pattern for AJAXing New Comments in XP" />
+  
+
+  
+    <meta name="twitter:description" content="For xp (GitHub Repo), our skillshare-like web app for the Flatiron community, Daniel and I knew that we had to make it easy for students and teachers to coordinate lesson logistics. They would need a place and a way to hash out details like what a lesson would cover, where and when it would meet, how long it would last, etc. One way I thought we could do this is to give users the ability to comment on individual lessons.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>How We Used the Data-Remote=True Pattern for AJAXing New Comments in XP</h1>
+                
+                
+                  <span class="post-meta">Posted on April 12, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>For <a href="http://get-xp.herokuapp.com/">xp</a> (<a href="https://github.com/kronosapiens/xp">GitHub Repo</a>), our skillshare-like web app for the Flatiron community, Daniel and I knew that we had to make it easy for students and teachers to coordinate lesson logistics. They would need a place and a way to hash out details like what a lesson would cover, where and when it would meet, how long it would last, etc. One way I thought we could do this is to give users the ability to comment on individual lessons.</p>
+
+<p>Once I had the comments up and running without using AJAX, we decided to go one step further and use AJAX to post new comments, so that the lesson&rsquo;s show page would not refresh. To do this, we used a really cool pattern that Avi showed us a few weeks ago that I&rsquo;ll call &ldquo;data remote true&rdquo;.</p>
+
+<!-- more -->
+
+<h3 id="what-this-does">What This Does</h3>
+
+<p>This pattern allows you to easily make an HTML link or form fire an AJAX request in the background (i.e. without reloading the page) and execute some jQuery to change the layout of the page.</p>
+
+<p>The use-case I&rsquo;ll be talking about here is a new comment form that (1) adds a comment to a database (connected to a Rails app) via an AJAX request and (2) adds the text of the comment to the comment section via a jQuery callback, all while not not reload the entire webpage.</p>
+
+<h3 id="a-generalized-overview-of-the-data-remote-true-pattern">A Generalized Overview of the Data Remote True Pattern</h3>
+
+<p>When I say &ldquo;data remote true&rdquo; what I&rsquo;m directly referring to is a universal jQuery listener built into Rails. Below is a rough approximation of what the listener looks like:</p>
+
+<pre><code class="language-javascript">$(document).on(&quot;click&quot;, &quot;a[data-remote=true]&quot;, function(e){
+    e.preventDefault();
+    $.getScript($(this).href())
+});
+
+$(document).on(&quot;submit&quot;, &quot;form[data-remote=true]&quot;, function(e){
+    e.preventDefault();
+    $.getScript($(this).attr(action))
+});
+
+</code></pre>
+
+<p>As you can see, there are really two listeners&ndash; one for HTML links (the <code>&lt;a&gt;</code> tag) and one for HTML forms. Both of them listen to your entire document, but only fire their functions when an <code>&lt;a&gt;</code> tag is clicked or a form is submitted that has a <code>data-remote</code> attribute set to <code>true</code>. The functions they fire do two things:</p>
+
+<ol>
+<li><code>e.preventDefault();</code> overrides the HTML tags&rsquo; default behavior&ndash; for a link that would be taking the user to the URL in the <code>href</code> attribute, for a form the default behavior is making a POST or GET request to the URL of the <code>action</code> attribute.<br /></li>
+<li>The second line of the functions, <code>$.getScript($(this).href())</code>, is slightly more complicated. <a href="https://api.jquery.com/jQuery.getScript/">$.getScript()</a> is a jQuery method that&rsquo;s shorthand for an AJAX request for Javascript. So Rails will make an AJAX call to your controller action, but with format js. We&rsquo;ll see what Rails does with this, and how we&rsquo;ll use it, in a minute.</li>
+</ol>
+
+<p>To apply these listeners to a specific link or form, we simply added <code>data-remote=true</code> as an attribute (hence the phrase I&rsquo;m using to describe this pattern) in the HTML tag.</p>
+
+<pre><code>&lt;a href=&quot;/lists&quot; data-remote=&quot;true&quot;&gt;AJAX LINK&lt;/a&gt;
+
+&lt;form action=&quot;/tasks&quot; data-remote=&quot;true&quot;&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h3 id="adding-comments">Adding Comments</h3>
+
+<p>Cool, so now let&rsquo;s look at how we used this pattern in xp, namely for adding/posting new comments to a lesson.</p>
+
+<p>Step 1: Set the data-remote attribute on the new comment form to true. Since we&rsquo;re using a form_for on a nested resource (<code>@comment</code>), that looks like this:</p>
+
+<pre><code class="language-erb">  &lt;h4&gt;Leave a New Comment&lt;/h4&gt;
+
+  &lt;%= form_for [@lesson, @comment], {role: &quot;form&quot;, remote: true} do |f| %&gt;
+    &lt;% if @comment.errors.any? %&gt;
+      &lt;div class=&quot;alert alert-warning&quot;&gt;
+        &lt;% @comment.errors.full_messages.each do |msg| %&gt;
+          &lt;p&gt;&lt;%= msg %&gt;&lt;/p&gt;
+        &lt;% end %&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;textarea class=&quot;form-control&quot; name=&quot;content&quot; placeholder=&quot;Write your comment here&quot;&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Post Comment&quot; class=&quot;btn&quot;&gt;
+  &lt;% end %&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+<p>Note: <code>role: &quot;form&quot;</code> is simply a Bootstrap setting. We&rsquo;re obviously concerned with the <code>remote: true</code> attribute setting. To review: Now this form will NOT make it&rsquo;s usual POST request, but instead look for Javascript through AJAX.</p>
+
+<p>Step 2: Jump to the comments controller, specifically the <code>create</code> method, as per the <code>form_for</code>. But remember, <code>data-remote = true</code> makes Rails look for a js file, rather than an HTML response.</p>
+
+<pre><code class="language-ruby">def create
+  @comment = Comment.new(:user =&gt; current_user, :lesson_id =&gt; params[:lesson_id], :content =&gt; params[:content])
+  @lesson = Lesson.find(params[:lesson_id])
+
+  if @comment.save
+    respond_to do |format|
+      format.html { redirect_to @lesson }
+      format.js {}
+    end
+  else
+    flash[:alert] = &quot;Comment failed to save...&quot;
+    
+    render &quot;lessons/show&quot;
+  end
+end 
+</code></pre>
+
+<p>Above is the create method from the comments controller. The key lines are inside the <code>if @comment.save</code> branch. If the comment is successfully saved, if the call wants HTML, we <code>redirect_to @lesson</code>. But if the call wants Javascript (i.e. what we&rsquo;ve told it to look for), we have a pair of curly braces with nothing in them: <code>{}</code>. Strange, no? But this is actually a key part of the data remote true pattern.</p>
+
+<p>When we put nothing in the curly braces we are counting on Rails&rsquo; sensible default, which is to look in this controller&rsquo;s corresponding view directory for, in this case, a file called <code>create.js.erb</code>.</p>
+
+<p>(This is exactly the same Rails default we rely on when we make a controller <code>show</code> method and, once we find the instance of what we&rsquo;re showing, let Rails find the proper HTML view.)</p>
+
+<p>Rails is going to run whatever Javascript is in <code>create.js.erb</code> after the new comment has been saved to the database. Because of this, it&rsquo;s referred to as a callback.</p>
+
+<p>In the case of posting a new comment, we&rsquo;re going to do 2 things: (1) use jQuery to add the new comment to the comment section, and (2) clear the new comment textarea.</p>
+
+<pre><code class="language-javascript">addCommentToLesson(&quot;&lt;%= j render @comment %&gt;&quot;);
+$(&quot;form#new_comment textarea&quot;).val(&quot;&quot;);
+</code></pre>
+
+<p>Line 2 clears the textarea in <code>&lt;form id=&quot;new_comment&quot;&gt;</code>. Pretty simple, but necessary in &ldquo;tricking&rdquo; the user into making it look like the form is being submitted as usual.</p>
+
+<p>Line 1 is a bit more tricky. Let&rsquo;s start with the <code>@comment</code> instance variable. Just like with normal, good ole .html.erb views, we have access to instance variables we set in the controller action. Indeed, if you look back at the comments controller code above, we see the very first line does just this:</p>
+
+<pre><code>@comment = Comment.new(:user =&gt; current_user, :lesson_id =&gt; params[:lesson_id], :content =&gt; params[:content])
+</code></pre>
+
+<p>As you can see, <code>@comment</code> is the comment we just created and saved, constructed from params.</p>
+
+<p>But, importantly, <code>@comment</code> is also referring to a partial, namely <code>_comment.html.erb</code>, which we use to render comments. It&rsquo;s pretty basic HTML ERB. Here it is in part for reference:</p>
+
+<pre><code class="language-erb">&lt;div class=&quot;comment&quot; id=&quot;comment_&lt;%= comment.id %&gt;&quot;&gt;
+  &lt;p&gt;
+    &lt;%= image_tag(comment.user.image_url, size: &quot;30&quot;, alt: comment.user.name) %&gt; 
+    &lt;small&gt;
+      &lt;%= link_to comment.user.name, user_path(comment.user.nickname) %&gt; posted on &lt;%= comment.created_at.to_formatted_s(:long_ordinal) %&gt;: 
+    &lt;/small&gt;
+    &lt;br&gt;
+    &lt;strong&gt;&lt;%= comment.content %&gt;&lt;/strong&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>This helps illuminate what <code>&lt;%= j render @comment %&gt;</code> does. <code>render</code> just says to render the partial. The j in front escapes any quotation marks or other characters to make the rendered HTML safe for Javascript (hence the <code>j</code>). So basically we&rsquo;re passing a long HTML string, with necessary characters escaped, into a Javascript function called <code>addCommentToLesson</code>.</p>
+
+<p><code>addCommentToLesson</code> is defined in <code>app/assets/javascripts/comments.js</code>.</p>
+
+<pre><code class="language-javascript">function addCommentToLesson(comment_html){
+  $(&quot;#comments-section&quot;).append(comment_html)
+};
+</code></pre>
+
+<p>It takes a string of HTML as an argument and, with the jQuery function <code>append</code>, dynamically appends that HTML to a CSS element with an ID of <code>comments-section</code>, which is where our comments live. This is what makes it look like the comment has been added to the page to the user.</p>
+
+<p>Here&rsquo;s the div the an id of <code>comments-section</code> located in the lesson show.html.erb view:</p>
+
+<pre><code class="language-erb">&lt;div id=&quot;comments-section&quot;&gt;
+  &lt;%= render @lesson.comments %&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>That <code>render</code> call is made when the show view is loaded initially, to show comments that are already in the database. We really just care about the div. When the current user adds a new comment, we want to <code>append</code> new comments after any previously-saved comments.</p>
+
+<h3 id="a-slight-hiccup">A Slight Hiccup</h3>
+
+<p>Unfortunately, we are having a problem with this implementation. Currently, if a user has Javascript disabled in the browser for any reason, the controller should respond with HTML rather than Javascript, which should submit the form, refresh the page, and redirect_to to @lesson. However the form is currently throwing an error when we do this. We&rsquo;re planning on looking into it.</p>
+
+<p>I think that&rsquo;s about it. The feature is working as described live on <a href="http://get-xp.herokuapp.com/">xp</a>. Hopefully I&rsquo;m not forgetting anything.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-04-02-chosen/" data-toggle="tooltip" data-placement="top" title="Using Chosen with Rails">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2014-04-21-squawkbot-connecting-to-twitter/" data-toggle="tooltip" data-placement="top" title="SquawkBot Part 1: Connecting to Twitter">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Installing Ricochet 1.1.4 on Lubuntu 16.04</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Installing Ricochet 1.1.4 on Lubuntu 16.04" />
+  
+
+  
+    <meta property="og:description" content="When I first installed Ricochet IM on my machine running Lubuntu, I either ran sudo apt install ricochet-im, or downloaded it through Ubuntu&rsquo;s GUI &ldquo;Software&rdquo; application. Regardless of which I chose, I think both methods install Ricochet version 1.1.2, as opposed the to latest release: 1.1.4. Considering this is a secure instant messaging app and new versions may contain important security fixes, I wanted to be using the latest version available (which I&rsquo;m actually thanked in, due to some extremely minor documentation fixes).">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/richochet-on-lubuntu/" />
+    <link rel="canonical" href="http://example.org/post/richochet-on-lubuntu/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Installing Ricochet 1.1.4 on Lubuntu 16.04" />
+  
+
+  
+    <meta name="twitter:description" content="When I first installed Ricochet IM on my machine running Lubuntu, I either ran sudo apt install ricochet-im, or downloaded it through Ubuntu&rsquo;s GUI &ldquo;Software&rdquo; application. Regardless of which I chose, I think both methods install Ricochet version 1.1.2, as opposed the to latest release: 1.1.4. Considering this is a secure instant messaging app and new versions may contain important security fixes, I wanted to be using the latest version available (which I&rsquo;m actually thanked in, due to some extremely minor documentation fixes).">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Installing Ricochet 1.1.4 on Lubuntu 16.04</h1>
+                
+                
+                  <span class="post-meta">Posted on January 24, 2017</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>When I first installed <a href="https://ricochet.im/">Ricochet IM</a> on my machine running Lubuntu, I either ran <code>sudo apt install ricochet-im</code>, or downloaded it through Ubuntu&rsquo;s GUI &ldquo;Software&rdquo; application. Regardless of which I chose, I think both methods install Ricochet version 1.1.2, as opposed the to latest release: <a href="https://github.com/ricochet-im/ricochet/releases/tag/v1.1.4">1.1.4</a>. Considering this is a secure instant messaging app and new versions may contain important security fixes, I wanted to be using the latest version available (which I&rsquo;m actually thanked in, due to <a href="https://github.com/ricochet-im/ricochet/commit/fe40045cec8bed9a735c3cecbcca6ae2276d9902">some extremely minor documentation fixes</a>).</p>
+
+<!-- more --> 
+
+<p>So I went over to <a href="https://ricochet.im/">ricochet.im</a>, found the <a href="https://ricochet.im/releases/1.1.4/">releases page</a> and downloaded the latest release for Linux, which is currently 1.1.4. I&rsquo;m running Linux on a 64-bit machine (<a href="https://sts10.github.io/blog/2016/11/07/installing-ubuntu-on-my-old-macbook-pro/">an old Macbook Pro</a>), so I went with <code>ricochet-1.1.4-linux-x86_64.tar.bz2</code>. I downloaded this compressed file to my <code>Downloads/</code> directory.</p>
+
+<h2 id="verifying-the-downloaded-tar-file">Verifying the downloaded tar file</h2>
+
+<p>To verify the contents of the downloaded tar file, I also downloaded the <code>.asc</code> signature file associated with the release I downloaded from to the <a href="https://ricochet.im/releases/1.1.4/">releases page</a>. I then went to the <a href="https://ricochet.im/">ricochet.im website</a> and downloaded <a href="https://ricochet.im/john-brooks.asc">John Brooks&rsquo; public gpg key</a>.</p>
+
+<p>Then in terminal I navigated to my <code>~/Downloads</code> directory (<code>cd ~/Downloads</code>) and ran <code>gpg2 --import john-brooks.asc</code>. gpg2 informed me that 1 key was successfully imported&ndash; woohoo. To double check that this was actually John Brooks&rsquo; public key that he signs Ricochet releases with, I ran <code>gpg2 --fingerprint</code> to list the fingerprints of the ekys on my key ring. I saw the fingerprint for the Brooks key was <code>9032 CAE4 CBFA 933A 5A21 45D5 FF97 C53F 183C 045D</code>, which is exactly the same fingerprint listed in <a href="https://github.com/ricochet-im/ricochet#downloads">the Ricochet Github README</a>.</p>
+
+<p>Next I needed to actually verify the tar file, so I ran <code>gpg2 --verify ricochet-1.1.4-linux-x86_64.tar.bz2.asc</code>. gpg2 correctly assumed that the signed data was in <code>ricochet-1.1.4-linux-x86_64.tar.bz2</code> and gave me the message:</p>
+
+<pre><code>gpg: Good signature from &quot;John Brooks &lt;john.brooks@dereferenced.net&gt;&quot; [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 9032 CAE4 CBFA 933A 5A21  45D5 FF97 C53F 183C 045D
+</code></pre>
+
+<p>Again, the fingerprint listed on the last line of the output above matches the one listed on <a href="https://github.com/ricochet-im/ricochet#downloads">the Ricochet Github README</a>.</p>
+
+<p>My understanding is that this &ldquo;Good signature&rdquo; message means I got a good tar file from the website. The &ldquo;WARNING&rdquo; that it&rsquo;s not a trusted signature just means that I didn&rsquo;t manually mark John Brooks&rsquo; public key as &ldquo;ultimately trusted&rdquo; before running the verify command.</p>
+
+<p>For more about this and the process of verifying signatures generally, checkout <a href="https://www.qubes-os.org/doc/verifying-signatures/">this page in the Qubes OS documentation</a> and/or <a href="https://keepassxc.org/verifying-signatures">KeePassXC&rsquo;s page on the subject</a>.</p>
+
+<h2 id="extraction-and-installing">Extraction&hellip; and Installing?</h2>
+
+<p>After I found a good signature, I double-clicked the <code>.tar.bz2</code> file to uncompress/extract it (though I understand that I could have been a badass and also <a href="https://linuxjourney.com/lesson/compressed-archives-tar">done this in the terminal</a>).</p>
+
+<p>I then got a new directory called <code>ricochet</code> that had subdirectories like <code>config</code> and <code>QtQuick</code>, a README file, a file called <code>tor</code> I was scared to click, and a file called <code>ricochet</code> that when I clicked I got asked what application I wanted to use to open it. I couldn&rsquo;t figure out how to run the actual Ricochet application&ndash; <a href="https://github.com/ricochet-im/ricochet/blob/master/packaging/linux-static/content/README">the README</a> didn&rsquo;t help me much.</p>
+
+<p>So first I Googled (actually Duck Duck Go) something like &ldquo;ubuntu how to install from tar file&rdquo; and landed on <a href="https://askubuntu.com/questions/25961/how-do-i-install-a-tar-gz-or-tar-bz2-file#1030">this askubuntu answer</a>, which talks about opening a file called <code>INSTALL</code> that I didn&rsquo;t have, and/or running <code>./configure</code>, which was returning an error for me.</p>
+
+<p>Eventually, I figured out that I could just run <code>./ricochet</code> from my <code>ricochet</code> directory and the real application&ndash; version 1.1.4&ndash; opened right up. Cool. But it would be kind of shitty if I had to first open Terminal, then run a command to launch Ricochet. Ideally I&rsquo;d have a Ricochet icon in my Lubuntu start menu.</p>
+
+<h2 id="creating-an-icon-in-the-lubuntu-start-menu">Creating an icon in the Lubuntu start menu</h2>
+
+<p>After some more searching I found a subheading on an Ubuntu/Lubuntu help page called <a href="https://help.ubuntu.com/community/Lubuntu/Windows#How_to_make.2Fadd_an_application_to_the_.22start.22_menu.">&ldquo;How to make/add an application to the &ldquo;start&rdquo; menu.&rdquo;</a> that described how to make a <code>.desktop</code> file.</p>
+
+<p>The help page states: &ldquo;Making a .desktop file in <code>~/.local/share/applications</code> will show the item in the LXDE start menu.&rdquo;</p>
+
+<p>First I moved my <code>ricochet</code> directory into <code>~/Desktop/my_programs</code>, a directory I made for programs I&rsquo;ve downloaded through the browser and am not sure where else to put (I know isn&rsquo;t ideal but I figure it&rsquo;s better than <code>~/Downloads</code>&ndash; <a href="https://twitter.com/sts10">hit me on Twitter</a> if you know a better way). Next I confirmed that the new absolute command for launching Ricochet the application was <code>~/Desktop/my_programs/ricochet/ricochet</code>, which indeed worked.</p>
+
+<p>Next, as described in the <a href="https://help.ubuntu.com/community/Lubuntu/Windows#How_to_make.2Fadd_an_application_to_the_.22start.22_menu.">help page</a>, I created a <code>Ricochet.desktop</code> text file from scratch in <code>~/.local/share/applications</code> using a desktop file for another program that was also in that directory as a loose template (the other program is <a href="https://crypto.cat/">Cryptocat</a>, just another program I had previously downloaded that had its .desktop file in <code>~/.local/share/applications</code>).</p>
+
+<p>Here&rsquo;s the <code>Ricochet.desktop</code> file I typed out in its entirety:</p>
+
+<pre><code>[Desktop Entry]
+Type=Application
+Name=Ricochet
+Exec=/home/USER/Desktop/my_programs/ricochet/ricochet
+Icon=/home/USER/Desktop/my_programs/ricochet/ricochet.png
+Terminal=false
+Categories=Network;InstantMessaging;Internet;
+</code></pre>
+
+<p>And be sure to substitute where it says &ldquo;USER&rdquo; for your username. If you&rsquo;re not sure what your username is, just run <code>pwd</code> in your terminal.</p>
+
+<p>As you can see, the <code>.desktop</code> format also allows you to specify an icon image, so I went over to <a href="https://github.com/ricochet-im/ricochet">the Ricochet IM Github repo</a> and downloaded <a href="https://github.com/ricochet-im/ricochet/blob/master/icons/ricochet.png">a PNG logo</a> and put it in my ricochet directory.</p>
+
+<p>I think I had to restart the machine in order to see the icon appear in the start menu. After restart it was there in &ldquo;Internet&rdquo; next to Cryptocat and some other applications.</p>
+
+<h2 id="things-i-haven-t-figure-out">Things I haven&rsquo;t figure out</h2>
+
+<p>So running <code>ricochet</code> from anywhere other than my ricochet directory does not launch the application. I could likely solve this pretty easily with an <code>ln</code> command or a line in my <code>bashrc</code>, but I&rsquo;ve never need to launch a non-text editor from the command line before.</p>
+
+<p>I&rsquo;m also not 100% how I&rsquo;ll go about upgrading to a new version of Ricochet, but the README says &ldquo;To upgrade, extract the new version to the same location.&rdquo; I assume I&rsquo;ll be able to download a new tar file, extract it, and switch it out from old directory. I&rsquo;ll likely keep the <code>config</code> directory, as that has my username, contact list, and (I think) my private key (the README notes: &ldquo;Once you run Ricochet, configuration will be stored in a &lsquo;config&rsquo; directory inside this folder&rdquo;.).</p>
+
+<p>I also might not even have to edit the .desktop file (assuming I put the executable and the PNG icon in the same place).</p>
+
+<h2 id="is-it-supposed-to-be-this-difficult-i-m-not-even-building-from-source">Is it supposed to be this difficult? I&rsquo;m not even building from source</h2>
+
+<p>To be honest, I&rsquo;m too new to Linux/Ubuntu/Lubuntu to know. It does seem strange that there isn&rsquo;t at least a copy of the Ricochet icon included in the tar that I downloaded. And I could also imagine there being a script that creates and places the <code>Ricochet.desktop</code> file for you. In fact there is a <a href="https://github.com/ricochet-im/ricochet/blob/master/src/ricochet.desktop">ricochet.desktop file</a> in the source of the project, but I couldn&rsquo;t find it in the 1.1.4 tar.</p>
+
+<p>Of course I could have missed some step in the installation that does exactly these things and maybe more. And I should say that this tar I downloaded is meant to serve the needs of many Linux distributions, whose configurations processes may be very different than the ones I took.</p>
+
+<p>Of course this pre-built distribution does take care of a lot of things that could be big headaches, most notable the Tor configuration, which just works. As the README notes: &ldquo;You do not need to manually run or configure tor. An unmodified tor binary is included with this package, and Ricochet will run it automatically, similiar [sic] to Tor Browser.&rdquo; which is obviously awesome.</p>
+
+<p>At the end of the day I&rsquo;ve got version 1.1.4 working and an icon for it in my start menu. I&rsquo;m not sure how similar the process is on Ubuntu 16.04.</p>
+
+<p>Plus I learned a bit about Linux and Lubuntu. And yes, I did submitted <a href="https://github.com/ricochet-im/ricochet/pull/521">a fresh pull request</a> to fix that pesky little typo in the README which has since been merged.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2016-12-06-yubikey-and-gpg/" data-toggle="tooltip" data-placement="top" title="YubiKey and OpenPGP">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/welcome/" data-toggle="tooltip" data-placement="top" title="welcome">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

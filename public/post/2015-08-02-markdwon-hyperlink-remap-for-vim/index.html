@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Markdown HyperLink Remap for Vim</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Markdown HyperLink Remap for Vim" />
+  
+
+  
+    <meta property="og:description" content="I&rsquo;ve been writing these blog posts in Vim for a few months now. It&rsquo;s been a great way to practice and hone my Vim skills in a slower, less intense environment (as compared to deployed code).
+This blog is run using Octopress and a shell script I wrote more than a year ago called ink (which has been really awesome!). Thus, the posts are actually written in Markdown. This has worked out great&ndash; it remains my preferred syntax for writing on the internet.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2015-08-02-markdwon-hyperlink-remap-for-vim/" />
+    <link rel="canonical" href="http://example.org/post/2015-08-02-markdwon-hyperlink-remap-for-vim/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Markdown HyperLink Remap for Vim" />
+  
+
+  
+    <meta name="twitter:description" content="I&rsquo;ve been writing these blog posts in Vim for a few months now. It&rsquo;s been a great way to practice and hone my Vim skills in a slower, less intense environment (as compared to deployed code).
+This blog is run using Octopress and a shell script I wrote more than a year ago called ink (which has been really awesome!). Thus, the posts are actually written in Markdown. This has worked out great&ndash; it remains my preferred syntax for writing on the internet.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Markdown HyperLink Remap for Vim</h1>
+                
+                
+                  <span class="post-meta">Posted on August 2, 2015</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I&rsquo;ve been writing these blog posts in Vim for a few months now. It&rsquo;s been a great way to practice and hone my Vim skills in a slower, less intense environment (as compared to deployed code).</p>
+
+<p>This blog is run using <a href="http://octopress.org/">Octopress</a> and a shell script I wrote more than a year ago called <a href="https://github.com/sts10/ink">ink</a> (which has been really awesome!). Thus, the posts are actually written in Markdown. This has worked out great&ndash; it remains my preferred syntax for writing on the internet. But one pesky problem was the headache of making text a link in Markdown using Vim.</p>
+
+<!-- more -->
+
+<p>As you can read in the <a href="http://daringfireball.net/projects/markdown/syntax#link">Markdown Syntax</a>, link text is surrounded by square brackets, followed immediately with the URL in parenthesis.</p>
+
+<p>While writing these blog posts, I&rsquo;d often write a full sentence or paragraph, then go to my browser and find any URLs I&rsquo;d want to insert links to. To do this, I would copy the URL to the system clipboard, then use Vim commands to navigate to the beginning of the text to link, insert a &ldquo;[&ldquo;, navigate to the end of the text to link to insert a &ldquo;]&rdquo; then a &ldquo;(&rdquo;, then use one of my remapping to paste from the system clipboard:</p>
+
+<pre><code>&quot; use leader to interact with the system clipboard 
+nnoremap &lt;Leader&gt;p &quot;*]p
+nnoremap &lt;Leader&gt;P &quot;*]P
+nnoremap &lt;Leader&gt;v &quot;*]p
+nnoremap &lt;Leader&gt;V &quot;*]P
+</code></pre>
+
+<p>Note 1: I&rsquo;m using Terminal Vim.</p>
+
+<p>Note 2: It&rsquo;s not clear to me whether it is better/more correct to use the <code>*</code> register or the <code>+</code> register to interact with the system clipboard. If you want to use the <code>+</code> register, just substitute <code>+</code> for all the <code>*</code>s in the code examples in this post.</p>
+
+<p>Note 3: The above block of Vimscript does NOT specifically allow Vim access to the system clipboard. I&rsquo;m actually not 100% how I connect my version of Terminal Vim with my system clipboard.</p>
+
+<p>One route to take, one described in <a href="http://vimcasts.org/episodes/accessing-the-system-clipboard-from-vim/">this Vimcast</a>, is to <a href="http://vim.wikia.com/wiki/Accessing_the_system_clipboard">set the clipboard to unnamed</a>. I believe this puts all yank, delete and put (paste) commands to the system clipboard, which is pretty different from having one specific register connected to the system clipboard. There&rsquo;s <em>also</em> a solution using <a href="https://github.com/tpope/vim-unimpaired">Tim Pope
+&rsquo;s Unimpaired plug-in</a>, which I believe is described in this <a href="http://vimcasts.org/episodes/using-vims-paste-mode-with-the-system-paste-command/">Vimcast</a>.</p>
+
+<p>Though this was good practice for my Vim cursor navigation skills, it was a bit of a pain in the ass, especially compared to Sublime Text. In Sublime, if you hit &ldquo;[&rdquo; with a portion of your text highlighted, Sublime will place square brackets around the selected text.</p>
+
+<p>Note: There is a Tim Pope plug-in for Vim called <a href="https://github.com/tpope/vim-surround">Surround</a> (<a href="https://www.youtube.com/watch?v=5HF4jSyPpvs">here&rsquo;s a Tuts+ video on YouTube about it</a>), which I may still implement because it looks awesome yet simple, but I figured if I just wanted this one functionality <em>and</em> I want my single command to paste from system clipboard.</p>
+
+<p>With this functionality in mind, I went about writing a new custom Vim remapping just for inserting links in Markdown, with the assumption that I already have the URL to link to in my system clipboard (in the <code>*</code> register).</p>
+
+<p>Here&rsquo;s what I came up with:</p>
+
+<pre><code>autocmd FileType markdown vnoremap &lt;c-a&gt; &lt;Esc&gt;`&lt;i[&lt;Esc&gt;`&gt;la](&lt;Esc&gt;&quot;*]pa)&lt;Esc&gt;
+</code></pre>
+
+<p>The first bit, <code>autocmd FileType markdown</code>, says this remapping should only work in markdown files. `&lt; and `&gt; take you to the beginning and end of the previously highlighted text (in visual mode), respectively. So I got to the beginning of the highlight text, insert a square bracket, then go to the end of the highlighted text, move one character left, and insert the closing square bracket, an opening parentheses, then paste from the system clipboard register (<code>*</code>). (Note: the square bracket after the <code>*</code> just formats the pasted text&hellip; I don&rsquo;t think it&rsquo;s actually necessary&hellip;) Then we use <code>a</code> to insert the closing parentheses, then hit escape to return to normal mode. Phew!</p>
+
+<p>I haven&rsquo;t pushed the new line of up to <a href="https://github.com/sts10/terminal_and_vim_settings/blob/master/vimrc">the publicly-hosted copy of my .vimrc</a> yet&hellip; still testing and debating whether mapping it to Ctrl + a is a good choice.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2015-08-02-the-hacker-ethic/" data-toggle="tooltip" data-placement="top" title="The Hacker Ethic">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2015-08-04-where-wizards-stay-up-late/" data-toggle="tooltip" data-placement="top" title="Where Wizards Stay Up Late">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

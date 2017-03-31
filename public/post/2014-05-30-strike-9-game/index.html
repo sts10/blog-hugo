@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Strike 9 Game</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Strike 9 Game" />
+  
+
+  
+    <meta property="og:description" content="At my second meet-up of this week, I ventured north to the east 20s for Building JavaScript Games. Our task was to build a seemingly simple game called Strike 9.
+How the Game is Played At the beginning of a turn, the &ldquo;computer&rdquo; rolls two die. The player has squares numbered 1 through 9 to make the sum of the computer&rsquo;s roll. The trick is that when the player uses a number it is removed from the board.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-05-30-strike-9-game/" />
+    <link rel="canonical" href="http://example.org/post/2014-05-30-strike-9-game/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Strike 9 Game" />
+  
+
+  
+    <meta name="twitter:description" content="At my second meet-up of this week, I ventured north to the east 20s for Building JavaScript Games. Our task was to build a seemingly simple game called Strike 9.
+How the Game is Played At the beginning of a turn, the &ldquo;computer&rdquo; rolls two die. The player has squares numbered 1 through 9 to make the sum of the computer&rsquo;s roll. The trick is that when the player uses a number it is removed from the board.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Strike 9 Game</h1>
+                
+                
+                  <span class="post-meta">Posted on May 30, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>At my second meet-up of this week, I ventured north to the east 20s for Building JavaScript Games. Our task was to build a seemingly simple game called Strike 9.</p>
+
+<h3 id="how-the-game-is-played">How the Game is Played</h3>
+
+<p>At the beginning of a turn, the &ldquo;computer&rdquo; rolls two die. The player has squares numbered 1 through 9 to make the sum of the computer&rsquo;s roll. The trick is that when the player uses a number it is removed from the board. So for example, if computer rolls a 9, the player can choose to remove any of the following combinations:  [9], [1,8], [2,7], [1,2,6], [2,3,4], etc. If he or she uses, say, the 1 and the 8, on the next roll neither 1 or 8 will be available.</p>
+
+<!-- more -->
+
+<h3 id="huh-live-demo">Huh? / Live Demo</h3>
+
+<p>Yeah, it&rsquo;s kind of hard to explain in words. Here&rsquo;s a <a href="http://samschlinkert.com/strike9/">live demo</a> (and <a href="https://github.com/sts10/strike-9">my GitHub repo</a>).</p>
+
+<h3 id="how-i-approached-the-basic-gameplay">How I Approached the Basic Gameplay</h3>
+
+<p>The meat of this project lives in <code>strike9-board.js</code>. <code>onload</code> we initialize some arrays and variables, then call <code>resetGame()</code>, which draws our 9 HTML <code>canvas</code>&rsquo;s and rolls the 2 die for the first time.</p>
+
+<p>From there we wait for the player to click one of the 9 canvases. When a canvas is clicked, we make sure it hasn&rsquo;t been clicked yet in this game. Then we mark it as clicked in the <code>board_array</code> and we remove that number from the <code>player_moves_remaining</code> array. We also add the number to <code>player_total</code>.</p>
+
+<p>Eventually we have to figure out if the player won, lost, or can keep playing on that turn. Here&rsquo;s a excerpt of that code:</p>
+
+<pre><code class="language-javascript">// the player just made a sum...
+
+// check if player has won
+if (board_array.indexOf(0) == -1){   
+  alert(&quot;Oh hey, You won!&quot;);
+  resetGame();
+} else { //still playing
+  // re-roll dice. 
+  computer_roll = rollTwoDie();
+
+  // with new dice roll, we can already figure out if the game is over
+  if (isGameOver(computer_roll, player_moves_remaining)){
+    alert(&quot;Computer's next roll is &quot; + computer_roll + &quot;...Game over :(&quot;);
+    resetGame();
+  } else { // if there exists a way to make the roll's sum...
+    sendMessage(randPraise() + &quot;&lt;br&gt;New roll is &quot; + computer_roll);
+    // reset for new roll, same game
+    possible_combinations = []; 
+    player_total = 0;
+  }
+}
+</code></pre>
+
+<p>By far the most interesting of these outcomes to check is if the player lost&ndash; which we do with the <code>isGameOver()</code> function called above. I wanted the game to know if the player lost right away&ndash; in other words if the player had 1, 2, and 4 remaining and the computer&rsquo;s new roll was 5, I wanted the game to tell the player they had lost.</p>
+
+<p>This might sounds simple, but&ndash; at least the way I went about it&ndash; turned out to be pretty non-trivial.</p>
+
+<h3 id="coolest-challenge-when-is-the-game-over">Coolest Challenge: When is the Game Over?</h3>
+
+<p>Ideally I wanted a function called <code>isGameOver</code> that returns <code>true</code> if the player can&rsquo;t make the sum with the remaining numbers (like the case above), and <code>false</code> if the player can make the sum.</p>
+
+<p>My approach was to generate an array of all ways to make a sum (in the above hypothetical, all the ways to add numbers to make 5). So given, say, <code>6</code>, <code>getAllPossAddends</code> should return an array of arrays: <code>[[6], [1,5], [2,4], [1,2,3]]</code>. Note that we don&rsquo;t want <code>[3,3]</code> because there&rsquo;s only one 3 on the board, and we don&rsquo;t want <code>[5,1]</code> because we already have <code>[1,5]</code> and order doesn&rsquo;t matter here. And <code>6</code> itself should be included because, in line with the rules of the game, if the computer rolls a 6 you can just use the 6 square.</p>
+
+<p>Once we get this array of possible combinations to make a given sum, which I call <code>possible_combinations</code>, we&rsquo;ll just need to compare it to what numbers the player has left (<code>player_moves_remaining</code>) to see if <code>isGameOver</code> should be <code>true</code> or <code>false</code>. Cool? Sounds easy? OMG took me a whole day.</p>
+
+<p>Let&rsquo;s do this.</p>
+
+<h3 id="part-1-generating-possible-combinations">Part 1: Generating possible_combinations</h3>
+
+<p><em>Note: The section below has been edited and updated to reflect some significant refactoring I&rsquo;ve performed.</em></p>
+
+<p>So the first thing I wanted to do was write the function that would take in a <code>sum</code>, say <code>6</code> and spit back <code>[[1,5], [2,4], [1,2,3], [6]]</code>. I decided to call this function <code>getAllPossAddends</code> (&ldquo;addends&rdquo;, <a href="http://en.wikipedia.org/wiki/Addition#Notation_and_terminology">according to Wikipedia</a>, is the technical term for what you add together to get a sum).</p>
+
+<p>After a few days of tinkering, I wrote a recursive function to accomplish this task.</p>
+
+<pre><code class="language-javascript">var possible_combinations = []; // I made this global
+
+function getAllPossAddends(sum, baggage){
+  // if baggage argument is undefined, this is our first run through
+  // so set baggage = []
+  // baggage is effectively an optional argument with a default value of [] if undefined in function call
+  if (typeof baggage == 'undefined'){
+    baggage = [];
+    possible_combinations = [];
+    possible_combinations.push([sum]); // can just play the number itself 
+  }
+
+  for (var j=1; j &lt; sum/2; j++){
+    // if j is not in baggage and sum-j is not in baggage
+    if (baggage.indexOf(j) == -1 &amp;&amp; baggage.indexOf(sum-j) == -1){
+      // add j and sum-j back to baggage to make our new array we may add as a possible_combination
+      var new_array = baggage.concat(j, sum-j);
+
+      // if new_array is NOT a subArray of possible_combinations yet... 
+      if (!isSubArray(new_array,possible_combinations)){
+        possible_combinations.push(new_array);
+      }
+
+      // prep new_baggage and send new sum and baggage back to top of the function
+      var new_baggage = baggage.concat(j);
+      getAllPossAddends(sum-j, new_baggage);
+    }
+  }
+
+  return possible_combinations;
+}
+</code></pre>
+
+<p>Let&rsquo;s walk through it as if we called it with <code>getAllPossAddends(10)</code>, so <code>sum = 10</code> and <code>baggage</code> is <code>undefined</code>.</p>
+
+<p>Right off the bat we use an <code>if</code> statement to check if <code>baggage</code> is undefined. If it is, we know that this is the &ldquo;first time&rdquo; we&rsquo;re running through <code>getAllPossAddends</code>, and that we should set <code>baggage = []</code> and reset <code>possible_combinations</code>. This setting of <code>baggage</code> to <code>[]</code> will make a little more sense in a minute.</p>
+
+<p>Now to the meat of the function. First we loop from 1 to <code>sum/2</code> (5 in our case). We then do some checks against baggage, which we&rsquo;ll learn about in a minute. Note: this loop doesn&rsquo;t go up to 5 because we put <code>i &lt; sum/2</code> not <code>i &lt;= sum/2</code>, which is what we want&ndash; remember there aren&rsquo;t 2 5s so we don&rsquo;t want <code>[5,5]</code> to count as a <code>possible_combination</code>.</p>
+
+<p>Eventually we make a new_array and set it equal to <code>baggage.concat(j, sum-j)</code>. We don&rsquo;t have any baggage yet, so for the first run through, <code>j==1</code> and <code>sum-j==9</code>. And that&rsquo;s good, because [1,9] is a possible way of making 10.</p>
+
+<p>That&rsquo;s a start, but what about <code>[1,4,5]</code> or (gulp) <code>[1,2,3,4]</code>? This is the problem that the recursion handles:</p>
+
+<pre><code class="language-javascript">// prep new_baggage and send new sum and baggage back to top of the function
+var new_baggage = baggage.concat(j);
+getAllPossAddends(sum-j, new_baggage);
+</code></pre>
+
+<p>Basically, we want to take that <code>9</code> in <code>[1,9]</code> and expand it out to <code>[[1,9], [1,2,7], [1, 3, 6], [1, 4, 5]]</code>. We want to break that 9 down while keeping the 1 untouched (Notice how the <code>1</code> is the first element of every &ldquo;sub-array&rdquo;). I decided to call the <code>1</code> <code>baggage</code>, because it&rsquo;s like, just along for the ride. With the baggage taken care of, what we want to do to the 9 is very similar to what we set out to do the 10&ndash; namely find all the ways to sum to it. Sounds like a case for recursion!</p>
+
+<p>We&rsquo;re going to call <code>getAllPossAddends</code> again, but first we have to set the <code>new_baggage</code>. In our example, right after we add <code>[1,9]</code>, 9 is the <code>sum-j</code> we want to break down further, and j is <code>1</code>, the baggage we want to pass along. We have to use <code>baggage.concat(j)</code> in case we got any baggage at the beginning of the run-through of the function, which will be the case every time except the first run-through.</p>
+
+<p>On the second run-through in our example, the getAllPossAddends call is: <code>getAllPossAddends(9, [1])</code>. Now 9 is the new <code>sum</code> and <code>[1]</code> is the <code>baggage</code> (since <code>baggage</code> is defined, we do not execute that first <code>if</code> statement).</p>
+
+<p>So the array we prepare, <code>new_array</code>, WOULD BE [1,1,8], but we have a check against duplicated numbers: <code>if (baggage.indexOf(j) == -1 &amp;&amp; baggage.indexOf(sum-j) == -1)</code>. <code>j</code>, which is equal to <code>1</code>, is in fact present in <code>baggage</code>, so we&rsquo;re not going to do anything in this <code>for</code> iteration. (Note: This is a bit wasteful, but refactoring further may make this thing a little too confusing.)</p>
+
+<p>So we try again. On the next iteration of the <code>for</code> loop, <code>j</code> will be equal to 2 and <code>sum-j</code> == 7. This time we will make it through the <code>if</code> checks. <code>baggage</code> is still <code>[1]</code>, so when we get to <code>baggage.concat(2, 7)</code> it&rsquo;s going to evaluate to <code>[1,2,7]</code>. Then we&rsquo;ll add it to <code>possible_combinations</code>.</p>
+
+<p>We&rsquo;ll then call the function again which <code>sum-j</code> equal to 7 and <code>baggage</code> == <code>[1,2]</code>. So the call will be <code>getAllPossAddends(7, [1,2])</code>, and we&rsquo;ll go break down that 7. And so on! Crazy, right?</p>
+
+<h3 id="part-2-building-my-own-array-tools">Part 2: Building My Own Array Tools</h3>
+
+<p>You may have noticed my use of a function called <code>isSubArray</code>. It checks whether the array we&rsquo;re trying to add to <code>possible_combinations</code> has already been added (again, we don&rsquo;t want duplicates).</p>
+
+<p>Of course this function is not a standard JavaScript function, but one I wrote myself. I ended up writing 3 of these &ldquo;array helper&rdquo; functions in total.</p>
+
+<pre><code class="language-javascript">// believe it or not, array.sort sorts numbers alphabetically, so we have to define our own sort for numbers
+function sortArray(array){ 
+  return array.sort(function(a, b){return a-b});
+}
+
+// this guy takes an array of arrays and sorts all of its sub-arrays using the above function
+function sortAllSubArrays(array){
+  for(var i = 0; i &lt; array.length; i++){
+    array[i] = sortArray(array[i]);
+  }
+  return array;
+}
+
+// the workhorse function in the trio. It sorts both the sub-array and the array of arrays using their respective functions. 
+// then sees if any of the arrays in `array` match the given `subArray`
+function isSubArray (subArray, array) {
+  subArray = sortArray(subArray); //  need to sort both the subArray...
+  array = sortAllSubArrays(array); // and the sub-arrays in array in order to compare them more easily
+
+  for(var i = 0; i &lt; array.length; i++) {
+    if(subArray.toString() === array[i].toString()){
+      return true;
+    }
+  }
+  return false;
+}
+</code></pre>
+
+<h3 id="part-3-putting-it-all-together">Part 3: Putting It All Together</h3>
+
+<p>Cool, so now we have an array, <code>possible_combinations</code>, that&rsquo;s full of all the ways our player could make a given sum (a given dice roll in our case). As I mentioned above, we also have an array of numbers that the player has left, called <code>player_moves_remaining</code>. Now all we have to do is compare them to figure out if the game is over.</p>
+
+<p>Again, I broke this into 2 functions, but most of the work happens in <code>playerHasAMove</code>. <code>player_moves_left</code> is <code>player_moves_remaining</code> and <code>passing_moves</code> is our mega-awesome array of arrays, <code>possible_combinations</code>.</p>
+
+<pre><code class="language-javascript">function playerHasAMove(player_moves_left, passing_moves){
+  for(var i = 0; i &lt; passing_moves.length; i++) {
+    var matches = 0; 
+    for(var j = 0; j &lt; passing_moves[i].length; j++) {  
+      if (player_moves_left.indexOf(passing_moves[i][j]) != -1){
+        // we foudn a match
+        matches = matches + 1;
+      }
+    }
+    if (matches == passing_moves[i].length){
+      return true;
+    }
+  }
+  return false; 
+}
+
+function isGameOver(roll, player_moves_remaining){
+  var ways_to_fulfill_roll = getAllPossAddends(roll);
+  if (playerHasAMove(player_moves_remaining, ways_to_fulfill_roll)){
+    return false; // game is not over
+  } else {
+    return true; // game is over
+  }
+}
+</code></pre>
+
+<p><code>playerHasAMove</code> first loops over the <code>passing_moves</code> and yields the sub-arrays like <code>[1,9]</code> and <code>[1,3,6]</code>. It then loops through these sub-arrays and looks for <code>matches</code> in <code>player_moves_left</code> using the <code>indexOf</code> method. If, for a given sub-array, all of its element are contained in <code>player_moves_left</code>, we return true. If we get to the end of <code>passing_moves</code> and the player is out of luck, we return false. This easily plugs into <code>isGameOver</code>, where we return the final true/false verdict.</p>
+
+<p>Again, here&rsquo;s where <code>isGameOver</code> is called:</p>
+
+<pre><code class="language-javascript">// player just made a sum
+
+if (board_array.indexOf(0) == -1){  // if board_array has no 0s, i.e. is all 1s 
+  alert(&quot;Oh hey, You won!&quot;);
+  resetGame();
+} else { //still playing
+  // re-roll dice. 
+  computer_roll = rollTwoDie();
+
+  // with new dice roll, we can already figure out if the game is over
+  if (isGameOver(computer_roll, player_moves_remaining)){
+    alert(&quot;Computer's next roll is &quot; + computer_roll + &quot;...Game over :(&quot;);
+    resetGame();
+  } else { // if there exists a way to make the roll's sum...
+    sendMessage(randPraise() + &quot;&lt;br&gt;New roll is &quot; + computer_roll);
+    // reset for new roll, same game
+    possible_combinations = []; 
+    player_total = 0;
+  }
+}
+</code></pre>
+
+<p>Think that&rsquo;s about it!</p>
+
+<p><em>Side Note</em>: I hope to write more programs that have a <code>randPraise</code> function:</p>
+
+<pre><code class="language-javascript">function randPraise(){
+  var praise = [&quot;Awesome!&quot;, &quot;Good job!&quot;, &quot;Knew you could do it!&quot;, &quot;Sweet!&quot;, &quot;You got this!&quot;, &quot;Again! Again!&quot;, &quot;Keep it up!&quot;, &quot;Keep going!&quot;, &quot;Easy, right?&quot;];
+  var rand = Math.floor(Math.random() * (praise.length));
+  return praise[rand];
+}
+</code></pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-05-28-ruby-golf-finding-the-perfedct-method/" data-toggle="tooltip" data-placement="top" title="Ruby Golf: Finding the Perfect Method">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2014-09-10-getting-started-with-vim/" data-toggle="tooltip" data-placement="top" title="Getting Started With Vim">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

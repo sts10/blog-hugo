@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Basic Guide to Creating a Markov Chain-Driven Twitter Bot</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Basic Guide to Creating a Markov Chain-Driven Twitter Bot" />
+  
+
+  
+    <meta property="og:description" content="Suspect fires on bounty hunters, twirling in their #Burberry
+&mdash; Schlink Bot (@schlinkbot) December 20, 2014 
+Over the past few weeks I&rsquo;ve been playing around with different ways of making Twitter bots (automated Twitter accounts). I don&rsquo;t have much to show for it yet&ndash; most of my experimentation has been with @schlinkbot, which probably doesn&rsquo;t look too impressive at this point. But I&rsquo;ve learned some foundational stuff.
+Anyway, in this post I&rsquo;m going to be going over how to use a Ruby gem called Twitter Ebooks by GitHub user mispy to make a Twitter bot.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-12-23-guide-create-markov-twitter-bot/" />
+    <link rel="canonical" href="http://example.org/post/2014-12-23-guide-create-markov-twitter-bot/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Basic Guide to Creating a Markov Chain-Driven Twitter Bot" />
+  
+
+  
+    <meta name="twitter:description" content="Suspect fires on bounty hunters, twirling in their #Burberry
+&mdash; Schlink Bot (@schlinkbot) December 20, 2014 
+Over the past few weeks I&rsquo;ve been playing around with different ways of making Twitter bots (automated Twitter accounts). I don&rsquo;t have much to show for it yet&ndash; most of my experimentation has been with @schlinkbot, which probably doesn&rsquo;t look too impressive at this point. But I&rsquo;ve learned some foundational stuff.
+Anyway, in this post I&rsquo;m going to be going over how to use a Ruby gem called Twitter Ebooks by GitHub user mispy to make a Twitter bot.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Basic Guide to Creating a Markov Chain-Driven Twitter Bot</h1>
+                
+                
+                  <span class="post-meta">Posted on December 23, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><blockquote class="twitter-tweet" lang="en"><p>Suspect fires on bounty hunters, twirling in their <a href="https://twitter.com/hashtag/Burberry?src=hash">#Burberry</a></p>&mdash; Schlink Bot (@schlinkbot) <a href="https://twitter.com/schlinkbot/status/546412459830288384">December 20, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>Over the past few weeks I&rsquo;ve been playing around with different ways of making Twitter bots (automated Twitter accounts). I don&rsquo;t have much to show for it yet&ndash; most of my experimentation has been with <a href="http://twitter.com/schlinkbot">@schlinkbot</a>, which probably doesn&rsquo;t look too impressive at this point. But I&rsquo;ve learned some foundational stuff.</p>
+
+<!-- more -->
+
+<p>Anyway, in this post I&rsquo;m going to be going over how to use a Ruby gem called <a href="https://github.com/mispy/twitter_ebooks">Twitter Ebooks</a> by GitHub user mispy to make a Twitter bot. There are of course other ways of doing this, but Twitter Ebooks has some nice features. <strong>Note:</strong> I&rsquo;m still new to this gem/framework, so excuse any problems. But I did get the bot up and tweeting and replying.</p>
+
+<p>You can read more about Twitter Ebooks at <a href="http://www.rubydoc.info/github/mispy/twitter_ebooks">the project&rsquo;s wiki</a>.</p>
+
+<h3 id="wait-what-is-this">Wait, What is This?</h3>
+
+<p>Right, so Twitter Ebooks is basically a framework written in Ruby that allows users to create their own Twitter bots. You can think of it like a Twitter bot factory. We want to use it to make one Twitter bot.</p>
+
+<p>Our bot, using Twitter Ebooks, will connect to Twitter using the <a href="https://dev.twitter.com/overview/documentation">Twitter API</a>. This will allow us to send tweets and listen for mentions of our bot. Actually running the bot involves us: (1) creating a twitter account for the bot, (2) registering a Twitter app for the bot, (3) creating a bot with Twitter Ebooks, then (4) running the Ruby code that runs the bot.</p>
+
+<p>Twitter Ebooks, and the bots created with it, are written in a programming language called Ruby. It&rsquo;s what&rsquo;s called a Ruby gem, which we&rsquo;ll need to download in a special way in order to use.</p>
+
+<h3 id="where-will-my-bot-get-its-content-from">Where Will My Bot Get Its Content From?</h3>
+
+<p>Twitter Ebooks uses a pseudo-Markov generator to generate text for the bot to tweet. Basically it&rsquo;s going to mash-up text from a &ldquo;real&rdquo; Twitter account (like your personal account perhaps), and spit it back out all mashed up. Hopefully that sounds cool to you. It can be pretty poetic!</p>
+
+<h3 id="what-you-ll-need-to-set-up-a-twitter-bot-this-way">What You&rsquo;ll Need to Set Up a Twitter Bot This Way</h3>
+
+<p>You&rsquo;ll need a basic Ruby coding environment. I think the bare minimum would be a fresh install of XCode or Command Line Tools, which you can <a href="https://developer.apple.com/downloads/index.action">download from Apple</a>, and <a href="https://rvm.io/rvm/install">RVM</a>. You&rsquo;ll also need a code editor like <a href="http://www.sublimetext.com/2">Sublime Text 2</a> or 3. If you can install Ruby gems you&rsquo;re ready to roll.</p>
+
+<h3 id="setup-step-1-configuration">Setup Step 1: Configuration</h3>
+
+<p>First step is to install the Twitter Ebooks Ruby gem. To do this open your Terminal and enter <code>gem install twitter_ebooks</code>. Hopefully it installs successfully. If it doesn&rsquo;t you probably don&rsquo;t have XCode or Command Line Tools set up correctly, or you don&rsquo;t have RVM (or an equivalent Ruby version manager) installed correctly (see above).</p>
+
+<p>Now you&rsquo;ll want to use the Unix commands <code>cd</code> and <code>mkdir</code> to make a folder for your bot project. When you&rsquo;re in the proper directory, run <code>ebooks new my_test_bot</code> (or whatever you want to call your bot). Now open the <code>bots.rb</code> file in your code editor. This is where you tell your bot how to act and thus will be where we&rsquo;ll do most of our coding.</p>
+
+<p>This would be a good time to go create the Twitter account that will be your bot. For example, I went and made @schlinkbot. Write down the password somewhere.</p>
+
+<p>Now we need to create a &ldquo;Twitter app.&rdquo; While logged in as your bot account, head over to <a href="https://apps.twitter.com/">https://apps.twitter.com/</a>. Hit the create new app button in the top right and fill out the form. It doesn&rsquo;t really matter what you put here, just be sure to leave Callback URL blank and agree to terms. If it asks, choose the highest level of permissions (read, write, direct messages). (Note: Since writing this blog post, I think Twitter has changed their API rules such that for an account to create a new account, it needs to have a phone number attached to it. If, like me, your one real phone number is attached to your real, non-bot account, <a href="https://www.google.com/voice?pli=1">Google Voice</a> may be useful here.)</p>
+
+<p>Let&rsquo;s head over to the &ldquo;Permissions&rdquo; tab and make sure our app asks for &ldquo;Read, Write and Access direct messages&rdquo;. With the checked, hit &ldquo;Update Settings.&rdquo; Now go to the &ldquo;Keys and Access Tokens&rdquo; tab. Scroll down and click the &ldquo;Generate My Access Token and Token Secret&rdquo; button.</p>
+
+<p>Cool. We now have 4 long token/secrets on this page. These 4 codes will allow our app to read and post to the bot&rsquo;s Twitter account. The 4 codes are: consumer key (API key), consumer secret (API secret), access token, and access token secret.</p>
+
+<p>Now, while keeping your browser open to that page, open <code>bots.rb</code> in your text editor.</p>
+
+<p>By default you&rsquo;re given a bare-bones example, but I&rsquo;d suggest replacing that with my slightly more built-up example below, which I based off of the bot example in <a href="https://github.com/mispy/ebooks_example">this repo</a>:</p>
+
+<pre><code class="language-ruby">require 'twitter_ebooks'
+
+# This is an example bot definition with event handlers commented out
+# You can define and instantiate as many bots as you like
+
+class MyBot &lt; Ebooks::Bot
+  # Configuration here applies to all MyBots
+  attr_accessor :original, :model, :model_path
+
+  def configure
+    # Consumer details come from registering an app at https://dev.twitter.com/
+    # Once you have consumer details, use &quot;ebooks auth&quot; for new access tokens
+    self.consumer_key = '' # Your app consumer key
+    self.consumer_secret = '' # Your app consumer secret
+
+    # Users to block instead of interacting with
+    self.blacklist = ['tnietzschequote']
+
+    # Range in seconds to randomize delay when bot.delay is called
+    self.delay_range = 1..6
+  end
+
+  def on_startup
+    load_model! 
+
+    scheduler.every '24h' do
+      # Tweet something every 24 hours
+      # See https://github.com/jmettraux/rufus-scheduler
+      # tweet(&quot;hi&quot;)
+      # pictweet(&quot;hi&quot;, &quot;cuteselfie.jpg&quot;)
+    end
+
+    scheduler.every '57m' do 
+      statement = model.make_statement(140)
+      tweet(statement)
+    end
+  end
+
+  def on_message(dm)
+    # Reply to a DM
+    # reply(dm, &quot;secret secrets&quot;)
+  end
+
+  def on_follow(user)
+    # Follow a user back
+    # follow(user.screen_name)
+  end
+
+  def on_mention(tweet)
+    # Reply to a mention
+    # reply(tweet, &quot;oh hullo&quot;)
+  end
+
+  def on_timeline(tweet)
+    # Reply to a tweet in the bot's timeline
+    # reply(tweet, &quot;nice tweet&quot;)
+  end
+
+  private
+  def load_model!
+    return if @model
+
+    @model_path ||= &quot;model/#{original}.model&quot;
+
+    log &quot;Loading model #{model_path}&quot;
+    @model = Ebooks::Model.load(model_path)
+  end
+end
+
+# Make a MyBot and attach it to an account
+MyBot.new(&quot;schlinkbot&quot;) do |bot|
+  bot.access_token = &quot;&quot; # Token connecting the app to this account
+  bot.access_token_secret = &quot;&quot; # Secret connecting the app to this account
+
+  bot.original = &quot;sts10&quot;
+end
+
+</code></pre>
+
+<p>NOTE: Here is a <a href="http://gist.github.com/sts10/9f253ea19bbf49b622ed">gist</a> of the above code if that&rsquo;s easier for you to read/copy-and-paste.</p>
+
+<p>First off, let&rsquo;s fill in those 4 codes. The first two go up top where it says <code>self.consumer_key</code> and <code>self.consumer_secret</code>. The second two go down at the bottom at <code>bot.access_token</code> and <code>bot.access_token_secret</code>. In all 4 cases, put the codes between the quotation marks.</p>
+
+<p>Next, change out <code>&quot;schlinkbot&quot;</code> to the handle of your Twitterbot. And change <code>&quot;sts10&quot;</code> to whatever &ldquo;real&rdquo; Twitter account you want your bot to imitate. This &ldquo;real&rdquo; account with populate something that Twitter Ebooks calls the &ldquo;model&rdquo;.</p>
+
+<p>OK, let&rsquo;s save that <code>bots.rb</code> file and go back to the command line. Now run the following lines from within your bots directory:</p>
+
+<pre><code>bundle install
+ebooks archive sts10 corpus/sts10.json
+ebooks consume corpus/sts10.json
+</code></pre>
+
+<p>This went and grabbed your real Twitter account&rsquo;s tweets so that your bot can mimic it. If you have trouble, this is <a href="https://github.com/mispy/ebooks_example">the repo containing an example bot</a> where I found this series of commands.</p>
+
+<p>Now, to actually run the bot, enter <code>ebooks start</code>. Since we only entered the bare minimum into the <code>bots.rb</code> file, your bot literally does nothing at this point, but if you saw something like:</p>
+
+<pre><code>@schlinkbot: Loading model model/sts10.model
+@schlinkbot: starting tweet stream
+@schlinkbot: Online!
+</code></pre>
+
+<p>We&rsquo;re in good shape. To stop your bot, hit Control + c in the terminal.</p>
+
+<h3 id="step-2-give-your-bot-instructions-on-how-to-act">Step 2: Give Your Bot Instructions on How to Act</h3>
+
+<p>In my example above, I give you two important lines of code:</p>
+
+<pre><code class="language-ruby">scheduler.every '57m' do 
+    statement = model.make_statement(140)
+    tweet(statement)
+end
+</code></pre>
+
+<p>Using a <a href="https://github.com/jmettraux/rufus-scheduler">scheduler</a>, this code tweets a Markov-generated &ldquo;statement&rdquo; that is 140 characters long every 57 minutes. Obviously you can make it tweet more or less often by changing that <code>57m</code>.</p>
+
+<p>Now knowing how the model generates Markov text, let&rsquo;s look at how we&rsquo;d instruct the bot to reply to users with a Markov statement in addition to sending statements out every 57 minutes.</p>
+
+<pre><code class="language-ruby">def on_mention(tweet)
+    # Reply to a mention
+    statement = model.make_statment(120)
+    reply(tweet, statement)
+end
+</code></pre>
+
+<p>So now instead of just tweeting out the 140 characters, we are replying to whatever tweet mentioned our bot.</p>
+
+<p><blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/ryanvailbrown">@ryanvailbrown</a> The last-ditch missile plan failed, sig up their Nobel Peace Prizes.</p>&mdash; Schlink Bot (@schlinkbot) <a href="https://twitter.com/schlinkbot/status/546446144445116417">December 20, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h3 id="restarting-your-bot">Restarting Your Bot</h3>
+
+<p>As I said above, to stop your bot hit Control + c in Terminal. To start it again, navigate to the correct directory and run <code>ebooks start</code>.</p>
+
+<h3 id="running-your-bot-not-on-your-local-machine-i-e-semi-permanently">Running Your Bot NOT On Your Local Machine (i.e. Semi-Permanently)</h3>
+
+<p>As you&rsquo;ve probably surmised, following this guide means you&rsquo;ll only be able to run your bot on your local machine. As in, your bot will only tweet/reply to tweets while you&rsquo;re running the Ruby program. To have your bot run forever, you&rsquo;ll need to push your finished code to a cloud hosting service like <a href="https://www.heroku.com/">Heroku</a>, as the <a href="https://github.com/mispy/twitter_ebooks/blob/master/README.md">Twitter Ebooks README</a> suggests. I haven&rsquo;t done this yet, mostly because I forget how Heroku works and I&rsquo;m still frequently playing with my <code>bots.rb</code> settings.</p>
+
+<h3 id="going-forward">Going Forward</h3>
+
+<p>There are plenty more &ldquo;event handlers&rdquo; in the <code>bots.rb</code> file to play with&ndash; <code>on_message</code>, <code>on_follow</code>, <code>on_timeline</code> for example. For more ideas, check out <a href="https://github.com/mispy/ebooks_example/blob/master/bots.rb">the bots.rb file of the example bot</a>.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-12-06-screenshots-mouse-trick/" data-toggle="tooltip" data-placement="top" title="Taking Screenshots Easier and Quicker">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2015-02-15-vim-update/" data-toggle="tooltip" data-placement="top" title="Getting Friendlier With Vim">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

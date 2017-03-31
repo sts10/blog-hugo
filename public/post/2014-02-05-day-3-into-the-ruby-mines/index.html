@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Day 3: Into the Ruby Mines</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Day 3: Into the Ruby Mines" />
+  
+
+  
+    <meta property="og:description" content="The pace is starting to pick up! Today marked our first tepid steps into Ruby, introducing not only a new topic, but a new way of thinking required by the course: programming logic.
+This morning we got a quick intro to RSPEC, which is basically a way to test pieces of Ruby code. For the course, it works as an auto-grader of our work that we can run as many times as we like before turning in our code (we now submit our work via GitHub forking and pull-requesting).">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-02-05-day-3-into-the-ruby-mines/" />
+    <link rel="canonical" href="http://example.org/post/2014-02-05-day-3-into-the-ruby-mines/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Day 3: Into the Ruby Mines" />
+  
+
+  
+    <meta name="twitter:description" content="The pace is starting to pick up! Today marked our first tepid steps into Ruby, introducing not only a new topic, but a new way of thinking required by the course: programming logic.
+This morning we got a quick intro to RSPEC, which is basically a way to test pieces of Ruby code. For the course, it works as an auto-grader of our work that we can run as many times as we like before turning in our code (we now submit our work via GitHub forking and pull-requesting).">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Day 3: Into the Ruby Mines</h1>
+                
+                
+                  <span class="post-meta">Posted on February 5, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>The pace is starting to pick up! Today marked our first tepid steps into Ruby, introducing not only a new topic, but a new way of thinking required by the course: programming logic.</p>
+
+<p>This morning we got a quick intro to RSPEC, which is basically a way to test pieces of Ruby code. For the course, it works as an auto-grader of our work that we can run as many times as we like before turning in our code (we now submit our work via GitHub forking and pull-requesting).</p>
+
+<!-- more -->
+
+<p>After watching Avi go through the tedious process of merging and rebasing all of our student profiles from day 1 using Git, we broke for lunch.</p>
+
+<p>Then! Avi gave an awesome lecture called “Why Programming is Awesome” and later jumped into the basics of Ruby.</p>
+
+<p>I don’t really know how to describe Avi’s philosophical lens yet. Not that he’s unclear about his passions, just that I want to understand them better first. He’s just a really solid and enthusiastic fan of programming in general, and the Ruby language specifically. Like today in the lecture’s section on what coding is, he dropped this excerpt from Plato:</p>
+
+<blockquote>
+<p>First perceiving and <strong>bringing together</strong> under <strong>one idea</strong> the <strong>scattered particulars</strong> so that one <strong>makes clear</strong> the particular thing which he <strong>wishes to do</strong>. Second, the <strong>separation</strong> of ideas into <strong>classes</strong>, by dividing it where the <strong>natural joints</strong> are, and not trying to break any part, after the manner of a bad carver…</p>
+
+<p>… I love these processes of <strong>division</strong> and <strong>bringing together</strong>… and if I think any other man is able to see things that can <strong>naturally be collected into one</strong> and <strong>divided into many</strong>, him I will follow as if he were a god.</p>
+
+<p>— Plato, <em>Phaedrus (Dialogue)</em> (Avi’s bolding)</p>
+</blockquote>
+
+<p>I majored in philosophy in college and have done some programming here and there before this course, but I never made or even considered there being such a connection between the two pursuits. In this light, both are processes of: an envisioning of something big, a breaking it down to understandable parts, and then a weaving into something new and more usable.</p>
+
+<p>Avi continued to explain that, to him, programming is “weird form of art where you don’t necessarily need to be starving.” It can be a weapon like Stuxnet, a method of curing disease through genetics and DNA coding, a valuable political asset for any politician, and a way of making millions of dollars through start-ups (if that’s what you want). But he said it in a way more inspiring way.</p>
+
+<blockquote>
+<p>If you want to build a ship, don’t drum up the men to gather wood, divide the work, and give orders. Instead, teach them to yearn for the vast and endless sea.</p>
+
+<p>— Antoine de Saint-Exupery, French poet and aviator</p>
+</blockquote>
+
+<p>After his talk about the vast sea (and a bit about <a href="http://en.wikipedia.org/wiki/Yukihiro_Matsumoto">the origins of Ruby</a>), Avi pivoted to the basics of Ruby, the primary language we’re here to learn.</p>
+
+<p>Later we jumped into more exercises in which we wrote Ruby code and tested it against RSPEC testing written by Avi and the TAs. The most interesting was FizzBuzz, <a href="http://c2.com/cgi/wiki?FizzBuzzTest">a common programming challenge</a>. The solution I turned in (embedded below) isn’t anything fancy, but it meets the specs we were given by the RSPEC code, and may give you a better idea of the task.</p>
+
+<pre><code>def fizzbuzz(num)
+    if num % 15 == 0 
+        return &quot;FizzBuzz&quot;
+    elsif num % 3 == 0 
+        return &quot;Fizz&quot;
+    elsif num % 5 == 0
+        return &quot;Buzz&quot;
+    else 
+        return nil 
+    end
+end
+</code></pre>
+
+<p>However, our small group later found a one-line function that also worked, with a few assists from the TAs:</p>
+
+<pre><code>def fizzbuzz(num)
+    &quot;#{'Fizz' if (num % 3).zero?}#{'Buzz' if (num % 5).zero?}&quot;.scan(/\w+/)[0]
+end
+</code></pre>
+
+<p>Quick explanation: the two bits between the curly brackets { } gets evaluated as Ruby code. That first bit,
+    &lsquo;Fizz&rsquo; if (num % 3).zero?
+basically prints the word “Fizz” if num (the result of the number we’re testing) <a href="http://en.wikipedia.org/wiki/Modulo_operation">modulus</a> 3 = 0. Likewise it prints “Buzz” right after that if it’s divisible by 5. If the number is divisible by 3 and 5, both “Fizz” and “Buzz” get printed right next to each other (no space). (The scan method at the end is a wacky thing a TA showed us to ensure the function returns nil when the number is not divisible by 3 or 5.</p>
+
+<p><em>Programming Note</em>: This is the Octopress blog I mentioned in an earlier post on <a href="http://schlinkblog.tumblr.com/">my Tumblr</a>. I’ve decided to give it a try, mostly because it handles markdown well and I wrote <a href="https://gist.github.com/sts10/8837128">a custom bash function</a> to launch a new post in my default <a href="http://daringfireball.net/projects/markdown/">Markdown</a> editor (<a href="http://writer.pro/">Writer Pro</a>) from anywhere in the terminal. We’ll see where we are in a week or two.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-02-05-flatiron-day-two/" data-toggle="tooltip" data-placement="top" title="Flatiron Day Two">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2014-02-07-octo-new-making-octopress-easier-with-bash/" data-toggle="tooltip" data-placement="top" title="Making Octopress Easier with ink">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

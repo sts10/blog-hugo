@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Advent of Code: 25 Days of Coding Challenges</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Advent of Code: 25 Days of Coding Challenges" />
+  
+
+  
+    <meta property="og:description" content="I was jumping around Reddit earlier this month and stumbled upon Advent of Code, a site created by Eric Wastl that has &ldquo;small programming puzzles&rdquo; for each day of the 25 days of Christmas. Like Project Euler, they are presented in such a way that you can solve them any which way you please. And, having attempted six of them so far, I can say that the challenges are good for a variety of skill levels.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2015-12-20-advent-of-code/" />
+    <link rel="canonical" href="http://example.org/post/2015-12-20-advent-of-code/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Advent of Code: 25 Days of Coding Challenges" />
+  
+
+  
+    <meta name="twitter:description" content="I was jumping around Reddit earlier this month and stumbled upon Advent of Code, a site created by Eric Wastl that has &ldquo;small programming puzzles&rdquo; for each day of the 25 days of Christmas. Like Project Euler, they are presented in such a way that you can solve them any which way you please. And, having attempted six of them so far, I can say that the challenges are good for a variety of skill levels.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Advent of Code: 25 Days of Coding Challenges</h1>
+                
+                
+                  <span class="post-meta">Posted on December 20, 2015</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I was jumping around Reddit earlier this month and stumbled upon <a href="http://adventofcode.com/">Advent of Code</a>, a site created by <a href="http://was.tl/">Eric Wastl</a> that has &ldquo;small programming puzzles&rdquo; for each day of the 25 days of Christmas. Like <a href="http://projecteuler.net/">Project Euler</a>, they are presented in such a way that you can solve them any which way you please. And, having attempted six of them so far, I can say that the challenges are good for a variety of skill levels.</p>
+
+<!-- more --> 
+
+<p>I was delighted enough to jump right into <a href="http://adventofcode.com/day/1">the first puzzle</a> and banged it out in <a href="https://github.com/sts10/advent_of_code/blob/master/day_1/runner.rb">some not-too-polished Ruby</a> (spoiler alert). I think I got through part 1 of day 3 that first night (you see my work <a href="https://github.com/sts10/advent_of_code">in this repo</a>).</p>
+
+<p><blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">an advent calendar of coding puzzles <a href="https://t.co/Bl6ABS3Jkt">https://t.co/Bl6ABS3Jkt</a> <a href="https://t.co/u49Zoy5ogM">pic.twitter.com/u49Zoy5ogM</a></p>&mdash; Sam Schlinkert (@sts10) <a href="https://twitter.com/sts10/status/675130262313967617">December 11, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>I was feeling pretty good about my solutions until I found <a href="https://www.reddit.com/r/adventofcode">this subreddit</a> dedicated to sharing solutions to the puzzles. There are all sorts of solutions posted in all different languages (some I&rsquo;d never heard of). Most of the upvoted solutions were elegant and extremely short. For example, <a href="https://www.reddit.com/r/adventofcode/comments/3viazx/day_5_solutions/cxnsyn2">here&rsquo;s a 3-line solution to day 5&rsquo;s challenge in Ruby</a>, a puzzle that <a href="https://github.com/sts10/advent_of_code/blob/master/day_5/runner.rb">took me 66 lines</a> in the same language (though I&rsquo;m giving myself points for using objects and, in some cases, writing <a href="https://github.com/sts10/advent_of_code/blob/master/day_3/spec/day_3_spec.rb">tests</a> for my code).</p>
+
+<p>I am happy that <a href="https://twitter.com/sts10/status/675130262313967617">my tweet</a> about the site has about 70 retweets at this point&ndash; exciting to think that others found the puzzles thanks to me. One of my favorite retweets was this quote tweet from <a href="https://twitter.com/KurtKumar">@KurtKamer</a>:</p>
+
+<p><blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Kids tried manually on paper, couldn&#39;t get past day 1. Now they want to try on a computer&#10;&#10;❤️ it &#10;&#10;<a href="https://twitter.com/hashtag/AdventCalendar?src=hash">#AdventCalendar</a> <a href="https://t.co/SNKHcTmkG9">https://t.co/SNKHcTmkG9</a></p>&mdash; Kurt Kumar (@KurtKumar) <a href="https://twitter.com/KurtKumar/status/677396127210082305">December 17, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>I feel like that&rsquo;s a great way to get a taste of programming!</p>
+
+<p>Anyway, if you&rsquo;re so inclined, check out <a href="http://adventofcode.com/">Advent of Code</a> and check <a href="https://www.reddit.com/r/adventofcode">the subreddit</a> if you get stuck! Note: I&rsquo;m currently stuck on <a href="http://adventofcode.com/day/6">Day 6</a>, which sounds kind of embarrassing after writing this whole post, but that&rsquo;s how it goes sometimes!</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2015-11-10-vimium-vim-in-chrome/" data-toggle="tooltip" data-placement="top" title="Vimium: Vim in Chrome">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2016-01-04-saddles/" data-toggle="tooltip" data-placement="top" title="They Would Take Their Saddle With Them">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

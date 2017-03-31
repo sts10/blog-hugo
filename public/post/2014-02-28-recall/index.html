@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Recall</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Recall" />
+  
+
+  
+    <meta property="og:description" content="Troublingly, I&rsquo;ve taken very few notes during lectures at Flatiron. How will I remember niche methods and strange, counter-intuitive syntaxes?!
+Of course, we do have awesome labs that we can reference anytime. Whenever I have needed to remember how I used inject that one time, or how to set up a module, I just remember which lab we did that in. The problem with this approach, of course, is that as the course progresses my labs directory has grown seemingly exponentially.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-02-28-recall/" />
+    <link rel="canonical" href="http://example.org/post/2014-02-28-recall/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Recall" />
+  
+
+  
+    <meta name="twitter:description" content="Troublingly, I&rsquo;ve taken very few notes during lectures at Flatiron. How will I remember niche methods and strange, counter-intuitive syntaxes?!
+Of course, we do have awesome labs that we can reference anytime. Whenever I have needed to remember how I used inject that one time, or how to set up a module, I just remember which lab we did that in. The problem with this approach, of course, is that as the course progresses my labs directory has grown seemingly exponentially.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Recall</h1>
+                
+                
+                  <span class="post-meta">Posted on February 28, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Troublingly, I&rsquo;ve taken very few notes during lectures at Flatiron. How will I remember niche methods and strange, counter-intuitive syntaxes?!</p>
+
+<p>Of course, we do have awesome labs that we can reference anytime. Whenever I have needed to remember how I used <code>inject</code> that one time, or how to set up a module, I just remember which lab we did that in. The problem with this approach, of course, is that as the course progresses my labs directory has grown seemingly exponentially. How are we supposed to remember which lab has that great example of a rake test?</p>
+
+<p>Since it&rsquo;s important for a programmer not to remember anything he or she doesn&rsquo;t absolutely have to, I figured it&rsquo;d be helpful to build a little search app that would return snippets of code based on a user&rsquo;s query.</p>
+
+<p>So! I&rsquo;ve put together a little Ruby app I&rsquo;m calling Recall and pushed it up to Github. You can find the public repo <a href="https://github.com/sts10/recall">here</a> (I actually referred to it in a blog post <a href="http://sts10.github.io/blog/2014/02/23/refactoring-with-structs/">earlier this week</a>).</p>
+
+<!-- more -->
+
+<h2 id="what-is-recall">What is Recall?</h2>
+
+<p>Basically it&rsquo;s a command line interface to search the .rb files of your local code directory for a phrase&ndash; say a method you don&rsquo;t quite remember how to use but know you&rsquo;ve used before. It dumps the output into a new .rb file and immediately opens that file with your default .rb editor (Sublime Text 2 for me).</p>
+
+<p>It&rsquo;s really not much more than a formatted grep search. But in the week that I&rsquo;ve been working on it on-and-off I&rsquo;ve used it a handful of times and it&rsquo;s actually helped! So I decided to push it to GitHub. Hopefully it will be heplful for you too!</p>
+
+<p>Again, here&rsquo;s <a href="https://github.com/sts10/recall">a link to the public repo on Github</a>.</p>
+
+<h2 id="some-interesting-bits-from-the-code">Some Interesting Bits From the Code</h2>
+
+<h3 id="1-prepping-the-query">1. Prepping the Query</h3>
+
+<p>The program takes in the user&rsquo;s query through a <code>gets</code> in the runner. Then, in the results model, we take the <code>@query</code> through a series of small methods before running the grep search. Behold!</p>
+
+<pre><code class="language-ruby">  def method?
+    @query[0] == '.'
+  end
+
+  def symbol?
+    @query[0] == ':'
+  end
+
+  def format_query
+    if method? 
+      a = @query.split('')
+      a[0] = '\.'
+      @query = a.join('')
+    end
+
+    if !symbol? # For some reason queries starting with ':' did not 
+                # jibe well with the regex below
+      c = @query.split('')
+      c.unshift('\b')
+      c.push('\b')
+      @query = c.join('')
+    end
+  end
+
+  def get_grep_results
+    format_query  
+    return `grep -r -n -i --include=*.rb &quot;#{@query}&quot; /Users/samschlinkert/Documents/code/flatiron | sort -r`
+  end
+</code></pre>
+
+<p>Sandi Metz would be proud (I hope?)! I tried to keep to the Single Responsibility Principle&ndash; that is, ensuring each method does one thing. For example, the <code>format_query</code> method escapes the &lsquo;.&rsquo; if the user searches for a method, and it puts &lsquo;\b&rsquo; (regex for word border) on either side of the query (unless it&rsquo;s a symbol&hellip; for whatever reason the &lsquo;\b&rsquo;s didn&rsquo;t work with symbols). OK, maybe that method does two things but you get the point.</p>
+
+<h3 id="2-the-struct">2. The Struct</h3>
+
+<p>I&rsquo;ve actually been reading Metz&rsquo;s <a href="http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1393199505&amp;sr=1-1&amp;keywords=practical+object-oriented+design+in+ruby"><em>Practical Object Oriented Design in Ruby</em></a> (aka POODR) this week, so I was inspired to use a Struct in the next portion of the results model.</p>
+
+<pre><code class="language-ruby">  # define the struct
+  Result = Struct.new(:file_path, :line_number, :code_snippet, :full_code) 
+
+  def parse_results
+    results = get_grep_results.split(&quot;\n&quot;)
+  
+    results.map do |result|
+      line_array = []
+      line_array = result.split(&quot;:&quot;)
+      Result.new(line_array[0], line_array[1], line_array[2], [''])
+    end 
+
+  end
+
+  def get_full_snippet 
+    results = parse_results # array of Result structs
+    results.each do |result| # iterate over the Result structs    
+      line_num = 0
+      File.open(&quot;#{result.file_path}&quot;, &quot;r&quot;) do |f|
+        f.each_line do |line|
+          line_num = line_num + 1 
+          if line_num &lt; (result.line_number.to_i - 5) || line_num &gt; (result.line_number.to_i + 15)
+            next
+          else 
+            result.full_code &lt;&lt; line
+          end
+        end
+      end
+
+    end
+  end 
+</code></pre>
+
+<p>With the struct defined as such, I get to call <code>result.file_path</code> rather than the uglier, non-semantic <code>line_array[0]</code>. This is especially helpful when I write the .rb.erb file (yes, I wrote a .rb.erb file). Here&rsquo;s what that looks like with the struct in place:</p>
+
+<pre><code>### Output from Recall search
+&lt;% @results.each do |result| %&gt;
+
+###########################
+
+# File: &lt;%= result.file_path %&gt;
+# Starting at line number: &lt;%= result.line_number %&gt;... 
+
+  &lt;% result.full_code.each { |line| %&gt;&lt;%= line %&gt;&lt;% } %&gt;
+&lt;% end %&gt;
+</code></pre>
+
+<h3 id="3-reading-the-full-code-snippet-from-each-file">3. Reading the &ldquo;full_code&rdquo; snippet from each file</h3>
+
+<p>Another fun bit was figuring out how to get the 20 lines surrounding the query in the result file. Let&rsquo;s say we&rsquo;re searching for <code>.to_s</code>. The grep search returns just the single line that <code>.to_s</code> is on. But I knew that wouldn&rsquo;t be very helpful to the user&ndash; they&rsquo;d want more context than that.</p>
+
+<p>I figured I&rsquo;d give them the 5 lines before the query, and 15 lines after. The way I did this (in results.rb) is a little janky, but it works OK.</p>
+
+<p>Calling <code>result.line_number</code> gives the line number that the grep search found the query on. (It returns the line number in its results thanks to the -n flag I hard-code into the call.) I also make a counter called <code>line_num</code> that iterates each time we read another line in the file.</p>
+
+<pre><code class="language-ruby">  File.open(&quot;#{result.file_path}&quot;, &quot;r&quot;) do |f|
+        f.each_line do |line|
+          line_num = line_num + 1 
+          if line_num &lt; (result.line_number.to_i - 5) || line_num &gt; (result.line_number.to_i + 15)
+            next
+          else 
+            result.full_code &lt;&lt; line
+          end
+        end
+      end
+</code></pre>
+
+<p>I call <code>next</code> if the counter is too far above or below the query&rsquo;s line number.</p>
+
+<p>Obviously feel free to <a href="https://github.com/sts10/recall">fork</a> and submit a pull request&ndash; plenty to improve on.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-02-23-refactoring-with-structs/" data-toggle="tooltip" data-placement="top" title="Refactoring with POODR">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2014-03-01-some-sublime-text-tips-and-tricks/" data-toggle="tooltip" data-placement="top" title="Some Sublime Text Tips and Tricks">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

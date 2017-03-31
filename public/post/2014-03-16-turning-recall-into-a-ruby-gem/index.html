@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Turning Recall into a Ruby Gem</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Turning Recall into a Ruby Gem" />
+  
+
+  
+    <meta property="og:description" content="Huzzah! I finally wrestled my Recall code into a legit Ruby Gem!
+Here&rsquo;s the updated GitHub repo and here&rsquo;s the super-official RubyGem page. You can install it by simple running gem install recall from your command line!
+Big thanks to Flatiron alum Kevin Curtin for his help organizing and connecting the various files.
+Here&rsquo;s a quick summary of the rather arduous process I went through to get the working script into a gem.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-03-16-turning-recall-into-a-ruby-gem/" />
+    <link rel="canonical" href="http://example.org/post/2014-03-16-turning-recall-into-a-ruby-gem/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Turning Recall into a Ruby Gem" />
+  
+
+  
+    <meta name="twitter:description" content="Huzzah! I finally wrestled my Recall code into a legit Ruby Gem!
+Here&rsquo;s the updated GitHub repo and here&rsquo;s the super-official RubyGem page. You can install it by simple running gem install recall from your command line!
+Big thanks to Flatiron alum Kevin Curtin for his help organizing and connecting the various files.
+Here&rsquo;s a quick summary of the rather arduous process I went through to get the working script into a gem.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Turning Recall into a Ruby Gem</h1>
+                
+                
+                  <span class="post-meta">Posted on March 16, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Huzzah! I finally wrestled my Recall code into a legit Ruby Gem!</p>
+
+<p>Here&rsquo;s <a href="https://github.com/sts10/recall">the updated GitHub repo</a> and here&rsquo;s the super-official <a href="https://rubygems.org/gems/recall">RubyGem page</a>. You can install it by simple running <code>gem install recall</code> from your command line!</p>
+
+<p>Big thanks to Flatiron alum <a href="https://twitter.com/kcurtin">Kevin Curtin</a> for his help organizing and connecting the various files.</p>
+
+<!-- more -->
+
+<p>Here&rsquo;s a quick summary of the rather arduous process I went through to get the working script into a gem. This outline may not be exactly correct, as it took me a little over a week to finally whip my directory structure and <code>require_relative</code>s into proper order, but it is roughly how this went down.</p>
+
+<h3 id="1-bundler-s-skeleton">1. Bundler&rsquo;s Skeleton</h3>
+
+<p>I ended up using Bundler&rsquo;s <a href="http://bundler.io/rubygems.html">built-in gem skeleton generator</a>. I ran <code>bundle gem recall</code> in a fresh, empty directory and got a scaffolded-out directory for the gem. But I still had some big hurdles to get over.</p>
+
+<h3 id="2-gemspec-file">2. Gemspec File</h3>
+
+<p>Next, an easy bit. I filled out the gemspec file that Bundler gave us with our personal information.</p>
+
+<h3 id="3-the-transfer">3. The Transfer</h3>
+
+<p>I then transferred code (models, a runner, and a template) into the appropriate folders inside the skeleton of directories that Bundler created for me. This involved a lot of guess-and-gem-build.</p>
+
+<p><strong>Models and template</strong>: I put both of my model files and the templates folder (containing the one template) into <code>lib/recall/</code>.</p>
+
+<p><strong>Runner</strong>: My &ldquo;runner&rdquo; went into <code>bin/</code> and I renamed it <code>recall</code> with no extension.</p>
+
+<p><strong>That weird recall.rb file</strong>: Bundler created a module called <code>Recall</code> in <code>lib/recall.rb</code> for me. I guess I&rsquo;ve come to think of this file as the bridge between my runner (<code>bin/recall</code>) and my <code>lib/recall/</code> directory, which has all my models and templates.</p>
+
+<p><strong>Why a module?</strong> The reason for making it a module is to protect it from naming conflicts. For example, Recall has a model called Results. We wouldn&rsquo;t want anyone using my gem to have a conflict when they call their Results class. So now my Results model effectively becomes Recall::Results (the :: is <a href="http://stackoverflow.com/questions/3009477/what-is-rubys-double-colon-all-about">the scope operator</a>).</p>
+
+<p><strong>Connecting the &ldquo;bridge&rdquo; file to my models and templates:</strong> The <code>lib/recall.rb</code> (again, the &ldquo;bridge&rdquo; file) has a <code>require_relative</code> pointing to each model&ndash; Results and SiteGenerator&ndash; <em>after</em> the module definition. Here&rsquo;s the entire file in all its weirdness:</p>
+
+<pre><code>require &quot;recall/version&quot;
+require 'erb'
+
+module Recall
+end
+
+require_relative 'recall/results.rb'
+require_relative 'recall/site_generator.rb'
+
+</code></pre>
+
+<p>The SiteGenerator model calls the template with the <code>expand_path</code> method, so we didn&rsquo;t need to <code>require_relative</code> it here.</p>
+
+<p><strong>Connecting the runner to the &ldquo;bridge&rdquo; file (scope operators all over)</strong>: In <code>bin/recall</code>, the models Results and SiteGenerator are called as <code>Recall::Results</code> and <code>Recall::SiteGenerator</code>, respectively, to associate them with the <code>Recall</code> module declared in <code>lib/recall.rb</code>. Oddly, we also found that we had to change their declarations to include the Recall module and the scope operator.</p>
+
+<h4 id="a-hiccup-when-connecting-one-of-the-models-to-the-template-and-the-output-file">A Hiccup When Connecting One of the Models to the Template and the Output File</h4>
+
+<p>In addition to the problem of my <code>bin/recall</code> runner not being able to find my Recall module until we put scope operators all over the place, it was also difficult to connect my <code>SiteGenerator</code> model to the files it needed to access. <code>SiteGenerator</code> needs access to both the .rb.erb template, located in <code>lib/recall/templates</code>, to know how to render the search results, as well as the temporary file where it dumps the search results. Kevin recommended I try File&rsquo;s <a href="http://ruby-doc.org/core-2.0/File.html#method-c-expand_path">expand_path method</a> for these connections and that did the trick. Here&rsquo;s how we connected to the template:</p>
+
+<pre><code>template_file = File.expand_path(&quot;../templates/sublime.rb.erb&quot;, __FILE__)
+</code></pre>
+
+<p>And here&rsquo;s how we connected the SiteGenerator model to the output file it writes to:</p>
+
+<pre><code>output_file = File.expand_path(&quot;../_site/ruby_file.rb&quot;, __FILE__)
+</code></pre>
+
+<p>(I&rsquo;m still not 100% why this was necessary.)</p>
+
+<p>As a recap, here is the current directory structure:</p>
+
+<p><img src="http://i.imgur.com/lYepXzH.png" alt="Directory Structure of Recall Gem v. 0.0.4" /></p>
+
+<h3 id="4-building-the-gem-over-and-over-again">4. Building the Gem (over and over again)</h3>
+
+<p>Now that we&rsquo;ve got the directory structure and file connections just right, it&rsquo;s time to build our gem locally and see if it works! (OK so in actuality I attempted and failed to build this gem correctly numerous times. Each time I made a change to the code, I&rsquo;d have to re-build it and re-install it to see what affect the change had on how the gem performed.)</p>
+
+<p>To build the gem locally, you run the following command:</p>
+
+<p><code>gem build recall.gemspec</code></p>
+
+<p>This creates a new .gem file (with the version number appended) in your gem&rsquo;s root directory. You then can run <code>gem install recall</code> to install the gem locally and then you can try it out. Whenever I needed to make another change, I&rsquo;d gracefully <code>rm</code> the <code>.gem</code> file, re-build and re-install the gem locally, and try again. Thankfully, you are able to keep the same version number throughout this process so the number of times I had to do this will be forever unknown to others.</p>
+
+<h3 id="5-publishing-the-gem-to-rubygems-org">5. Publishing the Gem to RubyGems.org</h3>
+
+<p>Once I successfully built the gem locally, and liked how it functioned, publishing the thing was surprisingly easy. As per the <a href="http://guides.rubygems.org/publishing/">RubyGems&rsquo; publishing guide</a>, I simply created an account at <a href="https://rubygems.org/">RubyGems.org</a> then and ran <code>gem push recall-0.0.2.gem</code> in my local directory. To test it, I first uninstalled my local copy of version 0.0.2, then ran <code>gem install recall</code> and lo and behold it seems to work!</p>
+
+<p>Also!</p>
+
+<p>In preparation for its public debut, I added a good amount of flow control to the runner to allow users to set and change the search directory as they please. Their search directory choice is stored in a .txt file called search_map, which I put in <code>lib/recall</code>. If that file is empty or for some reason doesn&rsquo;t exist, users are prompted to enter the absolute path of their desired search directory when they first call the gem. After that it&rsquo;s set, although users can edit the search directory by &ldquo;searching&rdquo; for <code>change_dir</code>.</p>
+
+<p>I think that about covers it. Give it a try? You can always uninstall it!</p>
+
+<p>For more info be sure to visit <a href="https://github.com/sts10/recall">the GitHub repo</a>. As usual, there&rsquo;s plenty of improvements to be pull-requested and merged.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-03-12-window-management-with-better-touch-tool/" data-toggle="tooltip" data-placement="top" title="Window Management with Better Touch Tool">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2014-04-02-chosen/" data-toggle="tooltip" data-placement="top" title="Using Chosen with Rails">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

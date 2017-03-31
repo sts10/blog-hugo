@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Interactive Score Card</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Interactive Score Card" />
+  
+
+  
+    <meta property="og:description" content="Every June my family has a big reunion down south. One of our traditions is playing a card game called Contract Rummy. If you don&rsquo;t know the game here is one version of rules, but basically it&rsquo;s gin rummy with 5 pre-set hands everyone plays. In the first hand, the &ldquo;contract&rdquo;&ndash; what every player is trying to &ldquo;get&rdquo;&ndash; is 2 sets of 3, or 2 3&rsquo;s-of-a-kind. For example, three 6s and three Jacks would fulfill this contract.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2014-05-21-interactive-score-card/" />
+    <link rel="canonical" href="http://example.org/post/2014-05-21-interactive-score-card/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Interactive Score Card" />
+  
+
+  
+    <meta name="twitter:description" content="Every June my family has a big reunion down south. One of our traditions is playing a card game called Contract Rummy. If you don&rsquo;t know the game here is one version of rules, but basically it&rsquo;s gin rummy with 5 pre-set hands everyone plays. In the first hand, the &ldquo;contract&rdquo;&ndash; what every player is trying to &ldquo;get&rdquo;&ndash; is 2 sets of 3, or 2 3&rsquo;s-of-a-kind. For example, three 6s and three Jacks would fulfill this contract.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Interactive Score Card</h1>
+                
+                
+                  <span class="post-meta">Posted on May 21, 2014</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Every June my family has a big reunion down south. One of our traditions is playing a card game called Contract Rummy. If you don&rsquo;t know the game here is <a href="http://www.pagat.com/rummy/ctrummy.html">one version of rules</a>, but basically it&rsquo;s gin rummy with 5 pre-set hands everyone plays. In the first hand, the &ldquo;contract&rdquo;&ndash; what every player is trying to &ldquo;get&rdquo;&ndash; is 2 sets of 3, or 2 3&rsquo;s-of-a-kind. For example, three 6s and three Jacks would fulfill this contract. The second hand is a set of 3 and a run of 4 (6 7 8 9, for example. Must be all in the same suit).</p>
+
+<!-- more -->
+
+<p>Winning a hand means that you fulfill the contract and run out of cards before anyone else does. The winner&rsquo;s score for that hand is 0. Everyone besides the winner will have cards left in there hand, and their score for that hand is determined by which and how many cards they got stuck with. So if I was left with 3 non-face cards (3 through 10), my score for that hand would be 15. Obviously you want a low score.</p>
+
+<p>Knowing who won an individual hand is easy, but the winner of the game is the player with the lowest total score after 5 hands are played. For years we&rsquo;ve just been using scrap paper and pencil: the scorekeeper sketching out a rough table with a row for each &ldquo;contract&rdquo; or hand and columns for each player and filling in scores as the game progresses. Sometimes the scorekeeper calculates the running totals between hands to get an idea of who in the lead, but usually it&rsquo;s a surprise until the end when all the scores are tallied.</p>
+
+<p>Obviously this task of scorekeeping and keeping a running total lends itself well to a simple app. Using JavaScript, jQuery, and an HTML table I got it <a href="http://samschlinkert.com/contract/">up-and-running pretty quickly</a> (here&rsquo;s the <a href="https://github.com/sts10/contract_score_card">GitHub repo</a>).</p>
+
+<p>The heart of the JavaScript is a <code>keyup</code> listener trained to all the <code>input</code> tags or type <code>text</code>. Everytime there&rsquo;s a <code>keyup</code> event in any of the table&rsquo;s input fields (say we&rsquo;re entering Bob&rsquo;s score for hand number 3), we want to (a) re-calculate that player&rsquo;s total score and post to the &ldquo;total&rdquo; cell of that player, (b) re-compute the current leader, and highlight the name and total score of the new leader.</p>
+
+<p>The actual function does a little more than this, but here&rsquo;s the simplified version for now:</p>
+
+<pre><code class="language-javascript">$('input[type=text]').on(&quot;keyup&quot;, function(){
+  var player_number = ($(this).attr('id')).charAt(6); // get 'this' player's number via the CSS id of the text input
+  low_score = 10000; // reset the low score to an impossibly high number
+
+  if (playerHasName(player_number)) { // if this is player who has a name, i.e. is actually in the game, and this isn't an erronaes data entry in an incorrect column
+    calculateAndPostPlayerTotal(player_number);
+  }
+
+  updateCurrentLeader();  // rec-calulate new leader
+  highlightLeader();      // use CSS to highlight the new leader's name and score 
+});
+</code></pre>
+
+<p>The rest of the <code>app.js</code> file is all helper methods. I think I wrote them in the way that I&rsquo;d write Ruby: each take in data, act on it&ndash; sometimes in just one line, and return the described result. Here are some fun ones:</p>
+
+<pre><code class="language-javascript">function makeScoreArray(player){
+  var array = [];
+  var i = 1;
+  
+  while (i &lt;= number_of_hands){
+    array.push(getHandScore(player, i));  
+    i = i + 1;
+  }
+
+  return array;
+}
+
+function sumArray(array){
+  return array.reduce(function(pv, cv) { return pv + cv; }, 0);
+}
+
+function calculatePlayerTotal(player_num){
+  return sumArray(makeScoreArray(player_num));
+}
+
+function calculateAndPostPlayerTotal(player_num){
+  $(&quot;#player&quot; + player_num + &quot;_total&quot;).html(calculatePlayerTotal(player_num));
+}
+</code></pre>
+
+<h3 id="some-bells-and-whistles">Some Bells and Whistles</h3>
+
+<p>Beyond that I added some extra bells and whistles. If a player&rsquo;s name is greater than 7 characters all of the player&rsquo;s names rotate 55 degrees, decreases in font size, and the first row of the table gets taller to accomodate. The jQuery there is just an <code>addClass</code> and <code>removeClass</code>.</p>
+
+<p>Also, if a player missed a hand (i.e. they joined the game late, which we usually allow), the scorekeeper can input a &lsquo;*&rsquo; and the app will get the highest (worst) score from that hand and replace the asterick with that penalty score. This cluttered up that <code>keyup</code> listener callback function, but I think it&rsquo;s a neat trick.</p>
+
+<h3 id="interesting-challenges">Interesting Challenges</h3>
+
+<p>The fact that the <em>lowest</em> score is the leader made that part of the app a interesting. Here&rsquo;s that function, where <code>leader</code> and <code>low_score</code> are global variables and <code>leader</code> is the leading players number:</p>
+
+<pre><code class="language-javascript">function updateCurrentLeader(){
+  var i = 1;
+
+  while (i &lt;= number_of_players){
+    if (playerHasName(i)) {
+      var this_player_score = calculatePlayerTotal(i);
+      if (this_player_score &lt; low_score){  
+        low_score = this_player_score;
+        leader = i;
+      }
+    }
+    i = i + 1;
+  }
+}
+</code></pre>
+
+<p>The sticky spot here is how do you initialize the <code>low_score</code> varaible. Obviously initializing it to <code>0</code> is problematic. I&rsquo;m not sure how JavaScript would handle us just declaring it as <code>var lowest_score</code>. I ended up initializing it to an ridiculously high number, 10000.</p>
+
+<p>The second part of the problem was a little trickier to see at first. So let&rsquo;s say we&rsquo;ve just played one hand&ndash; the leader now has a score of 0, because he or she got rid of all his or her cards, so <code>lowest_score</code> is set to 0. The next hand a different player goes out first, so the newest lowest score is, let&rsquo;s say 10. Thus, we need to reset our <code>lowest_score</code> variable on every keyup.</p>
+
+<p>There&rsquo;s plenty I like about this code but also some parts that I do not. For example, I&rsquo;m not sure how tightly the JavAscript should depend on the CSS. In one case I&rsquo;m getting the player&rsquo;s number with this line <code>var player_number = ($(this).attr('id')).charAt(6);</code>, which of course relies heavily on the CSS id having the player&rsquo;s number at position 6. But that may just be the nature of this stack.</p>
+
+<p>Going forward, if I can, I think it&rsquo;d be a fun exercise to re-write the JavaScript for this as all <a href="http://sts10.github.io/blog/2014/05/16/javascript-prototypes-the-basic-basics/">object-oriented</a>. The simple approach would be to define a prototype for &lsquo;player&rsquo; and instantiate them as names are typed in. Each player would know his or her score on any given hand plus their current total. A more elaborate OO schema could have a <code>hand</code> prototype and probably a <code>player-hand</code> prototype, but that might be drifting too far into the Rails mindset.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2014-05-16-javascript-prototypes-the-basic-basics/" data-toggle="tooltip" data-placement="top" title="JavaScript Prototypes: The Basic Basics">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2014-05-28-ruby-golf-finding-the-perfedct-method/" data-toggle="tooltip" data-placement="top" title="Ruby Golf: Finding the Perfect Method">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

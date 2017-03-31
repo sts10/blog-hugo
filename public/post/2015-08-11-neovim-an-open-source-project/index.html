@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Neovim, An Open-Source Project</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Neovim, An Open-Source Project" />
+  
+
+  
+    <meta property="og:description" content="When I was moving around Watch People Code the other day while figuring out how to livestream my work on a new project, I found a interview by the site&rsquo;s administrator, Alexander Putilin, with Justin M. Keyes, a contributor to an open-source project called Neovim.
+Here&rsquo;s the video of the interview:
+ Neovim is a new version of a classic text editor called Vim, which I&rsquo;ve become more interested in the last few months.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2015-08-11-neovim-an-open-source-project/" />
+    <link rel="canonical" href="http://example.org/post/2015-08-11-neovim-an-open-source-project/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Neovim, An Open-Source Project" />
+  
+
+  
+    <meta name="twitter:description" content="When I was moving around Watch People Code the other day while figuring out how to livestream my work on a new project, I found a interview by the site&rsquo;s administrator, Alexander Putilin, with Justin M. Keyes, a contributor to an open-source project called Neovim.
+Here&rsquo;s the video of the interview:
+ Neovim is a new version of a classic text editor called Vim, which I&rsquo;ve become more interested in the last few months.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Neovim, An Open-Source Project</h1>
+                
+                
+                  <span class="post-meta">Posted on August 11, 2015</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>When I was moving around <a href="http://www.watchpeoplecode.com/">Watch People Code</a> the other day while figuring out how to livestream my work on <a href="http://sts10.github.io/blog/2015/08/07/from-terminal-vim-to-mac-vim/">a new project</a>, I found a interview by the site&rsquo;s administrator, <a href="https://github.com/eleweek">Alexander Putilin</a>, with <a href="https://github.com/justinmk">Justin M. Keyes</a>, a contributor to an open-source project called <a href="http://neovim.io/">Neovim</a>.</p>
+
+<!-- more -->
+
+<p>Here&rsquo;s the <a href="https://www.youtube.com/watch?v=R7z2GQr9-tg">video of the interview</a>:</p>
+
+<iframe width="520" height="390" src="https://www.youtube.com/embed/R7z2GQr9-tg" frameborder="0" allowfullscreen></iframe>
+
+<p>Neovim is a new version of a classic text editor called Vim, which I&rsquo;ve become more interested in the last few months.</p>
+
+<p>It&rsquo;s an interesting interview as it offers a view into the problems and joys of running a loosely-organized open source project, with references to something he calls &ldquo;the trust model.&rdquo;</p>
+
+<p>But for me two specific points from Keyes stuck out to me:</p>
+
+<ol>
+<li><p>At about 16:20 in the YouTube video he talks about the notion of &ldquo;intuition&rdquo; and &ldquo;taste,&rdquo; citing <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvald</a>.</p></li>
+
+<li><p>At 25:50 Keyes talks about how if you&rsquo;ve <a href="http://sts10.github.io/blog/2015/02/18/text-file-preferences/">edited your vimrc file</a>&ndash; even just to add a custom key mapping, you&rsquo;re effectively a plug-in author. I think it&rsquo;s smart to erase the somewhat artificial line between those who package their vimscript functions and key mappings into plug-ins and someone who just adds their own key mappings and vimscript functions to their vimrc files.</p></li>
+</ol>
+
+<p>For example, I&rsquo;m super-satisfied with <a href="http://sts10.github.io/blog/2015/08/02/markdwon-hyperlink-remap-for-vim/">my little Markdown keymap</a> that I wrote the other day, and I&rsquo;d be happy to offer it to others who had the same problem/need as I did when I wrote it. And of course, I&rsquo;d be excited to see how they&rsquo;d improve it.</p>
+
+<p>By the way, here are <a href="https://github.com/neovim/homebrew-neovim/blob/master/README.md">the instructions I followed to install Neovim</a> on my machine using <a href="http://brew.sh/">Homebrew</a>. Apparently it&rsquo;s pretty stable as of this summer.</p>
+
+<p>Note that when you install (via Homebrew at least), in the console window it gives you two suggested commands for linking your current <code>.vimrc</code> file and <code>.vim</code> directory to where Neovim will look for these files, and it worked like clockwork for me. Here they are:</p>
+
+<pre><code>The Neovim executable is called 'nvim'. To use your existing Vim
+configuration:
+    ln -s ~/.vimrc ~/.nvimrc
+    ln -s ~/.vim ~/.nvim
+See ':help nvim' for more information on Neovim.
+</code></pre>
+
+<p>But for now I&rsquo;m still going steady with <a href="http://sts10.github.io/blog/2015/08/07/from-terminal-vim-to-mac-vim/">MacVim</a>.</p>
+
+<p><em>Update:</em></p>
+
+<p>Due to <a href="https://github.com/neovim/neovim/commit/6b4063fafe5401b95d1f35ecb7f8dfe0079b7450">a recent change to Neovim&rsquo;s master branch</a>, the above symlinks are no longer correct.</p>
+
+<p>See <a href="https://www.reddit.com/r/neovim/comments/3qgsza/psa_if_neovim_stopped_loading_your_nvimrc_after/">this Reddit thread</a>, which points to <a href="https://github.com/neovim/neovim/issues/78">issue #78</a>, for more information.</p>
+
+<p>Here are the new symlinks I ran. They seem to have brought everything back to normal.</p>
+
+<pre><code>ln -s ~/.vimrc ~/.config/nvim/init.vim
+ln -s ~/.vim ~/.config/nvim
+</code></pre>
+
+<p>Interesting that they&rsquo;d push such a significant change to master. Guess that&rsquo;s part of the thrill of using pre-release software!</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2015-08-11-google-doc-spreadsheet-if-statements/" data-toggle="tooltip" data-placement="top" title="Google Doc Spreadsheet IF Statements">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2015-08-24-begin-rescue-pry/" data-toggle="tooltip" data-placement="top" title="Basic Begin-Rescue-Pry Pattern">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

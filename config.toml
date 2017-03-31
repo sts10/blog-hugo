@@ -1,0 +1,4 @@
+languageCode = "en-us"
+title = "Prevent Default"
+theme = "beautifulhugo"
+baseURL = "http://example.org/"

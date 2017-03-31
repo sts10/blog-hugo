@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Best of My vimrc</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Best of My vimrc" />
+  
+
+  
+    <meta property="og:description" content="I just realized that I&rsquo;ve been using Vim for just about a year now (here&rsquo;s one of my early posts on starting to make the switch), so I figured it&rsquo;d be a good time to go over some of favorite parts of my vimrc. I&rsquo;m certainly no Vim expert, but if nothing else than recording my &ldquo;progress,&rdquo; here&rsquo;s a bit about how I use Vim at this point.
+I&rsquo;ve already written about a Markdown hyperlink remap that still works really well and how I ditched NERDTree in favor of netrw, etc.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2016-02-12-best-of-my-vimrc/" />
+    <link rel="canonical" href="http://example.org/post/2016-02-12-best-of-my-vimrc/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="Best of My vimrc" />
+  
+
+  
+    <meta name="twitter:description" content="I just realized that I&rsquo;ve been using Vim for just about a year now (here&rsquo;s one of my early posts on starting to make the switch), so I figured it&rsquo;d be a good time to go over some of favorite parts of my vimrc. I&rsquo;m certainly no Vim expert, but if nothing else than recording my &ldquo;progress,&rdquo; here&rsquo;s a bit about how I use Vim at this point.
+I&rsquo;ve already written about a Markdown hyperlink remap that still works really well and how I ditched NERDTree in favor of netrw, etc.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Best of My vimrc</h1>
+                
+                
+                  <span class="post-meta">Posted on February 12, 2016</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>I just realized that I&rsquo;ve been using Vim for just about a year now (here&rsquo;s <a href="http://sts10.github.io/blog/2015/02/15/vim-update/">one of my early posts on starting to make the switch</a>), so I figured it&rsquo;d be a good time to go over some of favorite parts of <a href="https://github.com/sts10/terminal_and_vim_settings/blob/master/vimrc">my vimrc</a>. I&rsquo;m certainly no Vim expert, but if nothing else than recording my &ldquo;progress,&rdquo; here&rsquo;s a bit about how I use Vim at this point.</p>
+
+<p>I&rsquo;ve already written about <a href="http://sts10.github.io/blog/2015/08/02/markdwon-hyperlink-remap-for-vim/">a Markdown hyperlink remap</a> that still works really well and <a href="http://sts10.github.io/blog/2015/09/13/ditching-nerdtree-and-using-vims-default-file-explorer/">how I ditched NERDTree in favor of netrw</a>, <a href="http://sts10.github.io/blog/categories/vim/">etc</a>. But there&rsquo;s plenty of more, smaller tricks I&rsquo;ve picked up since then.</p>
+
+<!-- more -->
+
+<h2 id="vim-vs-macvim-vs-neovim">Vim vs. MacVim vs. Neovim</h2>
+
+<p>Basically I split my usage between <a href="https://github.com/neovim/neovim">Neovim</a> and <a href="https://github.com/macvim-dev/macvim/releases/">MacVim</a>. Sometimes I want to stay in the terminal (in which case I fire up Neovim), and other times I want a separate GUI. I&rsquo;ll also admit that part of the reason I do this is because the iTerm2 + Neovim combo isn&rsquo;t super stable at this point, as I&rsquo;m running a beta version of iTerm2 <a href="http://sts10.github.io/blog/2015/10/24/true-hex-colors-with-neovim-and-iterm2/">in order to get better/more colors for Neovim</a>.</p>
+
+<p>One way to make using both easier is to use your existing configuration by making these two symlinks:</p>
+
+<pre><code class="language-vim">To use your existing Vim configuration:
+    ln -s ~/.vim ~/.config/nvim
+    ln -s ~/.vimrc ~/.config/nvim/init.vim
+See ':help nvim' for more information on Neovim.
+</code></pre>
+
+<p>Neovim + iTerm2 is a pretty great combo, but for somethings I like using a GUI (MacVim). (I haven&rsquo;t found a good Neovim GUI yet, though there are some other there, including <a href="https://github.com/rogual/neovim-dot-app">Neovim dot app</a>.)</p>
+
+<h2 id="my-plugin-manager">My Plugin Manager</h2>
+
+<p>To manage my ever-changing list of vim plugins I use <a href="https://github.com/junegunn/vim-plug">vim-plug</a>, which works really well.</p>
+
+<p><img src="https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif" alt="vim-plug in action" /></p>
+
+<p>In fact the first few lines of my vimrc automatically installs vim-plug if it&rsquo;s not detected then installs all the listed plugins, a trick I picked up from vim-plug&rsquo;s <a href="https://github.com/junegunn/vim-plug/wiki/faq">FAQ</a>:</p>
+
+<pre><code class="language-vim">&quot; vim-plug (https://github.com/junegunn/vim-plug) settings 
+&quot; Automatically install vim-plug and run PlugInstall if vim-plug not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+</code></pre>
+
+<p>I can then list my desired plugins as Github addresses:</p>
+
+<pre><code class="language-vim">call plug#begin('~/.vim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'matze/vim-move'
+Plug 'tpope/vim-commentary'
+Plug 'sickill/vim-pasta'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-vinegar'
+Plug 'ervandew/supertab'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-markdown'
+Plug 'sts10/vim-mustard'
+Plug 'junegunn/seoul256.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'bronson/vim-visual-star-search'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/goyo.vim'
+Plug 'tmhedberg/matchit'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'alvan/vim-closetag'
+Plug 'kana/vim-textobj-user'
+Plug 'lucapette/vim-textobj-underscore' | Plug 'kana/vim-textobj-user'
+Plug 'jceb/vim-textobj-uri'             | Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'          | Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'            | Plug 'kana/vim-textobj-user'
+Plug 'wellle/targets.vim'
+Plug 'sts10/vim-zipper'
+Plug 'tpope/vim-fugitive'
+
+&quot; All of your Plugins must be added before the following line
+call plug#end()
+</code></pre>
+
+<p>And I&rsquo;m good to go. I can run <code>:PlugUpdate</code> to get the latest versions of all the plugins, or <code>:PlugUpgrade</code> to upgrade vim-plug itself. For me vim-plug offers three advantages over <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>: (1) The automatic install script (shown above) is nice for portability, (2) When using Neovim, vim-plug updates the plugins asynchronously, and (3) you don&rsquo;t have to turn off file type detection (<code>filetype off</code>) in your vimrc when you list your plugins with vim-plug, <a href="https://github.com/VundleVim/Vundle.vim#quick-start">as you do with Vundle</a>.</p>
+
+<h2 id="quick-note-on-remappings">Quick Note on Remappings</h2>
+
+<p><a href="http://learnvimscriptthehardway.stevelosh.com/chapters/05.html">This blog post</a> recommends always using <code>nnoremap</code> over <code>nmap</code> (and the <code>inoremap</code> and <code>vnoremap</code> equivalents) to avoid recursion. So I&rsquo;ve strived to do that in all situations where both options work. If <code>nnoremap</code> doesn&rsquo;t work but <code>nmap</code> does (which is the case some of the time), I just use <code>nmap</code>.</p>
+
+<h2 id="favorite-plugins-and-my-configurations">Favorite Plugins and My Configurations</h2>
+
+<p>While, as you can see, I&rsquo;ve got a more than 20 plugins listed above, there&rsquo;s only a few that are super important to my workflow. Among these I would include <a href="https://github.com/tpope/vim-surround">vim-surround</a>, <a href="https://github.com/justinmk/vim-sneak">vim-sneak</a>, <a href="https://github.com/tpope/vim-commentary">vim-commentary</a>, <a href="https://github.com/matze/vim-move">vim-move</a>, and maybe <a href="https://github.com/terryma/vim-smooth-scroll">vim-smooth-scroll</a>.</p>
+
+<p>I map sneak to Tab and Shift + Tab as follows (works in MacVim and Neovim + iTerm2):</p>
+
+<pre><code class="language-vim">&quot; https://github.com/justinmk/vim-sneak
+&quot; Map Sneak_s using nmap-- not nnoremap. That seems to cause problems
+nmap &lt;Tab&gt; &lt;Plug&gt;Sneak_s
+nmap &lt;S-Tab&gt; &lt;Plug&gt;Sneak_S
+vmap &lt;Tab&gt; &lt;Plug&gt;Sneak_s
+vmap &lt;S-Tab&gt; &lt;Plug&gt;Sneak_S
+</code></pre>
+
+<p>And I set vim-move to <code>&lt;c-j&gt;</code> and <code>&lt;c-k&gt;</code> with <code>let g:move_key_modifier = 'C'</code>. I switched from <a href="https://github.com/tpope/vim-unimpaired">vim-unimpaired</a> to vim-move because vim-move auto-indents your code as you move it, which isn&rsquo;t without a speed cost sometimes, but is really nice for me visually. Plus vim-unimpaired has a bunch of other default mappings besides <code>[e</code> and <code>]e</code> that I didn&rsquo;t use (but that you may like!).</p>
+
+<p><img src="https://camo.githubusercontent.com/c06acab07e6bf0bb27086c9694fe2f456101d21c/687474703a2f2f692e696d6775722e636f6d2f524d76384b734a2e676966" alt="vim-move in action" /></p>
+
+<p>For more of my ~opinions~ plugins, I previously wrote about what I see as the <a href="http://sts10.github.io/blog/2015/09/12/two-types-of-vim-plugins/">two types of vim plugins</a>.</p>
+
+<h2 id="colorscheme">Colorscheme</h2>
+
+<p>I adapted a colorscheme I used in Sublime Text 2 called Mustard (located <a href="https://github.com/panrafal/mustard-theme">here</a>) to make a colorscheme that I also called <a href="https://github.com/sts10/vim-mustard">Mustard</a>.</p>
+
+<p>Thanks to its file structure, you can have vim-plug install and manage it by including <code>Plug 'sts10/vim-mustard'</code> in your vimrc (Mustard should work with other plugin managers too). Then be sure to have <code>colorscheme mustard</code> and <code>set background=dark</code> in your vimrc.</p>
+
+<h2 id="line-numbers">Line Numbers</h2>
+
+<p>I love my line numbers settings. I have relative number lines on every line except the one I&rsquo;m currently on, which I have display the absolute number line rather than just <code>0</code>. Here&rsquo;s how I get that set up:</p>
+
+<pre><code class="language-vim">&quot; Display relative line numbers
+set relativenumber
+&quot; display the absolute line number at the line you're on
+set number
+
+&quot; Keep the line number gutter narrow so three digits is cozy. 
+set numberwidth=2
+</code></pre>
+
+<p>This way, I can easily go up or down to specific line with <code>count + j</code> or <code>k</code>, but if Ruby tells me I have an error on line 76 I can just run <code>:76</code> and the absolute line number will confirm that I landed on line 76.</p>
+
+<h2 id="page-navigation">Page Navigation</h2>
+
+<p>I have two nice sets of mappings that make file navigation a little easier for me.</p>
+
+<p>This first one is a bit tricky to explain. First, know that I linewrap on certain filetypes with the following autocmds:</p>
+
+<pre><code class="language-vim">&quot; By default don't wrap lines
+set nowrap 
+
+&quot; But do wrap on these types of files...
+autocmd FileType markdown setlocal wrap
+autocmd FileType html setlocal wrap
+</code></pre>
+
+<p>But then I ran into the problem of <code>j</code> and <code>k</code> skipping over wrapped lines. I initially fixed this by simply remapping <code>j</code> as <code>gj</code> and <code>k</code> as <code>gk</code>. However, this gets screwy when you use a count with <code>j</code> or <code>k</code>. If you&rsquo;re navigating by relative numbers with a count, you want <code>j</code> and <code>k</code>, when using a count, treating wrapped lines as one line rather than multiple lines.</p>
+
+<p>Thanks to <a href="https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/cliuz1o">this Reddit comment</a>, I found the perfect solution to this problem:</p>
+
+<pre><code class="language-vim">&quot; j and k don't skip over wrapped lines in following FileTypes, unless given a count (helpful since I display relative line numbers in these file types)
+autocmd FileType html nnoremap &lt;expr&gt; j v:count ? 'j' : 'gj'
+autocmd FileType html nnoremap &lt;expr&gt; k v:count ? 'k' : 'gk'
+autocmd FileType markdown nnoremap &lt;expr&gt; j v:count ? 'j' : 'gj'
+autocmd FileType markdown nnoremap &lt;expr&gt; k v:count ? 'k' : 'gk'
+</code></pre>
+
+<p>I later simplified these mappings and added visual mode support (plus using it in <code>text</code> files) like this:</p>
+
+<pre><code class="language-vim">autocmd FileType html,markdown,text nnoremap &lt;expr&gt; j v:count ? 'j' : 'gj'
+autocmd FileType html,markdown,text nnoremap &lt;expr&gt; k v:count ? 'k' : 'gk'
+
+autocmd FileType html,markdown,text vnoremap &lt;expr&gt; j v:count ? 'j' : 'gj'
+autocmd FileType html,markdown,text vnoremap &lt;expr&gt; k v:count ? 'k' : 'gk'
+</code></pre>
+
+<p>My next trick is just to switch <code>&lt;c-e&gt;</code> (by default scrolls up one line without moving cursor) and <code>&lt;c-u&gt;</code> (by default scrolls up half a page). This conveniently puts scroll half page up (now <code>&lt;c-e&gt;</code>) right above the default keymap for scroll half page down, which is <code>&lt;c-d&gt;</code>.</p>
+
+<pre><code class="language-vim">&quot; Easier page navigation
+nnoremap &lt;C-e&gt; &lt;C-u&gt;
+nnoremap &lt;C-u&gt; &lt;C-e&gt;
+</code></pre>
+
+<p>However I found that scrolling by this much instantly was a bit jarring. It took me a while to figure out why until, I realized that in Sublime Text I usually scrolled with my mouse&rsquo;s scroll wheel (ugh), which was a bit more gradual. After some Googling I found <a href="https://github.com/terryma/vim-smooth-scroll">vim-smooth-scroll</a>, which slows down any scroll/movement command that you specify.</p>
+
+<p>Here&rsquo;s how I configure the plugin:</p>
+
+<pre><code class="language-vim">&quot; git@github.com:terryma/vim-smooth-scroll.git
+noremap &lt;silent&gt; &lt;c-e&gt; :call smooth_scroll#up(&amp;scroll, 30, 2)&lt;CR&gt;
+noremap &lt;silent&gt; &lt;c-d&gt; :call smooth_scroll#down(&amp;scroll, 30, 2)&lt;CR&gt;
+noremap &lt;silent&gt; &lt;c-b&gt; :call smooth_scroll#up(&amp;scroll*2, 30, 4)&lt;CR&gt;
+noremap &lt;silent&gt; &lt;c-f&gt; :call smooth_scroll#down(&amp;scroll*2, 30, 4)&lt;CR&gt;
+</code></pre>
+
+<p>I also make use of Vim&rsquo;s default normal commands <code>{</code> and <code>}</code> to navigate by &ldquo;paragraph&rdquo; (blank lines).</p>
+
+<h2 id="statusline">Statusline</h2>
+
+<p>Just recently I decided to write my own custom statusline. Previously I had tried a plugin solution to a statusline, like <a href="https://github.com/vim-airline/vim-airline">airline</a> or <a href="https://github.com/itchyny/lightline.vim">lightline</a>. I forget which one I actually tried, but I couldn&rsquo;t get it to work for me.</p>
+
+<p>Later I found a few blog posts (<a href="http://got-ravings.blogspot.co.at/2008/08/vim-pr0n-making-statuslines-that-own.html">this one in particular</a>) that helped me write my own, which is pretty similar to the one that blog post says Tim Pope was using.</p>
+
+<pre><code class="language-vim">set statusline=%f
+set statusline+=\ %h%w%m%r
+set statusline+=%=
+set statusline+=%-16(%{exists('g:loaded_fugitive')?fugitive#statusline():''}\%)
+set statusline+=\ %P/%L
+set statusline+=\ 
+</code></pre>
+
+<p>It gives basics like filename, percentage through the file, total number of lines, necessary flags, etc. The only fancy part is the <code>fugitive#statusline</code>, which gives me the current Git branch, if you&rsquo;re in a git directory AND you have <a href="https://github.com/tpope/vim-fugitive">Fugitive</a> installed. At this point this is the only reason I have Fugitive installed, though I&rsquo;m sure others find its other features helpful (from the README: &ldquo;I&rsquo;m not going to lie to you; fugitive.vim may very well be the best Git wrapper of all time.&rdquo;).</p>
+
+<h2 id="setting-default-filetype">Setting Default FileType</h2>
+
+<p>I write Markdown pretty frequently, so I set Vim to set new files to Markdown syntax with the following line:</p>
+
+<pre><code class="language-vim">&quot; if no filetype specified, set ft=markdown (alternative would be text)
+autocmd BufEnter * if &amp;filetype == &quot;&quot; | setlocal ft=markdown | endif
+</code></pre>
+
+<h2 id="markdown-tricks">Markdown Tricks</h2>
+
+<p>For Markdown, I use <a href="https://github.com/tpope/vim-markdown">tpope&rsquo;s vim-markdown</a> mostly for improved syntax highlighting. I also spell out some languages for it to highlight in between code fences with:</p>
+
+<pre><code class="language-vim">let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python', 'bash=sh', 'yaml', 'json']
+</code></pre>
+
+<p>As mentioned above, I also wrote a handy little mapping for quickly creating links in Markdown, assuming the URL is in your system clipboard:</p>
+
+<pre><code class="language-vim">&quot; In markdown files, Control + a surrounds highlighted text with square
+&quot; brackets, then dumps system clipboard contents into parenthesis
+autocmd FileType markdown vnoremap &lt;c-a&gt; &lt;Esc&gt;`&lt;i[&lt;Esc&gt;`&gt;la](&lt;Esc&gt;&quot;*]pa)&lt;Esc&gt;
+</code></pre>
+
+<p>Read more about my process coming to that mapping in <a href="https://sts10.github.io/blog/2015/08/02/markdwon-hyperlink-remap-for-vim/">this slightly-too-long blog post</a> if you like.</p>
+
+<h2 id="backup-swap-and-undo">Backup, Swap, and Undo</h2>
+
+<p>For backup, swap, and undo files&ndash; which I found frequently got mixed into Git repos no matter what I did with my gitignores&ndash; I found this solution, which basically shoves all those files into three directories, rather than individual local project directories. We also have to <a href="http://stackoverflow.com/a/22676189/3160994">setup Vim&rsquo;s persistent undo</a>.</p>
+
+<pre><code class="language-vim">&quot; Save temporary/backup files not in the local directory, but in your ~/.vim
+&quot; directory, to keep them out of git repos. 
+&quot; But first mkdir backup, swap, and undo first to make this work
+call system('mkdir ~/.vim')
+call system('mkdir ~/.vim/backup')
+call system('mkdir ~/.vim/swap')
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
+&quot; Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    call system('mkdir ~/.vim/undo')
+    set undodir=~/.vim/undo//
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
+</code></pre>
+
+<p>This code even creates the directories for you (at least in macOS, using <code>mkdir</code>) if they haven&rsquo;t already been created, so portability is maintained. The commands do not overwrite the directory if it already exists.</p>
+
+<h2 id="search-settings">Search Settings</h2>
+
+<p>I like my search settings: ignore case unless you uppercase a letter, search as you type, and don&rsquo;t highlight all matches.</p>
+
+<pre><code class="language-vim">&quot; set search case to a good configuration http://vim.wikia.com/wiki/Searching 
+set ignorecase
+set smartcase
+
+&quot; search characters as they're entered
+set incsearch
+&quot; don't highlight all search matches
+set nohlsearch
+</code></pre>
+
+<h2 id="text-objects">Text Objects</h2>
+
+<pre><code class="language-vim">Plug 'kana/vim-textobj-user'
+Plug 'lucapette/vim-textobj-underscore' | Plug 'kana/vim-textobj-user'
+Plug 'jceb/vim-textobj-uri'             | Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'          | Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'            | Plug 'kana/vim-textobj-user'
+</code></pre>
+
+<p>I&rsquo;ve recently added four extra text objects, using <a href="https://github.com/kana/vim-textobj-user">kana&rsquo;s vim-textobj-user</a> plugin. With <code>underscore</code>, <code>uri</code>, <code>indent</code>, and <code>line</code>, I get more text objects in Vim. So for example <code>viu</code> visually-selects the URI you&rsquo;re on, and <code>yil</code> yanks the inner &ldquo;line&rdquo;. There&rsquo;s a ton more information in <a href="https://github.com/kana/vim-textobj-user/wiki">the wiki</a>.</p>
+
+<p>Note that the <code>|</code> there is <a href="https://github.com/junegunn/vim-plug">vim-plug</a> syntax for denoting <a href="https://github.com/junegunn/vim-plug#example">a plugin dependency</a>. (My understanding is that putting the &ldquo;textobj-user&rdquo; first in my vimrc is not sufficient due to vim-plug + Neovim&rsquo;s asynchronous plugin installing and updating.) I indented it like so to make it look nice.</p>
+
+<p>Also, with <code>textobj-uri</code>, I can remap <code>gx</code> to work better and with more type of URLs (see <a href="https://github.com/kana/vim-textobj-user/wiki">this blog post for more</a>):</p>
+
+<pre><code class="language-vim">&quot; map gx and go to visually select a URI and then open it in default browser
+&quot; see: http://sts10.github.io/blog/2016/02/16/one-solution-to-a-problem-with-vims-gx-command/
+nmap gx mxviugx&lt;Esc&gt;`x
+</code></pre>
+
+<p>I also added <a href="https://github.com/wellle/targets.vim">targets.vim</a> to get even more text objects. Basically my reasoning is the more text objects the better for when I&rsquo;m creating a complex macro on the fly or need to do something complex within one command so that it is repeatable with the dot command (see <a href="https://github.com/tpope/vim-repeat">vim-repeat</a>, a plugin for making the dot command work with some plugins).</p>
+
+<h2 id="folding-with-vim-zipper-my-first-vim-plugin">Folding with vim-zipper, My First Vim Plugin</h2>
+
+<p>I learned about Vim&rsquo;s folding functionality pretty early on (see <code>:help folding</code>) but I never really used it. In fact I still can&rsquo;t quite get <code>set foldmethod=syntax</code> to find the folds that I think it should.</p>
+
+<p>So for a while I just <code>set foldmethod=marker</code> and really only used it in my vimrc.</p>
+
+<p>Later I realized the power of <code>set foldmethod=indent</code>. I particularly liked that it was pretty intuitive to see how it would fold code (by indent!) but it also wouldn&rsquo;t slow Vim down like the <code>syntax</code> method could.</p>
+
+<p>However I wanted to make opening folds easier so I eventually made my first Vim plugin called <a href="https://github.com/sts10/vim-zipper">vim-zipper</a>. You can read about it <a href="https://github.com/sts10/vim-zipper">on GitHub</a> or in <a href="https://sts10.github.io/blog/2016/03/20/vim-zipper-my-first-vim-plugin/">another blog post</a>.</p>
+
+<p><img src="https://raw.githubusercontent.com/sts10/vim-zipper/master/vim-zipper-gif.gif" alt="vim-zipper in action" /></p>
+
+<h2 id="system-clipboard">System Clipboard</h2>
+
+<p>I use my leader (mapped to space) to interact with the system clipboard. I&rsquo;m not 100% sure if this is true even on all Unix systems, but when I use Neovim in iTerm2 or MacVim, <code>*</code> is the register of the system clipboard. I frequently interact with the system clipboard from Vim, so I set up these key mappings to make that easier:</p>
+
+<pre><code class="language-vim">&quot; use leader to interact with the system clipboard
+nnoremap &lt;Leader&gt;p &quot;*]p
+nnoremap &lt;Leader&gt;P &quot;*]P
+
+nnoremap &lt;Leader&gt;y :y*&lt;cr&gt;
+nnoremap &lt;Leader&gt;c ^&quot;*c$
+nnoremap &lt;Leader&gt;d ^&quot;*d$
+
+vnoremap &lt;Leader&gt;y &quot;*y
+vnoremap &lt;Leader&gt;c &quot;*c
+vnoremap &lt;Leader&gt;d &quot;*d
+</code></pre>
+
+<p>The <code>]</code> in there automatically auto-indents the pasted text for me, which has worked well in both MacVim and Neovim but not <em>every time</em>. I don&rsquo;t think I have any other settings pertaining to the system clipboard at this point.</p>
+
+<h2 id="deleting-text-without-overwriting-any-registers">Deleting Text Without Overwriting Any Registers</h2>
+
+<p>I don&rsquo;t love how easy it is to overwrite the contents of your default registry (i.e. when you delete something with <code>d</code> with the desire to paste it somewhere else, but in the meantime you use <code>d</code> again trying to actually delete something, but now that&rsquo;s overwritten the default registry). To solve this I did my best to make <code>X</code> (shift + <code>x</code>) a new operator that deletes things to the &ldquo;black hole registry,&rdquo; <code>_</code>, which doesn&rsquo;t effect the default registry.</p>
+
+<pre><code class="language-vim">&quot; Make X an operator that removes text without placing text in the default registry
+nmap X &quot;_d
+nmap XX &quot;_dd
+vmap X &quot;_d
+vmap x &quot;_d
+</code></pre>
+
+<p>Similarly I make <code>x</code> in normal mode go to the black hole registry as well:</p>
+
+<pre><code class="language-vim">&quot; have x (removes single character) not go into the default registry
+nnoremap x &quot;_x
+</code></pre>
+
+<h2 id="make-visual-mode-a-little-more-powerful">Make Visual Mode a Little More Powerful</h2>
+
+<p>Again in <a href="https://www.reddit.com/r/vim/comments/3y2mgt/do_you_have_any_minor_customizationsmappings_that/cya0x04">a Reddit comment</a> I picked up this one-liner that makes the powerful dot command work on visually-selected lines:</p>
+
+<pre><code class="language-vim">&quot; Make the dot command work as expected in visual mode (via
+&quot; https://www.reddit.com/r/vim/comments/3y2mgt/do_you_have_any_minor_customizationsmappings_that/cya0x04)
+vnoremap . :norm.&lt;CR&gt;
+</code></pre>
+
+<p>Note I&rsquo;ve also got the <a href="https://github.com/tpope/vim-repeat">vim-repeat</a> plugin to help make the dot command work a little better with other plugins.</p>
+
+<p>Then, in <a href="https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.65mg9br0l">a Medium post</a> linked to from a <a href="http://reddit.com/r/vim">r/vim subreddit</a> post that I have since lost track of, I just recently picked up this function that makes macros work over visually-selected lines.</p>
+
+<pre><code class="language-vim">&quot; Allows you to visually select a section and then hit @ to run a macro on all lines
+&quot; https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.3dcn9prw6
+xnoremap @ :&lt;C-u&gt;call ExecuteMacroOverVisualRange()&lt;CR&gt;
+
+function! ExecuteMacroOverVisualRange()
+  echo &quot;@&quot;.getcmdline()
+  execute &quot;:'&lt;,'&gt;normal @&quot;.nr2char(getchar())
+endfunction
+</code></pre>
+
+<p>Both of these have come in handy often. Highly recommended, as they don&rsquo;t seem to require new learning or get in the way of any other functionality.</p>
+
+<h2 id="unminifying-javascript">UnMinifying Javascript</h2>
+
+<p>My latest addition to my vimrc is this function and two keymaps for minifying and unminifying Javascript, which I do pretty frequently at work. I picked the function up from <a href="https://gist.github.com/timtyrrell/0640d02bd08cd54f739a">this gist</a>.</p>
+
+<p>I did edit it a bit: (1) I added the <code>e</code> after the <code>g</code>s so that it never throws an error if it doesn&rsquo;t find a match, (2) removed lines 5 and 8 from the gist&ndash; removing line 5 was a personal preference and I&rsquo;m not sure what line 8 does, and (3) I attempted to use a mark <code>j</code> to save my place, but that doesn&rsquo;t seem to work as I wanted it to.</p>
+
+<p>I also added a mapping to join the whole file&ndash; effectively a &ldquo;minify&rdquo; command&ndash; so I could easily go back and forth. Works well so far!</p>
+
+<pre><code class="language-vim">&quot; Simple re-format for minified Javascript
+function! UnMinify()
+    normal mj
+    %s/{\ze[^\r\n]/{\r/ge
+    %s/};\?\ze[^\r\n]/\0\r/ge
+    %s/;\ze[^\r\n]/;\r/ge
+    normal ggVG=`j
+endfunction
+
+autocmd FileType javascript nnoremap &lt;Leader&gt;j :call UnMinify()&lt;CR&gt;
+autocmd FileType javascript nnoremap &lt;Leader&gt;k mjggvGJ&lt;Esc&gt;`j
+</code></pre>
+
+<h2 id="other-random-tips">Other Random Tips</h2>
+
+<p>Here&rsquo;s another remapping of Vim&rsquo;s default behavior that I consider pretty essential when indenting or un-indenting in visual mode.</p>
+
+<pre><code class="language-vim">&quot; Have the indent commands re-highlight the last visual selection to make
+&quot; multiple indentations easier
+vnoremap &gt; &gt;gv
+vnoremap &lt; &lt;gv
+</code></pre>
+
+<p>Though I have since removed these lines from my vimrc. The reason being that if I want to indent something multiple times it&rsquo;s slightly faster (and more &ldquo;Vim-like in my mind) to use the dot command.</p>
+
+<p>Forgoing the above remappings and using the dot command is faster since if you only want to indent something once (a relatively common case) using visual mode, you want to be dropped into normal mode so you can move on to other tasks that much quicker. You don&rsquo;t need to exit visual mode. But it you want to indent the text you just indented, or undo your last indentation move, you can use the dot command or undo (<code>u</code>) respectively. Both are one keystroke, so no loss there.</p>
+
+<h2 id="default-parts-of-vim-that-i-use-frequently">Default Parts of Vim That I Use Frequently</h2>
+
+<h3 id="exiting-insert-mode">Exiting Insert Mode</h3>
+
+<p>In my early days I had remapped <code>&lt;Esc&gt;</code> to <code>ii</code> (<code>imap ii &lt;Esc&gt;</code>), since escape was so far away, but now I just use <code>&lt;C-[&gt;</code>, which by default does almost the exactly same thing as <code>&lt;Esc&gt;</code>.</p>
+
+<h3 id="file-management">File Management</h3>
+
+<p>I&rsquo;ve tried to find solutions for a couple of problems but have learned to just use Vim&rsquo;s defaults. One example would be file-management: I used to use NERDTree, but <a href="http://sts10.github.io/blog/2015/09/13/ditching-nerdtree-and-using-vims-default-file-explorer/">now just use Vim&rsquo;s built-in file explorer</a>, netrw, combined with Tim Pope&rsquo;s <a href="https://github.com/tpope/vim-vinegar">vim-vinegar</a>. I do have <a href="https://github.com/ctrlpvim/ctrlp.vim">ctrlp.vim</a> (a fuzzy finder) installed, and I even tried <a href="http://sts10.github.io/blog/2016/01/09/vim-line-complete-with-fzf/">fzf</a>,but I find that I use netrw more frequently. Though granted I have yet to do a lot of work in a project that has many files, like a Rails project would have, which may necessitate a fuzzy finder.</p>
+
+<h3 id="closing-syntax">Closing Syntax</h3>
+
+<p>After using Vim for a while I started to miss how Sublime Text would automatically close brackets and parentheses for you. In Sublime, be default, if you type <code>def test(</code> it gives you the closing parenthesis and keeps your cursor between them: <code>def test(|)</code>. Then, most importantly, if you type your argument and type the closing parenthesis, you just &ldquo;type over&rdquo; the closing parenthesis that Sublime added for you. It&rsquo;s a nice, out-of-the-way implementation that I have been hoping to find in a vim plugin but haven&rsquo;t yet (<a href="https://twitter.com/sts10">tweet at me if you have ideas</a>).</p>
+
+<p>I&rsquo;ve tried a few plugins for auto-closing so far: <a href="https://github.com/Townk/vim-autoclose">vim-autoclose</a> and <a href="https://github.com/rstacruz/vim-closer">vim-closer</a>, as well as <a href="https://github.com/tpope/vim-endwise">vim-endwise</a>, but these days I don&rsquo;t use anything and have resigned to just closing my parentheses and brackets and Ruby methods myself by hand. (Update: A Twitter user whose account is private DM&rsquo;d me pointing to <a href="https://github.com/Raimondi/delimitMate">delimitMate</a> as an alternative. Separately, <a href="https://twitter.com/VimLinks/status/780693728545693696">@VimLinks</a> has tweeted about <a href="https://github.com/cohama/lexima.vim">lexima.vim</a>, which is another option. I&rsquo;ve yet to give either a try&ndash; mostly because I&rsquo;ve grown so used to closing brackets and parentheses manually, but you might find one of them to be the best option for you.)</p>
+
+<h3 id="spellcheck">Spellcheck</h3>
+
+<p>I use <code>]s</code> and <code>[s</code> to navigate to the next misspelled word. Once on a misspelled word, just hit <code>z=</code> to get some suggestions. To &ldquo;teach&rdquo; Vim the word under the cursor, use <code>zg</code>. Looks like <code>zug</code> undoes the adding to your learned-words list. See <code>:help spell</code> for more.</p>
+
+<h3 id="find-and-replace">Find and replace</h3>
+
+<p>While I have <code>multiple-cursors</code> installed, I rarely use it (I just had to look up the default mapping). Instead I use <code>/</code> or <code>?</code> to search, make the change with <code>c</code> and a motion, exit insert mode with <code>&lt;C-[&gt;</code>, then use <code>n</code> or <code>N</code> to go to the next instance and hit <code>.</code> to make the change. If the repeated change I want to make is too complex for the dot command to retain, I make use of Vim&rsquo;s macros (see <code>:h complex-repeat</code>).</p>
+
+<p>I do have <a href="https://github.com/bronson/vim-visual-star-search">vim-visual-star-search</a> installed to make <code>*</code> and <code>#</code> work a bit more intuitively for me, and I certainly could make use of it when finding and replacing, but I haven&rsquo;t.</p>
+
+<p>Update: If you&rsquo;re really missing Sublime Text&rsquo;s multiple cursor feature, <a href="http://www.kevinli.co/posts/2017-01-19-multiple-cursors-in-500-bytes-of-vimscript/">this solid blog post</a> gives some unique recommendations of ways to reproduce Sublime&rsquo;s functionality in Vim with a few lines of Vimscript and remapping.</p>
+
+<h3 id="other-vim-defaults-that-i-use-frequently">Other Vim Defaults That I Use Frequently</h3>
+
+<p>Know that when your cursor is on a URL you can hit <code>gx</code> in normal mode Vim will open that URL in your default browser. I&rsquo;ve found this to be more helpful than I thought it would be (though there appears to be at least <a href="http://sts10.github.io/blog/2016/02/16/one-solution-to-a-problem-with-vims-gx-command/">one strange problem with it</a>).</p>
+
+<p><code>o</code> in visual mode changes which &ldquo;end&rdquo; of a visual selection you&rsquo;re changing, which I love for its granularity.</p>
+
+<p><code>&lt;C-x&gt;&lt;C-l&gt;</code> auto completes an entire line, looking within your current buffer for a line to match. (If you&rsquo;re looking for a command to auto-complete lines from your entire project, check out <a href="http://sts10.github.io/blog/2016/01/09/vim-line-complete-with-fzf/">my post on fzf</a>.) You may also want to checkout the <code>:copy Ex</code> command, explained in <a href="http://vimcasts.org/episodes/long-range-line-duplication/">this great vimcast</a>.</p>
+
+<h2 id="things-i-don-t-really-have-an-answer-for">Things I Don&rsquo;t Really Have an Answer For</h2>
+
+<p>In addition to auto-closing parentheses and brackets that I mentioned above, I don&rsquo;t have a good general auto-completion solution setup beyond what <a href="https://github.com/ervandew/supertab">SuperTab</a> gives me. A lot of people seem to use <a href="https://github.com/Valloric/YouCompleteMe">YouCompleteMe</a> or <a href="https://github.com/Shougo/deoplete.nvim">Deoplete</a> for Neovim, but honestly the installation process daunts me a bit, and surely would decrease the portability of my whole setup for a feature that I don&rsquo;t think I&rsquo;d use a ton. I should probably instead spend time investigating snippets.</p>
+
+<p>Another thing I&rsquo;m not sure about is how to best search your entire working directory/project for a bit of code. I think the <a href="http://vimcasts.org/episodes/search-multiple-files-with-vimgrep/">vimgrep</a> command is the default, but I could also use ack or fzf? Again it&rsquo;s one of those things I haven&rsquo;t really needed yet, though I did use quite a bit when wrestling large Ruby on Rails projects in Sublime Text. With Vim, there&rsquo;s always something more to learn.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2016-01-30-software-updating-as-ritual/" data-toggle="tooltip" data-placement="top" title="Software Updating As Ritual">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2016-02-14-bowie-books/" data-toggle="tooltip" data-placement="top" title="Bowie Books">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

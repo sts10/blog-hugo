@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>A Problem with Vim&#39;s gx Command, And One Solution</title>
+  
+  <meta name="author" content=""/>
+  <meta name="generator" content="Hugo 0.19" />
+  
+
+  <link rel="alternate" href="http://example.org/index.xml" type="application/rss+xml" title="Prevent Default">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://example.org//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://example.org//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://example.org//css/highlight.min.css" />
+
+  
+  
+ 
+  
+    <meta property="og:title" content="A Problem with Vim&#39;s gx Command, And One Solution" />
+  
+
+  
+    <meta property="og:description" content="I&rsquo;ve been playing around with Vim&rsquo;s gx command, which in normal mode, when on a URL, opens that URL in your default browser (see :h gx). However today I ran into an interesting problem&ndash; if a URL has a ? in it gx thinks the URL ends at the ?. Note that I&rsquo;m using OS X and Chrome is my default browser. I&rsquo;m seeing this problem in both MacVim 7.">
+  
+
+  <meta property="og:type" content="website" />
+
+  
+    <meta property="og:url" content="http://example.org/post/2016-02-16-one-solution-to-a-problem-with-vims-gx-command/" />
+    <link rel="canonical" href="http://example.org/post/2016-02-16-one-solution-to-a-problem-with-vims-gx-command/" />
+  
+
+  
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+    <meta name="twitter:title" content="A Problem with Vim&#39;s gx Command, And One Solution" />
+  
+
+  
+    <meta name="twitter:description" content="I&rsquo;ve been playing around with Vim&rsquo;s gx command, which in normal mode, when on a URL, opens that URL in your default browser (see :h gx). However today I ran into an interesting problem&ndash; if a URL has a ? in it gx thinks the URL ends at the ?. Note that I&rsquo;m using OS X and Chrome is my default browser. I&rsquo;m seeing this problem in both MacVim 7.">
+  
+
+   
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">Prevent Default</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>A Problem with Vim&#39;s gx Command, And One Solution</h1>
+                
+                
+                  <span class="post-meta">Posted on February 16, 2016</span>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <div class="container" role="main">
+      
+        <div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>I&rsquo;ve been playing around with Vim&rsquo;s <code>gx</code> command, which in normal mode, when on a URL, opens that URL in your default browser (see <code>:h gx</code>). However today I ran into an interesting problem&ndash; if a URL has a <code>?</code> in it <code>gx</code> thinks the URL ends at the <code>?</code>. Note that I&rsquo;m using OS X and Chrome is my default browser. I&rsquo;m seeing this problem in both MacVim 7.4 (88) and Neovim v0.1.3-61-gf03ab69.</p>
+
+<p>This might not seem like a big deal for most URLs, since usually the characters after a <code>?</code> are superfluous tracking codes (though for my job they&rsquo;re pretty important). However there are the very large exceptions of YouTube video URLs, like <code>https://www.youtube.com/watch?v=wlR5gYd6um0</code>, and Google search results pages, like <code>https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=vim%20gx%20command</code>.</p>
+
+<p>Placing your normal mode cursor anywhere before the <code>?</code> in either of those URLs and hitting <code>gx</code> will open the URL up to but not past the <code>?</code>, thus taking you to a different location than intended. There are probably other examples where the <code>?</code> is non-trivial.</p>
+
+<!-- more --> 
+
+<p>This same problem is described in <a href="http://vi.stackexchange.com/questions/2801/how-can-i-make-gx-recognise-full-urls-in-vim">this Stack Exchange question</a>. Interestingly, the top answer to the Stack Exchange question says that the variable <code>g:netrx_gx</code> &ldquo;determines what will be considered part of a URI&rdquo; and that by default this is set to &ldquo;<cfile>&rdquo; (see <code>:help &lt;cfile&gt;</code>). The suggested fix is to change this variable from <code>&lt;cfile&gt;</code> to <code>&lt;cWORD&gt;</code>, however after some testing with that I found that it frequently selects MORE than a given URL, since it usually goes from space to space.</p>
+
+<p>Note there&rsquo;s also <a href="https://github.com/vim/vim/issues/190">Issue #190</a> in <a href="https://github.com/vim/vim">vim/vim</a> which seems relevant, and presents some more clues. One user gives <a href="https://github.com/vim/vim/issues/190#issuecomment-132351369">this answer</a>, which points to <a href="https://github.com/drmikehenry/vimfiles/blob/9b987c0349c9b1739242369d3e2cd62deacfd28c/vimrc#L2467">a function in his vimrc</a> that may work as a fix&ndash; I didn&rsquo;t try it. Here&rsquo;s what I did.</p>
+
+<h2 id="my-solution">My Solution</h2>
+
+<p>So it&rsquo;s not pretty, but here goes:</p>
+
+<p>The first clue I got was from the very end of that Stack Exchange answer: &ldquo;Hint: Using <code>gx</code> in visual mode, it will open the visually selected string (regardless of the above configuration).&rdquo; The same feature is touched upon in the <a href="https://github.com/vim/vim/issues/190#issuecomment-132351362">Vim Github issue</a> that I mention above.</p>
+
+<p>Kind of coincidentally, I recently installed the <a href="https://github.com/jceb/vim-textobj-uri">jceb/vim-textobj-uri Plugin</a> (which requires you to install <a href="https://github.com/kana/vim-textobj-user">kana/vim-textobj-user</a> first!). vim-textobj-uri, as you might guess, makes URIs text objects, and maps <code>iu</code> and <code>au</code> to interact with them.</p>
+
+<p>Now that I had a well-made URI text object at my finger tips (which is helpful on it&rsquo;s own!), I then typed this remapping into my vimrc:</p>
+
+<pre><code>nmap gx viugx&lt;Esc&gt;
+</code></pre>
+
+<p>As you can probably guess, this mapping visually selects the URI, then runs <code>gx</code> (from visual mode), then Escapes you back into normal mode.</p>
+
+<p>Later I refined this in two ways. First, I chose to use my <code>x</code> mark in order to preserve my cursor position in the URI. And secondly, thanks to <a href="https://sts10.github.io/blog/2016/02/16/one-solution-to-a-problem-with-vims-gx-command/#comment-2793361989">a comment from Carudo</a>, I found that I could use the preferable <code>nnoremap</code> by doing this:</p>
+
+<pre><code>nnoremap gx :normal mxviugx&lt;Esc&gt;`x
+</code></pre>
+
+<p>which you may prefer.</p>
+
+<p>From my point of view this is a problem that should be solved by default by Vim itself, or at least there should exist something better to set <code>g:netrx_gx</code> to. Right?</p>
+
+<h2 id="other-strangeness-with-gx">Other Strangeness with gx</h2>
+
+<p>Sometimes when I run <code>gx</code> on some URLs (one example was: <code>http://vimcasts.org/episodes/meet-the-yank-register/</code>), it seems like Vim runs a <code>curl</code> command and attempts to download the source code of the file (sometimes it&rsquo;s successfully and Vim opens the source code as a new buffer). This may be the case for URLs that end in trailing slashes, as <a href="http://vi.stackexchange.com/questions/5439/why-does-gx-call-curl-when-the-cursor-is-on-a-url-with-trailing-slash">this Stack Exchange user points out</a>, though, frustratingly, I haven&rsquo;t been able to reproduce the behavior consistently.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://example.org/post/2016-02-14-bowie-books/" data-toggle="tooltip" data-placement="top" title="Bowie Books">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://example.org/post/2016-03-20-vim-zipper-my-first-vim-plugin/" data-toggle="tooltip" data-placement="top" title="vim-zipper: My First Vim Plugin">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://example.org/">Prevent Default</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.19</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://example.org//js/main.js"></script>
+<script src="http://example.org//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
