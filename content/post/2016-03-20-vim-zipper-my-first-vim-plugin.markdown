@@ -1,6 +1,7 @@
 +++
 title= "vim-zipper: My First Vim Plugin"
 date= "2016-03-20 15:53:19 -0400"
+comments = "true"
 +++
 
 At work I was working with [Highcharts](http://www.highcharts.com/), a JavaScript charting library. The specific file I was working in had a number of these charts defined in it, each of which had a good amount of settings and functions within them. As a result, in spite of other vim awesomeness, I found that I was having some trouble navigating around the long file. 

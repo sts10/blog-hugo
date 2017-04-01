@@ -2,3 +2,9 @@ languageCode = "en-us"
 title = "Prevent Default"
 theme = "beautifulhugo"
 baseURL = "https://sts10.github.io/"
+
+[Params]
+  Author = "Sam Schlinkert"
+  DisqusShortname = "sts10"
+  disqusShortname = "sts10"
+

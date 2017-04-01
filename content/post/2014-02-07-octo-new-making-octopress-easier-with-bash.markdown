@@ -1,6 +1,7 @@
 +++
 title= "Making Octopress Easier with ink"
 date= "2014-02-06 22:41:28 -0500"
+comments = "true"
 +++
 
 

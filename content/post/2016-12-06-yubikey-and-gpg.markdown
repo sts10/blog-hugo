@@ -1,6 +1,7 @@
 +++
 title= "YubiKey and OpenPGP"
 date= "2016-12-06 22:40:37 -0500"
+comments = "true"
 +++
 
 On Cyber Monday, I took advantage of [Yubico](https://www.yubico.com)'s 2-for-1 YubiKey deal and got two [YubiKey 4](https://www.yubico.com/products/yubikey-hardware/yubikey4/)s for the price on one ($40).

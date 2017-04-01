@@ -1,6 +1,7 @@
 +++
 title= "The Terrible Laughter"
 date= "2015-05-07 22:35:28 -0400"
+comments = "true"
 +++
 
 > Everyone here who knew Gary will recall that if you spent time in his company, you were always laughing. You spent half the day laughing, he spent half the day laughing, or so it seemed, at least if he was in the company of other people...<!-- more -->

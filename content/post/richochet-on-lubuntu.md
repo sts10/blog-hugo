@@ -1,6 +1,7 @@
 +++
 title = "Installing Ricochet 1.1.4 on Lubuntu 16.04"
 date = "2017-01-24T21:10:42-04:00"
+comments = "true"
 
 +++
 

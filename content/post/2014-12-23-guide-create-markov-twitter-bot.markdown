@@ -1,6 +1,7 @@
 +++
 title= "Basic Guide to Creating a Markov Chain-Driven Twitter Bot"
 date= "2014-12-23 15:21:41 -0400"
+comments = "true"
 +++
 
 <blockquote class="twitter-tweet" lang="en"><p>Suspect fires on bounty hunters, twirling in their <a href="https://twitter.com/hashtag/Burberry?src=hash">#Burberry</a></p>&mdash; Schlink Bot (@schlinkbot) <a href="https://twitter.com/schlinkbot/status/546412459830288384">December 20, 2014</a></blockquote>

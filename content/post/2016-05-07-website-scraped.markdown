@@ -1,6 +1,7 @@
 +++
 title= "Website Scraped"
 date= "2016-05-07 21:45:31 -0400"
+comments = "true"
 +++
 
 Earlier this week Alex Balk, a co-founder of [The Awl](http://www.theawl.com/), tweeted: 

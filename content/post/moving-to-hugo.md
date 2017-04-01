@@ -1,6 +1,7 @@
 +++
 date = "2017-03-30T22:28:41-04:00"
 title = "Moving to Hugo"
+comments = "true"
 tags = []
 subtitle = ""
 
@@ -8,7 +9,7 @@ subtitle = ""
 
 A couple of weeks ago I was [proud of myself for switching from RVM to rbenv](https://twitter.com/sts10/status/839933857679949829). The reason I made the switch was that I wanted something light-weight and I didn't like the RVM installation process, in particular the need to use the GPG command line tool.
 
-The problem was that after I installed a fresh copy of Ruby 2.4.0 with rbenv, I wasn't able to deploy this blog using my very old version of Octopress. I got an error that some specific version of a gem was not avaiable. The gem that it couldn't find must have been a dependency of one of the other gems. Anyway, I wsa stuck, unable to update my blog. I had been meaning to move off of Octopress anyway, since it had been so long since I set it up I was worried that if I moved to a new computer I'd be stuck. This gem problem was as good an impetus as any. (Though note I believe there is [a newer version of Octopress](https://github.com/octopress/octopress) out there.)
+The problem was that after I installed a fresh copy of Ruby 2.4.0 with rbenv, I wasn't able to deploy this blog using my very old version of Octopress. I got an error that some specific version of a gem was not available. The gem that it couldn't find must have been a dependency of one of the other gems. Anyway, I wsa stuck, unable to update my blog. I had been meaning to move off of Octopress anyway, since it had been so long since I set it up I was worried that if I moved to a new computer I'd be stuck. This gem problem was as good an impetus as any. (Though note I believe there is [a newer version of Octopress](https://github.com/octopress/octopress) out there.)
 
 After not doing any research (which is unlike me) and sending [a random call out tweet](https://twitter.com/sts10/status/846463935184355328), I decided on [Hugo](https://gohugo.io). The only way I had heard of it was because [the Ricochet IM site](https://ricochet.im/) uses it. I like those developers, so I figured they had chosen a good, new static site generator. Plus it's written in GoLang so it must be good, right? So earlier tonight I dove into [the docs](https://gohugo.io/overview/introduction/).
 

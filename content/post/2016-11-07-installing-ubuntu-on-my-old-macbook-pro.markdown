@@ -1,6 +1,7 @@
 +++
 title= "Installing Ubuntu on my old MacBook Pro"
 date= "2016-11-07 23:07:09 -0500"
+comments = "true"
 +++
 
 I had an old 17 inch MacBook Pro from 2009 (college) lying around and I figured it'd be a fun challenge to install Linux on it. I had never installed or even used Linux before (to my knowledge). I also, confusingly, hadn't found a clean, step-by-step guide for doing this, so I promised I'd write my process out as thoroughly but simply as I could once I got it done. 
@@ -36,7 +37,7 @@ Again, note, this worked for me and my machine but may not for you. For example 
 
 Also, **WARNING**, this procedure completely wiped my OS X and all the files and applications on that installation, as I intended. There are ways to dual-boot both, but I wasn't interested in that as Mavericks was running super slow on this computer. Furthermore I think all the data I had on my USB stick is lost due to it being formatted in a certain way at some point in the procedure.
 
-**UPDATE (February 2017)**: Before moving ahead, you may want to consider the following. A helpful commenter, Brian Moran, (see below) writes that, when installing Ubuntu on an older Mac with a NVIDIA graphics card, it may be better to "boot in 'Legacy BIOS mode', not in 'EFI' mode": 
+**UPDATE (February 2017)**: Before moving ahead, you may want to consider the following. A helpful commenter, Brian Moran, writes that, when installing Ubuntu on an older Mac with a NVIDIA graphics card, it may be better to "boot in 'Legacy BIOS mode', not in 'EFI' mode": 
 
 > Apparently what is happening is that both the open source and Nvidia drivers are buggy when doing an "EFI Install" on Mac machines. If full graphics performance is desired, a "Legacy BIOS Install" is needed. 
 

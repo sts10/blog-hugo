@@ -1,6 +1,7 @@
 +++
 title= "Git Trick For When You're In Trouble"
 date= "2014-10-15 21:03:17 -0400"
+comments = "true"
 +++
 
 Do you ever find yourself a few commits into trouble on an important branch like `master`? I know I do (and just did). 

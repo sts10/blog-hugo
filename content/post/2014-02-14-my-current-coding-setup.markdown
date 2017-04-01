@@ -1,6 +1,7 @@
 +++
 title= "Apps, Fonts, and Colors of my Current Coding Setup"
 date= "2014-02-14 01:06:10 -0500"
+comments = "true"
 +++
 
 I’ve been playing with my color theme and default font-face in my code editor, Sublime Text 2, this cold, snowy weekend, so I thought I’d share a little about my current application setup. I don’t know, maybe this is boring? Self-involved? I try not to get too bogged down in tricking out my gear (while I should be writing code). But on the other hand, now that I’m using my computer even more than I have in the past, I do think it’s important to get it feeling right and looking good. 

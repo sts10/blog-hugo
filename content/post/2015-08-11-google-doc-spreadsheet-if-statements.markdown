@@ -1,6 +1,7 @@
 +++
 title= "Google Doc Spreadsheet IF Statements"
 date= "2015-08-11 21:01:50 -0400"
+comments = "true"
 +++
 
 I was working in a shared Google Doc Spreadsheet this week and needed to figure out how to use `if` statements. It turns out it's pretty simple! 

@@ -1,9 +1,10 @@
 +++
 title= "True HEX Colors with Neovim and iTerm2"
 date= "2015-10-24 14:05:03 -0400"
+comments = "true"
 +++
 
-**Note: I've written [an updated version of this post that shows how to get true colors with terminal Vim or Neovim and iTerm2](http://sts10.github.io/blog/2016/06/14/true-hex-colors-in-vim-with-iterm2/)**
+**Note: I've written [an updated version of this post that shows how to get true colors with terminal Vim or Neovim and iTerm2](https://sts10.github.io/post/2016-06-14-true-hex-colors-in-vim-with-iterm2/)**
 
 For a few weeks now, I've been picking at the problem of getting "true" colors in Neovim, as the creators [tout on the official website](https://neovim.io/). I understood that I would probably need to use a terminal emulator rather than OS X's default Terminal app, and I knew one such emulator was called [iTerm2](https://www.iterm2.com/). I also understood that I'd need to put some settings in my nvim config file (wherever that is these days), or a "nvim section" of my symlinked `.vimrc`. 
 
@@ -19,7 +20,7 @@ In that Vim colorscheme file, following the pattern of another such file, I ente
 
 It's my view that a setup that uses the hex color codes is infinitely preferable for 2 reasons: (1) You get a far larger variety of colors to use in your theme, and (2) the theme always appears the same, no matter the user's terminal color preferences. 
 
-The first way I made a setup that used the hex color codes in a Vim colorscheme was by using [MacVim](http://sts10.github.io/blog/2015/08/07/from-terminal-vim-to-mac-vim/). But given the advantages of Neovim (some which I read about in [this blog post](http://geoff.greer.fm/2015/01/15/why-neovim-is-better-than-vim/)), and its advertisement of true (read: hex) colors, I wanted to figure out how to get my precious hex colors in Neovim and/or the terminal somehow. 
+The first way I made a setup that used the hex color codes in a Vim colorscheme was by using [MacVim](https://sts10.github.io/post/2015-08-07-from-terminal-vim-to-mac-vim/). But given the advantages of Neovim (some which I read about in [this blog post](http://geoff.greer.fm/2015/01/15/why-neovim-is-better-than-vim/)), and its advertisement of true (read: hex) colors, I wanted to figure out how to get my precious hex colors in Neovim and/or the terminal somehow. 
 
 Part of this desire was to try to get my day-to-day Vim usage back into a terminal, since that feels more authentic and may be the only way to use Vim when working on a remote box. Maybe I'll compare the current pros and cons below. 
 

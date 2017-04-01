@@ -1,6 +1,7 @@
 +++
 title= "Turning Recall into a Ruby Gem"
 date= "2014-03-16 21:42:08 -0400"
+comments = "true"
 +++
 
 Huzzah! I finally wrestled my Recall code into a legit Ruby Gem! 

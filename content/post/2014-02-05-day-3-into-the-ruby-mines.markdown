@@ -1,6 +1,7 @@
 +++
 title= "Day 3: Into the Ruby Mines"
 date= "2014-02-05 20:56:13 -0500"
+comments = "true"
 +++
 
 
