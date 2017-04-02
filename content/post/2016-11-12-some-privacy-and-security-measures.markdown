@@ -50,7 +50,7 @@ If you see something wrong or misleading here, or you have suggestions, feel fre
 
 #### What I Learned
 
-From what I gathered, the basic idea with passwords is that you want (a) to enable two-factor authentication whenever possible and (b) do your best never to re-use a password between multiple services. 
+From what I gathered, the basic idea with passwords is that you want (a) to enable two-factor authentication whenever possible, (b) do your best never to re-use a password between multiple services, and (c) make sure those passwords are random and unique (i.e. `fido3` and `fido4` are not random or unique enough-- `VoF3cRLxhcfpCLd298Fd9Y` and `f@[6:7)nSH#i#RMg".8>-a1` are).
 
 Turning on two-factor authentication means that whenever you log into your account, a code will be sent to your phone that you'll have to enter after entering your correct password. The idea here is that even if an attacker gets your password, they would also need your phone to get this code. As [Shelton writes](https://medium.com/@mshelton/securing-your-digital-life-like-a-normal-person-a-hasty-and-incomplete-guide-56437f127425#.zf9977k7v): [Gmail](https://www.google.com/landing/2step/), [Twitter](https://support.twitter.com/articles/20170388), [Facebook](https://www.facebook.com/help/148233965247823), [Dropbox](https://www.dropbox.com/en/help/363), GitHub, and [a number of other services](https://twofactorauth.org/) allow two-factor authentication. 
 
@@ -74,7 +74,7 @@ Inside you'll see all your accounts. To log in to a website, highlight the accou
 
 If you're looking for more features-- such as being able to easily access your passwords on a mobile device-- you may want to look elsewhere.
 
-For a time, and still occasionally, I paid for [1Password](https://1password.com/). This is a slicker password manager, with more features than KeePassX. For example you can install a Google Chrome extension that automatically fills in usernames and passwords for the page you're on. It also syncs with Dropbox seamlessly for you (if you so choose to put your encrypted password file on the cloud), and they have an iPhone app for accessing your passwords. This allows me to sign in both on my phone and, if I wish, on other computers. 
+In direct response to these problems, at one point I paid for and setup [1Password](https://1password.com/). This is a slicker password manager, with more features than KeePassX. For example you can install a Google Chrome extension that automatically fills in usernames and passwords for the page you're on. It also syncs with Dropbox seamlessly for you (if you so choose to put your encrypted password file on the cloud), and they have an iPhone app for accessing your passwords. This allows me to sign in both on my phone and, if I wish, on other computers. 
 
 Here's Shelton's guide [1Password for Beginners](https://medium.com/@mshelton/introduction-to-password-managers-5e15baa8b26e).
 
@@ -91,6 +91,12 @@ For creating strong but memorable master passwords (which you obviously can't st
 I also have two-factor authentication enabled on almost all the services I use that offer it. I prefer using a neutral app like [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) to get the codes (rather than receiving an SMS text message with the code), as I find it more convenient than waiting for a text. Plus the National Institute of Standards and Technology [advise choosing the Authenicator route rather than SMS for security reasons](https://techcrunch.com/2016/07/25/nist-declares-the-age-of-sms-based-2-factor-authentication-over/). Note: Using SMS as a 2nd factor is definitely a more secure option than not having a 2nd factor at all!
 
 What happens if you lose your phone? One solution is to store backup codes which can be used instead of the 2nd factor code. Most services give you one or more of these codes when you enable 2-factor for just this reason ([here's more info on GMail backup codes](https://support.google.com/accounts/answer/1187538?hl=en)). Store these somewhere safe obviously, like on a piece of paper you store somewhere secure. Once you use a backup code to login, you can choose to temporarily disable two-factor authentication until you get your phone back or get a new one.
+
+##### YubiKey
+
+Note that you can also use a piece of hardware as your 2nd factor. The most popular option for this product seems to a [YubiKey](https://www.yubico.com/start/). It looks like a thin USB drive you can attach to your key chain. Instead of typing in a code you see on your phone, you plug your YubiKey into a USB slot on the computer. This method is considered more secure and works even if you don't have you phone or its battery is dead. 
+
+Currently Google, Facebook Dropbox, Windows, masOS Sierra, LastPass, dashlane, Keepass accept a YubiKey as a second factor. You can compare YubiKey options [here](https://www.yubico.com/products/yubikey-hardware/).
 
 ### Browser Use and Tracking 
 
@@ -143,14 +149,6 @@ I'd also encourage potential users to read [Tor's list of warnings to consider](
 I also looked into a new browser called [Brave](https://www.brave.com/), a relatively new open source browser that has ad-blocking and privacy features built in. As I see it the pros are that you get some of the benefits you get from some of the add-ons I mention above right out of the box. Brave also comes bundled with a password manager of its own, but you can switch that out for 1Password, Dashlane, or LastPass. The cons are that you, currently, can't add other extensions to your liking. For these reasons, I have it installed on my iPhone, but stick with Tor and Chrome when on desktop. 
 
 Note that when using version 0.12.9 of Brave for OS X you need to [enable "Google Widevine" support](https://github.com/brave/browser-laptop/issues/468#issuecomment-255938042) to use services like Netflix in the browser. Also, in regard to the advantages that the Tor Browser provides over Brave, apparently Brave developers are [looking into adding Tor support for Brave](https://twitter.com/bcrypt/status/798383317959602176) ([GitHub link](https://github.com/brave/browser-laptop/wiki/Brave-Tor-Support)), which would be pretty interesting!
-
-## Encrypting Your Hard Drive
-
-A lot of the guides I found recommend encrypting your computer's hard drive. As [Shelton writes](https://medium.com/@mshelton/securing-your-digital-life-like-a-normal-person-a-hasty-and-incomplete-guide-56437f127425#.dcxdkpedk):
-
-> **Encrypt your hard drive.** If your device is ever lost or stolen, it's easy for thieves to take data off your hard disk. Good news: If you have a new password-protected iPhone [your disk is already encrypted](https://support.apple.com/en-us/HT202064). If you have an Android Device, [it's pretty easy to encrypt your phone](https://support.google.com/nexus/answer/2844831). A few Android phones (in the Nexus line) are [encrypted by default](http://nexus%205x%2C%206p%2C%206%2C%209/). For your laptop or desktop, you can encrypt your hard drive using your operating system's native software: [FileVault for Mac](https://support.apple.com/en-us/HT204837), or [BitLocker on Windows](http://www.pcworld.com/article/2308725/a-beginners-guide-to-bitlocker-windows-built-in-encryption-tool.html).
-
-I actually _haven't_ done this yet (on my Mac it would mean enable FileVault) as I'm little freaked out about straight-up forgetting my password or screwing it up in some other way, but you should consider it!
 
 ## Communication (Texts, Instant Messaging, and Email)
 
@@ -234,6 +232,14 @@ To avoid Google reading my email, realistically I'd have to get off of GMail. On
 ### What I Did
 
 I downloaded Ricochet and Cryptocat and created a public PGP key and put all that information online in [a GitHub gist](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3). I then linked to that gist in my the bio of my Twitter account, which is verified. I also downloaded Signal on my iPhone and have started to use it with some of my privacy-minded friends-- discovery of other users is pretty easy when using Signal, as it searches your phone's contacts.
+
+## Encrypting Your Hard Drive
+
+A lot of the guides I found recommend encrypting your computer's hard drive. As [Shelton writes](https://medium.com/@mshelton/securing-your-digital-life-like-a-normal-person-a-hasty-and-incomplete-guide-56437f127425#.dcxdkpedk):
+
+> **Encrypt your hard drive.** If your device is ever lost or stolen, it's easy for thieves to take data off your hard disk. Good news: If you have a new password-protected iPhone [your disk is already encrypted](https://support.apple.com/en-us/HT202064). If you have an Android Device, [it's pretty easy to encrypt your phone](https://support.google.com/nexus/answer/2844831). A few Android phones (in the Nexus line) are [encrypted by default](http://nexus%205x%2C%206p%2C%206%2C%209/). For your laptop or desktop, you can encrypt your hard drive using your operating system's native software: [FileVault for Mac](https://support.apple.com/en-us/HT204837), or [BitLocker on Windows](http://www.pcworld.com/article/2308725/a-beginners-guide-to-bitlocker-windows-built-in-encryption-tool.html).
+
+I actually _haven't_ done this yet (on my Mac it would mean enabling FileVault) as I'm little freaked out about straight-up forgetting my password or screwing it up in some other way, but you should consider it! One way to mitigate the risk of forgetting this password would be to write it down on a piece of paper and store it someplace safe.
 
 ## Additional Resources
 
