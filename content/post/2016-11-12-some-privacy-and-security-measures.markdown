@@ -70,7 +70,7 @@ Martin Shelton has a nice guide called [KeePass for Beginners](https://medium.co
 
 ![A KeePassX screenshot](https://www.keepassx.org/images/screenshots/main_window.png)
 
-Inside you'll see all your accounts. To log in to a website, highlight the account, then you hit a button to copy your username, paste that in the web form, then back to KeePassX to copy the password, and paste that into the web form. This is a bit time consuming, but as I understand it's the most secure way to use a password manager. (There is a new "fork" of KeePassX called [KeePassXC](https://keepassxc.org/) that has an "auto type" feature for macOS, but I've found it to be a bit wonky.) 
+Inside you'll see all your accounts. To log in to a website, highlight the account, then you hit a button to copy your username, paste that in the web form, then back to KeePassX to copy the password, and paste that into the web form. This is a bit time consuming, but as I understand it's the most secure way to use a password manager. 
 
 If you're looking for more features-- such as being able to easily access your passwords on a mobile device-- you may want to look elsewhere.
 
