@@ -9,7 +9,7 @@ subtitle = ""
 
 In order to get the very latest version of the password manager [KeePassXC](https://keepassxc.org), I decided to build it from [the source on GitHub](https://github.com/keepassxreboot/keepassxc). Here's how I did it on OS X 10.10.5.
 
-<!-- more -->
+<!-- read more -->
 
 1. Set up build environment by following [these instructions](https://github.com/keepassxreboot/keepassxc/wiki/Set-up-Build-Environment-on-OS-X).
 
@@ -30,7 +30,7 @@ cmake -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release \
 make -j8 package
 ```
 
-4. The above step, if completed successfully, will create a fresh DMG in the `build` directory you created. Double click it to install KeePassXC (by dragging it into your Applications folder.
+The above step, if completed successfully, will create a fresh DMG file in the `build` directory you created. Double click it to install KeePassXC (by dragging it into your Applications folder).
 
 
 My resulting debug info:
