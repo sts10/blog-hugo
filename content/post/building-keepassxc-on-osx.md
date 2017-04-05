@@ -7,7 +7,9 @@ subtitle = ""
 
 +++
 
-In order to get the very latest version of the password manager [KeePassXC](https://keepassxc.org), I decided to build it from [the source on GitHub](https://github.com/keepassxreboot/keepassxc). Here's how I did it on OS X 10.10.5.
+I'm excited about a community fork of [KeePassX](https://www.keepassx.org/) called [KeePassXC](https://keepassxc.org). They offer binary builds for the three major operating systems [on their website](https://keepassxc.org/download), however I wanted to build it from source for two reasons: (1) I was a little dubious of KeePassHTTP, which the developers are now building into the pre-built binaries (it appears to be disabled by default, but they have [a warning in the README](https://github.com/keepassxreboot/keepassxc#note-about-keepasshttp)), and (2) I simply wanted the latest version, which already sports some UI improvements from the last time they made the binaries. Plus, to my knowledge, I've never built a real application from the source code before.
+
+So, I headed over to [their repo on GitHub](https://github.com/keepassxreboot/keepassxc) and got started. Here's how I did it on OS X 10.10.5.
 
 <!-- read more -->
 
@@ -17,9 +19,9 @@ In order to get the very latest version of the password manager [KeePassXC](http
 
 3. Follow the updated [OS X build instructions](https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC#os-x)
 
-I wanted to disable auto type and KeePassHTTP, so in the line below I turned those flags `OFF`. Also, I needed to find out what version of qt5 I had in order to put the correct version in the `DCMAKE_PREFIX_PATH` flag below. To do this I navigated to `/usr/local/Cellar/qt5` and looked at what the latest folder was there. In my case it was `5.8.0_1`. 
+I decided to disable two features of KeePassXC: Auto Type and KeePassHTTP, so in the line below I turned those flags `OFF`. Also, I needed to find out what version of qt5 I had in order to put the correct version in the `DCMAKE_PREFIX_PATH` flag below. To do this I navigated to `/usr/local/Cellar/qt5` and looked at what the latest folder was there. In my case it was `5.8.0_1`. 
 
-Edit the line below accordingly.
+Obviously you may need to edit the line below according to what flags you want and your version of qt5.
 
 ```
 mkdir build

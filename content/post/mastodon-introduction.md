@@ -4,11 +4,11 @@ tags = []
 subtitle = ""
 comments = "true"
 draft = "true"
-date = "2017-04-02T16:11:17-04:00"
+date = "2017-04-04T16:11:17-04:00"
 
 +++
 
-Back in October I caught wind of a new social network called Mastodon. It _looks_ like Twitter, but it has some incredibly interesting differences, the most notable of which is that it's both open-source and federated.
+Back in October I caught wind of a new social network called Mastodon. It _looks_ like Twitter, but it has some incredibly interesting differences, the most notable of which is that it's decentralized, federated, and open-source.
 
 As described on [its main website](https://mastodon.social/about): 
 
@@ -22,7 +22,7 @@ What does **"federated"** mean in this context? Again, I'll let [Eugen Rochko](h
 
 Why is the concept of many instances notable? First of all, each instance can have its own rules and culture as to what is permitted and not permitted there. And yet, users from different instances can follow each other. 
 
-Somewhat confusingly, "mastodon.social" is the flagship instance of Mastodon. But there are already other ([full list here](https://instances.mastodon.xyz/)). Here is the code of conduct of for mastodon.social: https://mastodon.social/about/more
+Somewhat confusingly, "mastodon.social" is the flagship instance of Mastodon. But there are already a ton of others up and running ([full list here](https://instances.mastodon.xyz/)). Here is the code of conduct of for mastodon.social: https://mastodon.social/about/more
 
 Let's say we have instance A, which is primarily made up of people interested in news and politics, and instance B, which is 
 
