@@ -32,7 +32,7 @@ cmake -DCMAKE_OSX_ARCHITECTURES=x86_64 -DCMAKE_BUILD_TYPE=Release \
 make -j8 package
 ```
 
-The above step, if completed successfully, will create a fresh DMG file in the `build` directory you created. Double click it to install KeePassXC (by dragging it into your Applications folder).
+The above step, if completed successfully, will create a fresh DMG file in the `build` directory you created. Double click it to install KeePassXC (then drag it into your Applications folder).
 
 
 My resulting debug info:
@@ -52,3 +52,7 @@ Kernel: darwin 14.5.0
 Enabled extensions:
 - YubiKey
 ```
+
+**Update**: I tried pulling down the updated source code from GitHub and building the new version, but now, after I install the built DMG, I can't open KeePassXC. The error is a bit long and complex... I might generate it again to post on here at some point. 
+
+I even tried to check out the 2.1.4 and then the 2.1.3 tags but I got the same error. Hopefully it's some glitch in the source code...? 

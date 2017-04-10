@@ -1,5 +1,5 @@
 +++
-title = "Mastodon: An Introduction"
+title = "Using Mastodon: An Introduction"
 tags = []
 subtitle = ""
 comments = "true"
@@ -10,7 +10,7 @@ date = "2017-04-04T16:11:17-04:00"
 
 Back in October I caught wind of a new social network called Mastodon. It _looks_ like Twitter, but it has some incredibly interesting differences, the most notable of which is that it's decentralized, federated, and open-source.
 
-As described on [its main website](https://mastodon.social/about): 
+As described on [the website of its main instance](https://mastodon.social/about): 
 
 > Mastodon is a free, open-source social network. A decentralized alternative to commercial platforms, it avoids the risks of a single company monopolizing your communication. Pick a server that you trust — whichever you choose, you can interact with everyone else. Anyone can run their own Mastodon instance and participate in the social network seamlessly.
 
@@ -18,11 +18,21 @@ What does **"federated"** mean in this context? Again, I'll let [Eugen Rochko](h
 
 > One of Mastodon's fundamental differences to Twitter is federation. To bring that word into context, the United States of America are a federation. In a more technical context: E-mail is federation. It means that users are spread throughout different, independent communities, yet remain unified in their ability to interact with each other. You can send an e-mail from GMail to Outlook, from Outlook to someone's private e-mail inbox. Mastodon's federation is similar: users from different sites (let's call them "instances") establish connections between these sites by following each other and sending each other messages like on any other social network.
 
+## The (Official?) User Guide
+
+You can [read the official Mastodon User's Guide](https://github.com/tootsuite/mastodon/blob/master/docs/Using-Mastodon/User-guide.md) if that's more your jam. Below I've written out some notes. 
+
 ## The Importance of Federation
 
 Why is the concept of many instances notable? First of all, each instance can have its own rules and culture as to what is permitted and not permitted there. And yet, users from different instances can follow each other. 
 
 Somewhat confusingly, "mastodon.social" is the flagship instance of Mastodon. But there are already a ton of others up and running ([full list here](https://instances.mastodon.xyz/)). Here is the code of conduct of for mastodon.social: https://mastodon.social/about/more
+
+![where toots appear](https://techn.ical.ist/system/media_attachments/files/000/001/422/original/6c6f14ae39d55557.png)
+
+Diagram via [vhf@techn.ical.ist](https://techn.ical.ist/users/vhf/updates/102)
+
+The metaphor I like to think of involves the three columns that the web interface offers-- Home, Local, and Federated. Home will be familiar to Twitter users-- it's simply a timeline of all the (public) toots of your followers. 
 
 Let's say we have instance A, which is primarily made up of people interested in news and politics, and instance B, which is 
 
