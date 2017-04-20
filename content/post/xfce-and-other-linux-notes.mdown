@@ -110,7 +110,8 @@ For customizing Panel 1, I followed some of the instructions in the first minute
 
 I'm not sure what I want out of panel 2 (the dock) yet, so I set it to be pretty small and have it hide intelligently. 
 
-![my xfce desktop](https://i.imgur.com/P9Cj2kK.jpg)
+<!-- ![my xfce desktop](https://sts10.github.io/img/xfce.png) -->
+![my xfce desktop](../../img/xfce.png)
 
 
 ## LXDE/Lubuntu
