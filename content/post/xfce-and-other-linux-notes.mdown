@@ -17,15 +17,21 @@ On macOS I make frequent use of [Alfred](https://www.alfredapp.com/) as an appli
 
 So I found [this askubuntu answer](https://askubuntu.com/questions/203851/any-search-tool-for-lxde-menu/203852#203852) that recommends installing an application called Synapse by running `sudo apt-get install synapse`. By default the launcher is invoked by hitting `ctrl + space`, but I changed it to `alt+Enter` by launching Synapse and clicking on the not-super-obvious round button on the right side of the pop-up display and clicking "Preferences". Works great on all the desktop environments I tried (though its speed varied a little). 
 
-## Ditching Unity Desktop
+## Ditching Unity Desktop Environment
 
-To avoid the high memory usage of Ubuntu's Unity desktop environment, I explored installing a more lightweight desktop environment (DE). I had a gist that Unity was a bit of a memory hog compared to other desktop environments. I also spotted [this Reddit post](https://www.reddit.com/r/linux/comments/5l39tz/linux_distros_ram_consumption_comparison_updated/?st=ixpgu5wy&sh=67b8f57f) that compares some lightweight distros in terms of RAM consumption. 
+### What's a Desktop Environment?
 
-Note: When I installed these desktops (a) I didn't lose any files or installed programs, and (b) I can easily switch between installed desktop environments by choosing them in my computer login screen. You don't even need to restart the computer to switch environments. 
+In the context of an operating system, a desktop environment (sometimes abbreviated DE) is essentially the GUI part of your operating system. On OS X, the desktop Environment is called Aqua, and in Windows it's called Aero, however in both cases users cannot change it. But with Linux, you can change your desktop environment, and pretty easily. Examples are GNOME, KDE, LXDE, Xfce, Unity, MATE, Cinnamon, etc. Note that these are different than Linux _distributions_ or "distros" (examples of which are Ubuntu, Arch, Mint, Debian, Manjaro, etc.). From what I understand, some desktop environments work better with certain distributions than others, one clue of which is what desktop environment a given distribution comes with -- for example Ubuntu ships with Unity, Manjaro ships with either (i.e. officially supports both) KDE or Xfce, etc.
 
-From that [list](https://www.reddit.com/r/linux/comments/5l39tz/linux_distros_ram_consumption_comparison_updated/?st=ixpgu5wy&sh=67b8f57f), I first installed Ubuntu's LXDE desktop environment (called Lubuntu). The size of the installation was about 343 mb. I later installed the Xfce desktop environment, which uses a little more memory, but I like it considerably more. 
+### Why I Wanted to Change my Desktop Environment
 
-Also, a seemingly big advantage Xfce has over the other two I've tried (LXDE and Unity) is it's popularity with other distros, including well-regarded "advanced" distros like Debian and Manjaro. From what I've gathered this effectively means that Xfce is a desktop environment users can "grow with", i.e. you can take your knowledge, comfort, and configuration with you to other distributions that are made to work with it (obviously unlike Unity, which seems to be only used with Ubuntu, and only until Ubuntu 18.04). I think the same could be said of KDE and GNOME, but those seem to be a little heavier.
+To recap, I started with an old MacBook Pro with 2 GB of RAM running Ubuntu 16.04 LTS with Unity. With only 2 GB of RAM Unity ran pretty sluggishly. So to avoid the high memory usage of the Unity desktop environment, I explored installing a more lightweight desktop environment. I had a gist that Unity was a bit of a memory hog compared to other desktop environments. I also spotted [this Reddit post](https://www.reddit.com/r/linux/comments/5l39tz/linux_distros_ram_consumption_comparison_updated/?st=ixpgu5wy&sh=67b8f57f) that compares some lightweight distros in terms of RAM consumption. 
+
+Note: When I installed new desktop environments (a) I was still running Ubuntu as my Linux distribution-- Ubuntu was my operating system the whole time. Also note that (b) I didn't lose any files or installed programs, and (c) I can easily switch between installed desktop environments by choosing from them in my computer login screen. You don't even need to restart the computer to switch environments. 
+
+From that [list](https://www.reddit.com/r/linux/comments/5l39tz/linux_distros_ram_consumption_comparison_updated/?st=ixpgu5wy&sh=67b8f57f), I first installed Ubuntu's LXDE desktop environment (called Lubuntu). The size of the installation was about 343 mb. I later installed the Xfce desktop environment, which was probably big larger and uses a little more memory, but I like it considerably more. 
+
+Also, a seemingly big advantage Xfce has over the other two I've tried (LXDE and Unity) is its popularity with other distros, including well-regarded "advanced" distros like Debian and Manjaro. From what I've gathered this effectively means that Xfce is a desktop environment users can "grow with", i.e. you can take your knowledge, comfort, and configuration with you to other distributions that are made to work well with it (unlike Unity, which seems to be only used with Ubuntu, and only until Ubuntu 18.04 which [will come with the GNOME desktop environment](http://www.omgubuntu.co.uk/2017/04/ubuntu-18-04-ship-gnome-desktop-not-unity) instead). I think the same could be said of KDE and GNOME, but those seem to be a little heavier.
 
 ## Xfce
 
@@ -70,6 +76,11 @@ Honestly I'm not sure whether it's more proper to say I'm running "Xfce on Ubunt
 
 ### Customizing Appearance of Xfce (Ubuntu)
 
+Customizing the look of your desktop environment may seem like an afterthought to you, but I've come to realize it's at least a little important in how you use and approach your computer. On Mac such things aren't a big deal because the new OSs also update the look and feel of the environment, but I found that even my new installation of Xfce (and LXDE) looked straight out of 2000 if not earlier. Below I outline some of the tweaks that I made to my Xfce environment to bring it "up to speed" aesthetically. 
+
+<!-- ![my xfce desktop](https://sts10.github.io/img/xfce.png) -->
+![my xfce desktop](../../img/xfce.png)
+
 #### Desktop Background Image
 
 1. Pick one (I found one I liked [here](https://www.buzzfeed.com/jessicaprobus/26-remarkably-soothing-desktop-backgrounds?utm_term=.uhwBX0qylL#.vxgE1Z8Yar)). 
@@ -110,8 +121,6 @@ For customizing Panel 1, I followed some of the instructions in the first minute
 
 I'm not sure what I want out of panel 2 (the dock) yet, so I set it to be pretty small and have it hide intelligently. 
 
-<!-- ![my xfce desktop](https://sts10.github.io/img/xfce.png) -->
-![my xfce desktop](../../img/xfce.png)
 
 
 ## LXDE/Lubuntu
