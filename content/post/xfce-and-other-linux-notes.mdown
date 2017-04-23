@@ -79,7 +79,7 @@ Honestly I'm not sure whether it's more proper to say I'm running "Xfce on Ubunt
 Customizing the look of your desktop environment may seem like an afterthought to you, but I've come to realize it's at least a little important in how you use and approach your computer. On Mac such things aren't a big deal because the new OSs also update the look and feel of the environment, but I found that even my new installation of Xfce (and LXDE) looked straight out of 2000 if not earlier. Below I outline some of the tweaks that I made to my Xfce environment to bring it "up to speed" aesthetically. 
 
 <!-- ![my xfce desktop](https://sts10.github.io/img/xfce.png) -->
-![my xfce desktop](../../img/xfce.png)
+![my xfce desktop](../../img/axiom-screenshot.png)
 
 #### Desktop Background Image
 
@@ -99,7 +99,7 @@ I went with axiom, which I got [here](https://www.xfce-look.org/p/1016679/). To 
 
 #### Icons
 
-I went with "Papers" icons for now, which you can find download instructions for on [the offical website](https://snwh.org/paper/download). After running those updates, I went to Settings Manager > Appearance > Icons and selected Paper. 
+I chose "Paper" icons for now, which you can find download instructions for on [the offical website](https://snwh.org/paper/download). After running those updates, I went to Settings Manager > Appearance > Icons and selected Paper. 
 
 #### Login Window
 
@@ -121,7 +121,17 @@ For customizing Panel 1, I followed some of the instructions in the first minute
 
 I'm not sure what I want out of panel 2 (the dock) yet, so I set it to be pretty small and have it hide intelligently. 
 
+### Switching to Paper theme 
 
+I did some more fiddling today and here's what I've got now:
+
+![paper theme screenshot](../../img/paper-screenshot.png)
+
+Basically I put panel 1 up top, switch the battery level item to the power management icon, and used the [Paper theme](https://snwh.org/paper/download) as well as the Paper icon, though from the Neofetch display in the screenshot it looks like it's a GTK2 theme, meaning that it won't work with GTK3 apps(?)
+
+[Here's](https://www.reddit.com/r/wallpapers/comments/5blz1j/lowpoly_planet/?st=j1v38smk&sh=bb87167d) where I got the new wallpaper (seems like r/wallpapers is a good sub). I also switched the Whisker menu icon for a generic app launcher icon (top right).
+
+Overall it's a bit darker than I'm used to, but I do like how the theme matches the wallpaper. I'm tempted to find a matching Vim colorscheme, but that'll be for another day.
 
 ## LXDE/Lubuntu
 
