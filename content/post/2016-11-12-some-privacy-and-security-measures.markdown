@@ -77,11 +77,20 @@ If you're looking for more features-- such as being able to easily access your p
 
 In direct response to these problems, at one point I paid for and setup [1Password](https://1password.com/). This is a slicker password manager, with more features than KeePassX. For example you can install a Google Chrome extension that automatically fills in usernames and passwords for the page you're on. It also syncs with Dropbox seamlessly for you (if you so choose to put your encrypted password file on the cloud), and they have an iPhone app for accessing your passwords. This allows me to sign in both on my phone and, if I wish, on other computers. 
 
-Here's Shelton's guide [1Password for Beginners](https://medium.com/@mshelton/introduction-to-password-managers-5e15baa8b26e).
+Here's Shelton's guide [1Password for Beginners](https://medium.com/@mshelton/introduction-to-password-managers-5e15baa8b26e) and [an even more recent one from Lifehacker](https://lifehacker.com/the-beginners-guide-to-1password-1794464866?utm_campaign=socialflow_lifehacker_twitter&utm_source=lifehacker_twitter&utm_medium=socialflow).
 
-If you open a 1Password account your username and passwords will be stored and synced on 1Password's servers. There is a hidden alternative in which you can pay 1Password an approximately $65 one-time fee for a standalone license to use their software and host it on your own Dropbox account, but the company's pretty actively discouraged new users from taking that route ([here's an AgileBits employee admitting that they've intentionally buried the license option on their website in order to avoid confusing customers](https://news.ycombinator.com/item?id=12376841).
+##### 1Password Account vs. 1Password One-Time License
 
-This and other unnecessary complexity and its incompatibility with Linux (which I hope to transition to at some point in the near future) are downsides for me. For these (admittedly specific and small) reasons I have mostly switched back to KeePassX and live without being able to access my passwords on my smartphone. However if you want the mobile and Chrome extension features, I don't really have a problem recommending 1Password. 
+If you open a 1Password account your username and passwords will be stored and synced on 1Password's servers. There is a sort-of-hidden alternative in which you can pay 1Password an approximately $65 one-time fee for a standalone license to use their software and host it on your own Dropbox account, but the company's pretty actively discouraged new users from taking that route ([here's an AgileBits employee admitting that they've intentionally buried the license option on their website in order to avoid confusing customers](https://news.ycombinator.com/item?id=12376841). Here's [where you can still buy the one-time license](https://agilebits.com/store).
+
+Here's how [Lifehacker](https://lifehacker.com/the-beginners-guide-to-1password-1794464866) explains the choice: 
+
+> While 1Password has a trial version you can check out free for 30 days, it is a paid service after that. You can choose between two different payment models, a subscription or a one-time purchase. The [one-time purchase is $65](https://agilebits.com/store) and only works for Mac. You do not get password syncing between devices (like your phone and your desktop computer) with this purchase, though you can manually sync passwords between devices using [Dropbox or iCloud](https://support.1password.com/sync-options/#sync-it-yourself-with-icloud-or-dropbox).
+
+> Otherwise, you have two subscription options: $3/month for yourself, or $5/month for a family plan. The family plan includes up to five people. With a subscription plan, you get syncing using 1Password’s servers. Most people will likely want to go with the subscription plan.
+
+
+This and other unnecessary complexity of 1Password, plus its incompatibility with Linux (which I hope to transition to at some point in the near future) are downsides for me. For these (admittedly specific and small) reasons I have mostly switched back to KeePassX and live without being able to access my passwords on my smartphone. However if you want the mobile and Chrome extension features, I don't really have a problem recommending 1Password. 
 
 At this point, for most services I have a randomly-created password stored in my KeePassX or 1Password vaults, and almost none of them are duplicates. (Both KeePassX and 1Password are able to generate random passwords for you.) See EFF's article on [Creating Strong Passwords](https://ssd.eff.org/en/node/23/) for more. 
 
@@ -97,7 +106,7 @@ What happens if you lose your phone? One solution is to store backup codes which
 
 Note that you can also use a piece of hardware as your 2nd factor. The most popular option for this product seems to a [YubiKey](https://www.yubico.com/start/). It looks like a thin USB drive you can attach to your key chain. Instead of typing in a code you see on your phone, you plug your YubiKey into a USB slot on the computer. This method is considered more secure and works even if you don't have you phone or its battery is dead. 
 
-Currently Google, Facebook Dropbox, Windows, masOS Sierra, LastPass, dashlane, Keepass accept a YubiKey as a second factor. You can compare YubiKey options [here](https://www.yubico.com/products/yubikey-hardware/).
+Currently Google (gmail), Facebook Dropbox, Windows, masOS Sierra, LastPass, dashlane, Keepass accept a YubiKey as a second factor. You can compare YubiKey options [here](https://www.yubico.com/products/yubikey-hardware/). Separately, here's [an unofficial guide to setting up a YubiKey as a second factor for your Google/gmail account](https://techsolidarity.org/resources/security_key_gmail.htm) that looks pretty good.
 
 ### Browser Use and Tracking 
 
