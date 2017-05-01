@@ -199,7 +199,9 @@ The New York Times's [Brian X. Chen recommends Signal to his readers](http://www
 
 Signal is [open source](https://github.com/WhisperSystems/Signal-iOS) and is licensed under the [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html). Its founder is Moxie Marlinspike, a computer security researcher recently [profiled in _Wired_](https://www.wired.com/2016/07/meet-moxie-marlinspike-anarchist-bringing-encryption-us/). Also, Signal [recently released a desktop client for iPhone users](https://whispersystems.org/blog/signal-desktop-ios/), meaning you can send messages to your Signal contacts from your desktop.
 
-Note that [there are some complaints](https://sandervenema.ch/2016/11/why-i-wont-recommend-signal-anymore/) that it has a what I understand to be a small dependency on Google Cloud Messaging. But given [this response from Marlinspike](https://news.ycombinator.com/item?id=12883410) and [another blog post responding to the GCM issue](http://dephekt.net/2016/11/10/managing-security-trade-offs-why-i-still-recommend-signal.html), I'm not too concerned. It seems like any security trade-off is worth it for making the app easier to install and use.
+<!-- Note that [there are some complaints](https://sandervenema.ch/2016/11/why-i-wont-recommend-signal-anymore/) that it has a what I understand to be a small dependency on Google Cloud Messaging. But given [this response from Marlinspike](https://news.ycombinator.com/item?id=12883410) and [another blog post responding to the GCM issue](http://dephekt.net/2016/11/10/managing-security-trade-offs-why-i-still-recommend-signal.html), I'm not too concerned. It seems like any security trade-off is worth it for making the app easier to install and use. -->
+
+Micah Lee has recently written [a thorough guide on how to use Signal](https://theintercept.com/2017/05/01/cybersecurity-for-the-people-how-to-keep-your-chats-truly-private-with-signal/). Martin Shelton also has ["Signal for Beginners"](https://medium.com/@mshelton/signal-for-beginners-c6b44f76a1f0).
 
 #### Desktop-to-Desktop Messaging
 
