@@ -203,6 +203,8 @@ Signal is [open source](https://github.com/WhisperSystems/Signal-iOS) and is lic
 
 Micah Lee has recently written [a thorough guide on how to use Signal](https://theintercept.com/2017/05/01/cybersecurity-for-the-people-how-to-keep-your-chats-truly-private-with-signal/). Martin Shelton also has ["Signal for Beginners"](https://medium.com/@mshelton/signal-for-beginners-c6b44f76a1f0).
 
+As of February 2017 I've taken a serious look at Wire, an messaging app that offers end-to-end encryption similar to Signal, but has some added benefits like stand-alone native desktop applications on Mac, Windows, and [Linux](https://medium.com/@wireapp/a-step-forward-for-wire-for-linux-52f0538cac15) (no connection to Google necessary), and better GIF and video support. It was [audited in February 2017](https://techcrunch.com/2017/02/10/messaging-app-wire-now-has-an-external-audit-of-its-e2e-crypto/), and [more of its server code has been open sourced](https://medium.com/@wireapp/open-sourcing-wire-server-code-ef7866a731d5), which has ostensibly helped to it recently being [listed on privacytools.io as a suitable alternative to Signal](https://privacytoolsio.github.io/privacytools.io/#im). These encrypted communications only work if your contacts use them, so I'm hoping that the non-encryption-based benefits of Wire help sway some of my friends from things like gchat and iMessage.
+
 #### Desktop-to-Desktop Messaging
 
 I also found a desktop-only messaging app called [Ricochet](https://ricochet.im/) which uses the Tor network in an attempt to obfuscate or "eliminate" metadata of your conversations. From their documentation:
@@ -219,11 +221,11 @@ I like its design-- you don't have a password and you don't pick a username. As 
 
 I'll also mention [Cryptocat](https://crypto.cat/), another desktop-only, open source encrypted messaging app. Cryptocat is mentioned by name as a good option in _Data and Goliath_ and on [privacytools.io](https://privacytoolsio.github.io/privacytools.io/#im), and it allows file transfers which is nice. One thing to note is that previous version(s) of the app were criticized for a lack of security, but, after re-writing the program, the developer has now asked security-minded users to [take a second look at the code](https://www.reddit.com/r/netsec/comments/4fyzyc/cryptocat_rewritten_from_scratch_invitation_to/?st=ivgs41yw&sh=c25b60a8). 
 
-Lastly, in this section I should also note that the EFF has a [Secure Messaging Scorecard](https://www.eff.org/secure-messaging-scorecard) though the current version, they admit, is out of date. They're currently working on an updated version.
+Note that both Signal and Wire offer desktop applications as well. 
 
 #### Email
 
-Encrypting email is hard. 
+Apparently encrypting email is (still) hard. 
 
 A standard method that's been around for a while is [PGP ("Pretty Good Privacy")](https://en.wikipedia.org/wiki/Pretty_Good_Privacy), for which I wrote [a basic explainer when I first learned how to use it](https://sts10.github.io/post/2015-07-01-my-basic-understanding-of-pgp-encryption/). Shelton, in [a post called "Security Compromises in Journalism"](https://medium.com/@mshelton/security-compromises-in-journalism-4cc32ba0709d#.sofplhy72), writes:
 
