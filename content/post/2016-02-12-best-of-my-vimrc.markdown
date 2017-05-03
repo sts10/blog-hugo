@@ -10,6 +10,8 @@ I've already written about [a Markdown hyperlink remap](http://sts10.github.io/p
 
 <!-- more -->
 
+**Note from May 2017**: My vimrc has changed a bit since I wrote this post, which I wrote in February of 2016. But rather than update it with each new plugin and mapping, I'm going to leave this post as is, as the setup is still pretty solid. You can see [my relatively up-to-date vimrc here](https://github.com/sts10/terminal_and_vim_settings/blob/master/vimrc).
+
 ## Vim vs. MacVim vs. Neovim
 
 Basically I split my usage between [Neovim](https://github.com/neovim/neovim) and [MacVim](https://github.com/macvim-dev/macvim/releases/). Sometimes I want to stay in the terminal (in which case I fire up Neovim), and other times I want a separate GUI. I'll also admit that part of the reason I do this is because the iTerm2 + Neovim combo isn't super stable at this point, as I'm running a beta version of iTerm2 [in order to get better/more colors for Neovim](http://sts10.github.io/post/2015-10-24-true-hex-colors-with-neovim-and-iterm2/). 
@@ -33,7 +35,7 @@ To manage my ever-changing list of vim plugins I use [vim-plug](https://github.c
 
 In fact the first few lines of my vimrc automatically installs vim-plug if it's not detected then installs all the listed plugins, a trick I picked up from vim-plug's [FAQ](https://github.com/junegunn/vim-plug/wiki/faq): 
 
-```vim
+```text
 " vim-plug (https://github.com/junegunn/vim-plug) settings 
 " Automatically install vim-plug and run PlugInstall if vim-plug not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -92,11 +94,12 @@ And I'm good to go. I can run `:PlugUpdate` to get the latest versions of all th
 
 ## Favorite Plugins and My Configurations
 
+
 While, as you can see, I've got a more than 20 plugins listed above, there's only a few that are super important to my workflow. Among these I would include [vim-surround](https://github.com/tpope/vim-surround), [vim-sneak](https://github.com/justinmk/vim-sneak), [vim-commentary](https://github.com/tpope/vim-commentary), [vim-move](https://github.com/matze/vim-move), and maybe [vim-smooth-scroll](https://github.com/terryma/vim-smooth-scroll). 
 
 I map sneak to Tab and Shift + Tab as follows (works in MacVim and Neovim + iTerm2):
 
-```vim
+```text
 " https://github.com/justinmk/vim-sneak
 " Map Sneak_s using nmap-- not nnoremap. That seems to cause problems
 nmap <Tab> <Plug>Sneak_s
@@ -121,7 +124,7 @@ Thanks to its file structure, you can have vim-plug install and manage it by inc
 
 I love my line numbers settings. I have relative number lines on every line except the one I'm currently on, which I have display the absolute number line rather than just `0`. Here's how I get that set up:
 
-```vim
+```text
 " Display relative line numbers
 set relativenumber
 " display the absolute line number at the line you're on
@@ -139,7 +142,7 @@ I have two nice sets of mappings that make file navigation a little easier for m
 
 This first one is a bit tricky to explain. First, know that I linewrap on certain filetypes with the following autocmds: 
 
-```vim
+```text
 " By default don't wrap lines
 set nowrap 
 
@@ -152,7 +155,7 @@ But then I ran into the problem of `j` and `k` skipping over wrapped lines. I in
 
 Thanks to [this Reddit comment](https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/cliuz1o), I found the perfect solution to this problem: 
 
-```vim
+```text
 " j and k don't skip over wrapped lines in following FileTypes, unless given a count (helpful since I display relative line numbers in these file types)
 autocmd FileType html nnoremap <expr> j v:count ? 'j' : 'gj'
 autocmd FileType html nnoremap <expr> k v:count ? 'k' : 'gk'
@@ -162,7 +165,7 @@ autocmd FileType markdown nnoremap <expr> k v:count ? 'k' : 'gk'
 
 I later simplified these mappings and added visual mode support (plus using it in `text` files) like this: 
 
-```vim
+```text
 autocmd FileType html,markdown,text nnoremap <expr> j v:count ? 'j' : 'gj'
 autocmd FileType html,markdown,text nnoremap <expr> k v:count ? 'k' : 'gk'
 
@@ -172,7 +175,7 @@ autocmd FileType html,markdown,text vnoremap <expr> k v:count ? 'k' : 'gk'
 
 My next trick is just to switch `<c-e>` (by default scrolls up one line without moving cursor) and `<c-u>` (by default scrolls up half a page). This conveniently puts scroll half page up (now `<c-e>`) right above the default keymap for scroll half page down, which is `<c-d>`. 
 
-```vim
+```text
 " Easier page navigation
 nnoremap <C-e> <C-u>
 nnoremap <C-u> <C-e>
@@ -182,8 +185,7 @@ However I found that scrolling by this much instantly was a bit jarring. It took
 
 Here's how I configure the plugin:
 
-```vim
-" git@github.com:terryma/vim-smooth-scroll.git
+```text
 noremap <silent> <c-e> :call smooth_scroll#up(&scroll, 30, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 30, 4)<CR>
@@ -198,7 +200,7 @@ Just recently I decided to write my own custom statusline. Previously I had trie
 
 Later I found a few blog posts ([this one in particular](http://got-ravings.blogspot.co.at/2008/08/vim-pr0n-making-statuslines-that-own.html)) that helped me write my own, which is pretty similar to the one that blog post says Tim Pope was using. 
 
-```vim
+```text
 set statusline=%f
 set statusline+=\ %h%w%m%r
 set statusline+=%=
@@ -212,7 +214,7 @@ It gives basics like filename, percentage through the file, total number of line
 ## Setting Default FileType
 
 I write Markdown pretty frequently, so I set Vim to set new files to Markdown syntax with the following line: 
-```vim
+```text
 " if no filetype specified, set ft=markdown (alternative would be text)
 autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
 ```
@@ -221,13 +223,13 @@ autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
 
 For Markdown, I use [tpope's vim-markdown](https://github.com/tpope/vim-markdown) mostly for improved syntax highlighting. I also spell out some languages for it to highlight in between code fences with: 
 
-```vim
+```text
 let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python', 'bash=sh', 'yaml', 'json']
 ```
 
 As mentioned above, I also wrote a handy little mapping for quickly creating links in Markdown, assuming the URL is in your system clipboard: 
 
-```vim
+```text
 " In markdown files, Control + a surrounds highlighted text with square
 " brackets, then dumps system clipboard contents into parenthesis
 autocmd FileType markdown vnoremap <c-a> <Esc>`<i[<Esc>`>la](<Esc>"*]pa)<Esc>
@@ -239,7 +241,7 @@ Read more about my process coming to that mapping in [this slightly-too-long blo
 
 For backup, swap, and undo files-- which I found frequently got mixed into Git repos no matter what I did with my gitignores-- I found this solution, which basically shoves all those files into three directories, rather than individual local project directories. We also have to [setup Vim's persistent undo](http://stackoverflow.com/a/22676189/3160994).
 
-```vim
+```text
 " Save temporary/backup files not in the local directory, but in your ~/.vim
 " directory, to keep them out of git repos. 
 " But first mkdir backup, swap, and undo first to make this work
@@ -264,7 +266,7 @@ This code even creates the directories for you (at least in macOS, using `mkdir`
 ## Search Settings
 
 I like my search settings: ignore case unless you uppercase a letter, search as you type, and don't highlight all matches.
-```vim
+```text
 " set search case to a good configuration http://vim.wikia.com/wiki/Searching 
 set ignorecase
 set smartcase
@@ -277,7 +279,7 @@ set nohlsearch
 
 ## Text Objects
 
-```vim
+```text
 Plug 'kana/vim-textobj-user'
 Plug 'lucapette/vim-textobj-underscore' | Plug 'kana/vim-textobj-user'
 Plug 'jceb/vim-textobj-uri'             | Plug 'kana/vim-textobj-user'
@@ -291,7 +293,7 @@ Note that the `|` there is [vim-plug](https://github.com/junegunn/vim-plug) synt
 
 Also, with `textobj-uri`, I can remap `gx` to work better and with more type of URLs (see [this blog post for more](https://github.com/kana/vim-textobj-user/wiki)):
 
-```vim
+```text
 " map gx and go to visually select a URI and then open it in default browser
 " see: http://sts10.github.io/post/2016-02-16-one-solution-to-a-problem-with-vims-gx-command/
 nmap gx mxviugx<Esc>`x
@@ -315,7 +317,7 @@ However I wanted to make opening folds easier so I eventually made my first Vim 
 
 I use my leader (mapped to space) to interact with the system clipboard. I'm not 100% sure if this is true even on all Unix systems, but when I use Neovim in iTerm2 or MacVim, `*` is the register of the system clipboard. I frequently interact with the system clipboard from Vim, so I set up these key mappings to make that easier:
 
-```vim
+```text
 " use leader to interact with the system clipboard
 nnoremap <Leader>p "*]p
 nnoremap <Leader>P "*]P
@@ -335,8 +337,7 @@ The `]` in there automatically auto-indents the pasted text for me, which has wo
 
 I don't love how easy it is to overwrite the contents of your default registry (i.e. when you delete something with `d` with the desire to paste it somewhere else, but in the meantime you use `d` again trying to actually delete something, but now that's overwritten the default registry). To solve this I did my best to make `X` (shift + `x`) a new operator that deletes things to the "black hole registry," `_`, which doesn't effect the default registry.
 
-```vim
-" Make X an operator that removes text without placing text in the default registry
+```text
 nmap X "_d
 nmap XX "_dd
 vmap X "_d
@@ -345,7 +346,7 @@ vmap x "_d
 
 Similarly I make `x` in normal mode go to the black hole registry as well: 
 
-```vim
+```text
 " have x (removes single character) not go into the default registry
 nnoremap x "_x
 ```
@@ -354,7 +355,7 @@ nnoremap x "_x
 
 Again in [a Reddit comment](https://www.reddit.com/r/vim/comments/3y2mgt/do_you_have_any_minor_customizationsmappings_that/cya0x04) I picked up this one-liner that makes the powerful dot command work on visually-selected lines: 
 
-```vim
+```text
 " Make the dot command work as expected in visual mode (via
 " https://www.reddit.com/r/vim/comments/3y2mgt/do_you_have_any_minor_customizationsmappings_that/cya0x04)
 vnoremap . :norm.<CR>
@@ -364,7 +365,7 @@ Note I've also got the [vim-repeat](https://github.com/tpope/vim-repeat) plugin 
 
 Then, in [a Medium post](https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.65mg9br0l) linked to from a [r/vim subreddit](http://reddit.com/r/vim) post that I have since lost track of, I just recently picked up this function that makes macros work over visually-selected lines.
 
-```vim
+```text
 " Allows you to visually select a section and then hit @ to run a macro on all lines
 " https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.3dcn9prw6
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
@@ -385,7 +386,7 @@ I did edit it a bit: (1) I added the `e` after the `g`s so that it never throws 
 
 I also added a mapping to join the whole file-- effectively a "minify" command-- so I could easily go back and forth. Works well so far!
 
-```vim
+```text
 " Simple re-format for minified Javascript
 function! UnMinify()
     normal mj
@@ -403,7 +404,7 @@ autocmd FileType javascript nnoremap <Leader>k mjggvGJ<Esc>`j
 
 Here's another remapping of Vim's default behavior that I consider pretty essential when indenting or un-indenting in visual mode. 
 
-```vim
+```text
 " Have the indent commands re-highlight the last visual selection to make
 " multiple indentations easier
 vnoremap > >gv
