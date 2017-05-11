@@ -108,6 +108,12 @@ Note that you can also use a piece of hardware as your 2nd factor. The most popu
 
 Currently Google (gmail), Facebook Dropbox, Windows, masOS Sierra, LastPass, dashlane, Keepass accept a YubiKey as a second factor. You can compare YubiKey options [here](https://www.yubico.com/products/yubikey-hardware/). Separately, here's [an unofficial guide to setting up a YubiKey as a second factor for your Google/gmail account](https://techsolidarity.org/resources/security_key_gmail.htm) that looks pretty good.
 
+##### Managing the apps that have access to your accounts
+
+While we're on the subject of my Google/Twitter/Facebook accounts, I should note that I also now keep a vigilant eye of what "apps" have what permissions to these important accounts. These "apps" are other services that connect to your accounts. Some of these apps just read information from say, your Facebook account. Others are used so that you can log in to the other service by using your Twitter account. Some of these apps have permission to do more serious things like read your email or post to your account. A recent example of a user base that was unfamiliar with the terms and permissions they had given to an app was the [Unroll.me discovery and subsequent backlash](https://www.nytimes.com/2017/04/24/technology/personal-data-firm-slice-unroll-me-backlash-uber.html?_r=0).
+
+It's easy to check which apps have what permissions to your accounts. For example, to see what apps have access to your Google/gmail account, visit [this page](https://myaccount.google.com/security?utm_source=OGB#connectedapps). For Facebook, [the page is here](https://www.facebook.com/settings?tab=applications). [BuzzFeed has a great how-to](https://www.buzzfeed.com/nicolenguyen/how-to-de-authorize-forgotten-twitter-integrations?utm_term=.frE9b4dZLk#.jnEBXGboPJ) on this for more. 
+
 ### Browser Use and Tracking 
 
 #### What I Learned
