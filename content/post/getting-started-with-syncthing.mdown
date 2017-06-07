@@ -105,7 +105,7 @@ You may have a folder on your system already that you want to sync to another co
 
 On one machine, let's say computer A, hit the "Add Folder" button. The "Folder Path" field here should be the path to the folder on computer A. Check which other devices you want to share this folder with-- in this case computer B, and hit Save. At the next sync time on computer B you'll get a notification and request to share this folder. You'll then get to specify a new path for the folder on computer B. Note that the dialog window asks for "Path to the folder on the local computer. Will be created if it does not exist." Wait for another sync and you should be all good!
 
-## How Syncthing Handles Updates
+## How Syncthing Handles Upgrading Itself
 
 Since I've been using Syncthing, v0.14.29 went from being a release candidate to a stable release. Delightfully, on both my Mac and my Linux machines, the Syncthing web GUI gave me a simple prompt that a new stable version was available (you can change a setting in the web GUI to get the release candidates as upgrades as well). I clicked upgrade and after a quick download and restart, Syncthing was running the 0.14.29. 
 
@@ -113,21 +113,21 @@ Note that there's [a stable release about every two weeks](https://docs.syncthin
 
 If you installed Syncthing NOT via the binary packages, as I describe above, note [this paragraph in the docs](https://docs.syncthing.net/users/faq.html?#how-do-i-upgrade-syncthing):
 
-> If you use a package manager such as Debians apt-get, you should upgrade using the package manager. If you use the binary packages linked from Syncthing.net, you can use Syncthing built in automatic upgrades."
+> If you use a package manager such as Debians apt-get, you should upgrade using the package manager. If you use the binary packages linked from Syncthing.net, you can use Syncthing built in automatic upgrades.
 
 ### Automatic Upgrades
 
-As I describe above, I had to click a button to perform the upgrade. Interestingly, [the docs](https://docs.syncthing.net/users/faq.html?#how-do-i-upgrade-syncthing) say that this upgrade would have happened automatically after 24 hours:
+As I describe above, I had to click a button to perform the upgrade. Interestingly, [the docs](https://docs.syncthing.net/users/faq.html?#how-do-i-upgrade-syncthing) seem to imply that this upgrade would have happened automatically after 24 hours:
 
 > If automatic upgrades is enabled (which is the default), Syncthing will upgrade itself automatically within 24 hours of a new release.
 
-Cool! This means I can leave this thing running for weeks at a time and it'll stay up-to-date.
+Cool! This means I can leave Syncthing running for weeks at a time and it'll stay up-to-date.
 
 ## Some notes at this point
 
 As I understand it, the syncing only happens while the `syncthing` command is running in a terminal window of BOTH computers involved. This is a bit crappy, as I can't run Syncthing for a minute on computer A, close it down, then commute to computer B, run Syncthing, and expect changes made on computer A to sync to computer B. That's a behavior I'm used with cloud-based solutions like Dropbox. 
 
-But with Syncthing, in this scenario, I'd have to leave Syncthing running on computer A while I went to computer B. Not impossible, but different. 
+With Syncthing, in this scenario, I'd have to leave Syncthing running on computer A while I went to computer B. Or, better yet, have a Computer C that I start up Syncthing on and just leave running. Not a dealbreaker, but different from the Dropbox/Google Drive model you might be used to.
 
 In addition to the Getting Started section of the docs, which, as you can see, I found helpful, there's also [a User FAQ here](https://docs.syncthing.net/users/faq.html). 
 

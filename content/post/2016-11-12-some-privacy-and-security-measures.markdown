@@ -116,6 +116,12 @@ A recent example of a user base that was unfamiliar with the terms and permissio
 
 It's easy to check which apps have what permissions to your accounts. For example, to see what apps have access to your Google/gmail account, visit [this page](https://myaccount.google.com/security?utm_source=OGB#connectedapps). For Facebook, [the page is here](https://www.facebook.com/settings?tab=applications). I checked to make sure I recognized every service listed and still used it. I revoked the permissions of any apps that I didn't recognize or no longer used. [BuzzFeed has a great how-to](https://www.buzzfeed.com/nicolenguyen/how-to-de-authorize-forgotten-twitter-integrations?utm_term=.frE9b4dZLk#.jnEBXGboPJ) on this for more. 
 
+##### Disabling Google's SMS account recovery 
+
+Google has a method of recovering your account via SMS. [The "Signing in" section of Google's security page](https://myaccount.google.com/security#signin) explains these "account recovery options" as: "If you forget your password or cannot access your account, we will use this information to help you get back in." When I investigated this section of the security page (at the [suggestion of a friend on Twitter](https://twitter.com/dwr/status/871737650457133058)), I found that my cell phone number was listed as a recovery option (even though I had enabled two-factor authentication years ago).
+
+I didn't want someone with just access to my phone's SMS messages to be able to gain entry into my Google account-- I want them to have to know my password _and_ have access to my Google Authenticator app. So in that ["Signing in" section of that Google security page](https://myaccount.google.com/security#signin) I simply removed my "Recovery phone" and confirmed that I had no "Recovery email" listed.
+
 ### Browser Use and Tracking 
 
 #### What I Learned
