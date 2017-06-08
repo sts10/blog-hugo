@@ -10,14 +10,16 @@ As some of you may know, [Google is killing gchat (aka Google Talk) and moving u
 
 > Talk users within Gmail will receive a prompt in the next few weeks, inviting them to switch to Hangouts. After June 26, users will be automatically transitioned to Hangouts, unless contractual commitments apply. For users that preferred the Google Talk look, there is a Dense Roster setting in Hangouts that provides a similar experience.
 
-Some folks [aren't happy about it](https://motherboard.vice.com/en_us/article/gchat-good-google-hangouts-bad?utm_source=mbtwitter).
-
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Exactly 3 weeks until Gchats are ruined forever <a href="https://t.co/xvkPHZtrD6">pic.twitter.com/xvkPHZtrD6</a></p>&mdash; Justin Green (@JGreenDC) <a href="https://twitter.com/JGreenDC/status/871810132279267330">June 5, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-(Tech sites like Select All [just reported it straight](http://nymag.com/selectall/2017/03/google-kills-gchat-replaces-with-google-hangouts.html?mid=twitter-share-selectall).)
+Some folks aren't happy about it. As Sarah Emerson [writes](https://motherboard.vice.com/en_us/article/gchat-good-google-hangouts-bad?utm_source=mbtwitter): 
 
-Personally I think I prefer gchat to Hangouts. Hangouts feels uglier, and I understand that it's a bit more restrictive with regard to third-party applications like Adium and Pidgin, though I could be wrong-- [Google's blog post](https://gsuiteupdates.googleblog.com/2017/03/updates-in-g-suite-to-streamline-hangouts-and-gmail.html) says, "Third-party XMPP clients will continue to work with Hangouts for 1-on-1 chats," but continues, "XMPP federation with third-party services providers will no longer be supported starting June 26."
+> [At its debut] Hangouts was slow, heavy, and intrusive. It was, and still is, an aggressively worse form of Google+, the company's failed social platform....[Gchat] was minimalist, discreet, and intimate-- values that are hard to come by in an age where everything must be scalable, social, and platform-ized.
+
+(Other tech sites like Select All [just reported it straight](http://nymag.com/selectall/2017/03/google-kills-gchat-replaces-with-google-hangouts.html?mid=twitter-share-selectall).)
+
+I prefer gchat to Hangouts. Hangouts feels uglier, and I understand that it's a bit more restrictive with regard to third-party applications like Adium and Pidgin, though I could be wrong-- [Google's blog post](https://gsuiteupdates.googleblog.com/2017/03/updates-in-g-suite-to-streamline-hangouts-and-gmail.html) says, "Third-party XMPP clients will continue to work with Hangouts for 1-on-1 chats," but continues, "XMPP federation with third-party services providers will no longer be supported starting June 26."
 
 All that aside, more broadly, both gchat and Hangouts are pretty shitty instant messaging services. From my experience neither allows for easy file transfers or group chat, not to mention mobile access (especially for iOS) and video calling. Even niceties I've gotten used to on Slack like inline GIFs, furled-out URLs and tweets, easy :emojis:, and editable messages aren't there. I think we deserve a better instant messenger in 2017.
 
