@@ -24,7 +24,7 @@ Mostly through a collection of subreddits like [r/privacy](https://www.reddit.co
 - [Electronic Frontier Foundation's Surveillance Self-Defense Guide](https://ssd.eff.org/)
   - EFF also has [guides for different roles](https://ssd.eff.org/en/playlist) like [activist or protester](https://ssd.eff.org/en/playlist/activist-or-protester#playlist). Separately, they recently published a blog post called ["Digital Security Tips for Protesters"](https://www.eff.org/deeplinks/2016/11/digital-security-tips-for-protesters).
 - [privacytools.io](https://www.privacytools.io/) - A well-maintained list of recommended tools and settings to enhance your privacy. 
-- [macOS Security and Privacy Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide) - a bit more intense, but good to read through to learn about more advanced steps.
+- An unofficial [macOS Security and Privacy Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide) - a bit more intense, but good to read through to learn about more advanced steps.
 - [Select All's Two-Step, 14-Word Guide to Comprehensive Digital Security](http://nymag.com/selectall/2017/03/digital-security-information-hackers-internet-privacy.html)
 - [How to encrypt your entire life in less than an hour](https://medium.freecodecamp.com/tor-signal-and-beyond-a-law-abiding-citizens-guide-to-privacy-1a593f2104c3#.wwonlaaud) - Repeats a lot of the tips in the other guides I link to above, but it got [decent comments when posted to r/crypto](https://www.reddit.com/r/crypto/comments/5cecij/how_to_encrypt_your_entire_life_in_less_than_an/?st=ivlr2eka&sh=79ada075).
 - [Security in a Box](https://securityinabox.org/en) - a "toolkit was created by the [Tactical Technology Collective](http://www.tacticaltech.org/) and [Front Line Defenders](http://www.frontlinedefenders.org/)" that looks pretty comprehensive. If you're using Tor, they also have [an onion address](http://bpo4ybbs2apk4sk4.onion/). 
@@ -43,17 +43,27 @@ So let's get this out of the way: **I am just learning and am far from an expert
 
 Below is what I have learned and some of my subsequent actions-- things I have done given the information I gathered and ultimately trusted enough. If not specified, software and links included assume you're using OS X / macOS (apologies if I switch between the names for Apple's desktop operating system). I mostly wrote this all down as an exercise for myself, but I figured it'd be nice to publish if I ever need to refer to it or point others to it. Again, not an expert. Say it out loud if it helps.
 
-If you see something wrong or misleading here, or you have suggestions, feel free to [tweet at me](https://twitter.com/sts10) or send me a PGP-encrypted email (which I discuss below). [Here's my public key](https://pgp.mit.edu/pks/lookup?op=get&search=0x5BF6E5C2B80500F2).
+If you see something wrong or misleading here, or you have suggestions, feel free to [tweet at me](https://twitter.com/sts10) or [contact me by one of the means -- including PGP -- listed here](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3). 
 
-## What I Learned and What I Did
+## What I Learned About Passwords
 
-### Passwords
+From what I gathered, the basic idea with passwords is that you want (a) to enable two-factor authentication whenever possible, (b) do your best never to re-use a password between multiple services, and \(c) make sure those passwords are random and unique (`fido3` and `fido4` are not random or unique enough-- `VoF3cRLxhcfpCLd298Fd9Y` and `f@[6:7)nSH#i#RMg".8>-a1` are).
 
-#### What I Learned
-
-From what I gathered, the basic idea with passwords is that you want (a) to enable two-factor authentication whenever possible, (b) do your best never to re-use a password between multiple services, and (c) make sure those passwords are random and unique (i.e. `fido3` and `fido4` are not random or unique enough-- `VoF3cRLxhcfpCLd298Fd9Y` and `f@[6:7)nSH#i#RMg".8>-a1` are).
+### Turning on 2-Factor Authentication
 
 Turning on two-factor authentication means that whenever you log into your account, a code will be sent to your phone that you'll have to enter after entering your correct password. The idea here is that even if an attacker gets your password, they would also need your phone to get this code. As [Shelton writes](https://medium.com/@mshelton/securing-your-digital-life-like-a-normal-person-a-hasty-and-incomplete-guide-56437f127425#.zf9977k7v): [Gmail](https://www.google.com/landing/2step/), [Twitter](https://support.twitter.com/articles/20170388), [Facebook](https://www.facebook.com/help/148233965247823), [Dropbox](https://www.dropbox.com/en/help/363), GitHub, and [a number of other services](https://twofactorauth.org/) allow two-factor authentication. 
+
+**There are different ways to receive and give this 2nd factor code.** The most basic but least secure way is via SMS (text message) -- though note that the National Institute of Standards and Technology, as of July 2016, [advises against this SMS method for security reasons](https://techcrunch.com/2016/07/25/nist-declares-the-age-of-sms-based-2-factor-authentication-over/). However it's important to note that SMS 2as your 2nd-factor is safer than not having a 2nd factor at all, so if SMS is the only choice a service provides, go for it.
+
+The next most secure is a system by which you store a ["time-based one-time password"](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm) in an app on your smartphone like [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) or [Authy](https://authy.com/). A third, and apparently even more secure method is using a physical key, like a [YubiKey](https://www.yubico.com/), as your 2nd factor. 
+
+As mentioned above, you can also use a physical piece of hardware as your 2nd factor. The most popular option for this product seems to a [YubiKey](https://www.yubico.com/start/). It looks like a thin USB drive you can attach to your key chain. Instead of typing in a code you see on your phone, you plug your YubiKey into a USB slot on the computer and the YubiKey "sends" a code to the service proving that the user has the key. This method is considered more secure and works even if you don't have you phone or its battery is dead. 
+
+Currently Google (gmail), Facebook Dropbox, Windows, masOS Sierra, and password managers LastPass, dashlane, and some versions of KeePass accept a YubiKey as a second factor. You can compare YubiKey options [here](https://www.yubico.com/products/yubikey-hardware/). Separately, here's [an unofficial guide to setting up a YubiKey as a second factor for your Google/gmail account](https://techsolidarity.org/resources/security_key_gmail.htm) that looks pretty good.
+
+**What happens if you lose your phone?** One solution is to store backup codes which can be used instead of the 2nd factor code. Most services give you one or more of these codes when you enable 2-factor for just this reason ([here's more info on GMail backup codes](https://support.google.com/accounts/answer/1187538?hl=en)). Store these somewhere safe obviously, like on a piece of paper you store somewhere secure. Once you use a backup code to login, you can choose to temporarily disable two-factor authentication until you get your phone back or get a new one.
+
+### Use a Password Manager to Keep Track of All Those Unique Passwords
 
 For all your other services (and even the ones that you have two-factor turned on for), you're going to want different passwords for each service. That's because, as Shelton writes in [his password managers guide](https://medium.com/@mshelton/password-managers-for-beginners-d1f49866f80f#.w2pvjawj1):
 
@@ -61,9 +71,11 @@ For all your other services (and even the ones that you have two-factor turned o
 
 To keep track of all those unique passwords, it seems that the best solution is to effectively put all your apples in one basket and use a password manager with a (very) strong master password.
 
-#### What I Did (Password Manager)
+### The Password Manager(s) I Chose
 
 So I've jumped between two different password managers. Here I'll describe each of them, with some of the pros and cons. (Note that I currently use all Mac and iOS systems.)
+
+#### KeePassX (No Frills, Get the Job Done)
 
 [KeePassX](https://www.keepassx.org/) is a trusted, simple, open-source, no-frills password manager. The best way I can explain it is to say that it's like Excel, and you can use it to create or open databases of usernames and passwords. Obviously the difference here is that these database files are always well-encrypted when not in use. To access them, you first open the database using KeePassX just as you would open a spreadsheet with Excel, then you must enter the master password for that database. 
 
@@ -75,7 +87,11 @@ Inside you'll see all your accounts. To log in to a website, highlight the accou
 
 If you're looking for more features-- such as being able to easily access your passwords on a mobile device-- you may want to look elsewhere.
 
-In direct response to these problems, at one point I paid for and setup [1Password](https://1password.com/). This is a slicker password manager, with more features than KeePassX. For example you can install a Google Chrome extension that automatically fills in usernames and passwords for the page you're on. It also syncs with Dropbox seamlessly for you (if you so choose to put your encrypted password file on the cloud), and they have an iPhone app for accessing your passwords. This allows me to sign in both on my phone and, if I wish, on other computers. 
+#### 1Password (More features right out of the box)
+
+In direct response to these problems, at one point I paid for and setup [1Password](https://1password.com/). This is a slicker password manager, with more features than KeePassX right from the get go. 
+
+For example you can install a Google Chrome extension that automatically fills in usernames and passwords for the page you're on. It also syncs with Dropbox seamlessly for you (if you so choose to put your encrypted password file on the cloud), and they have an iPhone app for accessing your passwords. This allows me to sign in both on my phone and, if I wish, on other computers. 
 
 Here's Shelton's guide [1Password for Beginners](https://medium.com/@mshelton/introduction-to-password-managers-5e15baa8b26e) and [an even more recent one from Lifehacker](https://lifehacker.com/the-beginners-guide-to-1password-1794464866?utm_campaign=socialflow_lifehacker_twitter&utm_source=lifehacker_twitter&utm_medium=socialflow).
 
@@ -89,42 +105,37 @@ Here's how [Lifehacker](https://lifehacker.com/the-beginners-guide-to-1password-
 
 > Otherwise, you have two subscription options: $3/month for yourself, or $5/month for a family plan. The family plan includes up to five people. With a subscription plan, you get syncing using 1Password’s servers. Most people will likely want to go with the subscription plan.
 
-
 This and other unnecessary complexity of 1Password, plus its incompatibility with Linux (which I hope to transition to at some point in the near future) are downsides for me. For these (admittedly specific and small) reasons I have mostly switched back to KeePassX and live without being able to access my passwords on my smartphone. However if you want the mobile and Chrome extension features, I don't really have a problem recommending 1Password. 
 
 At this point, for most services I have a randomly-created password stored in my KeePassX or 1Password vaults, and almost none of them are duplicates. (Both KeePassX and 1Password are able to generate random passwords for you.) See EFF's article on [Creating Strong Passwords](https://ssd.eff.org/en/node/23/) for more. 
 
 For creating strong but memorable master passwords (which you obviously can't store in a manager, since they're used to open the password vault), I sometimes use a technique recommended in [the EFF guide linked to above](https://ssd.eff.org/en/node/23/) called [Diceware passphrases](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/), which I find absolutely fascinating.
 
-#### What I Did (2-Factor Authentication)
+## Other Ways to Secure Your Accounts 
 
-I also have two-factor authentication enabled on almost all the services I use that offer it. I prefer using a neutral app like [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) to get the codes (rather than receiving an SMS text message with the code), as I find it more convenient than waiting for a text. Plus the National Institute of Standards and Technology [advise choosing the Authenicator route rather than SMS for security reasons](https://techcrunch.com/2016/07/25/nist-declares-the-age-of-sms-based-2-factor-authentication-over/). Note: Using SMS as a 2nd factor is definitely a more secure option than not having a 2nd factor at all!
+I've now learned that there are other ways bad actors (or anyone) can use your accounts in ways that you don't want without even getting your password. Let's look at those.
 
-What happens if you lose your phone? One solution is to store backup codes which can be used instead of the 2nd factor code. Most services give you one or more of these codes when you enable 2-factor for just this reason ([here's more info on GMail backup codes](https://support.google.com/accounts/answer/1187538?hl=en)). Store these somewhere safe obviously, like on a piece of paper you store somewhere secure. Once you use a backup code to login, you can choose to temporarily disable two-factor authentication until you get your phone back or get a new one.
+### Managing which apps that have access to your accounts
 
-##### YubiKey
+Services like Google, Facebook, and Twitter offer ways for other applications to access your account to varying degrees. Some applications only ask for permission to, say, the email associated with your Facebook account. Others are used so that you can log in to the their service (you may log in to Spotify using your Facebook account, or to Medium by using your Twitter account, etc.). Some of these apps have permission to do more serious things like read your email or post to your account. 
 
-Note that you can also use a piece of hardware as your 2nd factor. The most popular option for this product seems to a [YubiKey](https://www.yubico.com/start/). It looks like a thin USB drive you can attach to your key chain. Instead of typing in a code you see on your phone, you plug your YubiKey into a USB slot on the computer. This method is considered more secure and works even if you don't have you phone or its battery is dead. 
-
-Currently Google (gmail), Facebook Dropbox, Windows, masOS Sierra, LastPass, dashlane, Keepass accept a YubiKey as a second factor. You can compare YubiKey options [here](https://www.yubico.com/products/yubikey-hardware/). Separately, here's [an unofficial guide to setting up a YubiKey as a second factor for your Google/gmail account](https://techsolidarity.org/resources/security_key_gmail.htm) that looks pretty good.
-
-##### Managing the apps that have access to your accounts
-
-While we're on the subject of my Google/Twitter/Facebook accounts, I should note that I also now keep a vigilant eye of what "apps" have what permissions to these important accounts. These "apps" are other services that connect to your accounts. Some of these apps just read information from say, your Facebook account. Others are used so that you can log in to the other service by using your Twitter account. Some of these apps have permission to do more serious things like read your email or post to your account. 
+Thus it's important to keep an eye on which apps have what permissions to which of your accounts.
 
 A recent example of a user base that was unfamiliar with the terms and permissions they had given to an app was the [Unroll.me privacy revelations and subsequent backlash](https://www.nytimes.com/2017/04/24/technology/personal-data-firm-slice-unroll-me-backlash-uber.html?_r=0).
 
-It's easy to check which apps have what permissions to your accounts. For example, to see what apps have access to your Google/gmail account, visit [this page](https://myaccount.google.com/security?utm_source=OGB#connectedapps). For Facebook, [the page is here](https://www.facebook.com/settings?tab=applications). I checked to make sure I recognized every service listed and still used it. I revoked the permissions of any apps that I didn't recognize or no longer used. [BuzzFeed has a great how-to](https://www.buzzfeed.com/nicolenguyen/how-to-de-authorize-forgotten-twitter-integrations?utm_term=.frE9b4dZLk#.jnEBXGboPJ) on this for more. 
+It's relatively easy to check which apps have what permissions to your accounts. For example, to see what apps have access to your Google/gmail account, visit [this page](https://myaccount.google.com/security?utm_source=OGB#connectedapps). For Facebook, [the page is here](https://www.facebook.com/settings?tab=applications). I checked to make sure I recognized every service listed and still used it. I revoked the permissions of any apps that I didn't recognize or no longer used. [BuzzFeed has a great how-to](https://www.buzzfeed.com/nicolenguyen/how-to-de-authorize-forgotten-twitter-integrations?utm_term=.frE9b4dZLk#.jnEBXGboPJ) on this for more. 
 
-##### Disabling Google's SMS account recovery 
+### Disabling Recovery Methods (for example, Google's SMS account recovery)
 
-Google has a method of recovering your account via SMS. [The "Signing in" section of Google's security page](https://myaccount.google.com/security#signin) explains these "account recovery options" as: "If you forget your password or cannot access your account, we will use this information to help you get back in." When I investigated this section of the security page (at the [suggestion of a friend on Twitter](https://twitter.com/dwr/status/871737650457133058)), I found that my cell phone number was listed as a recovery option (even though I had enabled two-factor authentication years ago).
+Your accounts may have "recovery options" that might be a security risk for you.
 
-I didn't want someone with just access to my phone's SMS messages to be able to gain entry into my Google account-- I want them to have to know my password _and_ have access to my Google Authenticator app. So in that ["Signing in" section of that Google security page](https://myaccount.google.com/security#signin) I simply removed my "Recovery phone" and confirmed that I had no "Recovery email" listed.
+For example, Google has a method of recovering your account via SMS (text message). This seems to turned on automatically when you add a phone number to your account. 
 
-### Browser Use and Tracking 
+[The "Signing in" section of Google's security page](https://myaccount.google.com/security#signin) explains these "account recovery options" as: "If you forget your password or cannot access your account, we will use this information to help you get back in." When I investigated this section of the security page (at the [suggestion of a friend on Twitter](https://twitter.com/dwr/status/871737650457133058)), I found that my cell phone number was listed as a recovery option (even though I had enabled two-factor authentication years ago).
 
-#### What I Learned
+This seems pretty important! As I understand this means that an attacker would only need access to my SMS messages in order to take full control of my Google account, bypassing my TOTP 2nd factor and even my account password. I did not want that to be possible-- I want them to have to know my password _and_ have access to my Google Authenticator app. So in that ["Signing in" section of that Google security page](https://myaccount.google.com/security#signin) I simply removed my "Recovery phone" and confirmed that I had no "Recovery email" listed.
+
+## Browser Use and Tracking 
 
 Most broadly, most services we use on the internet make money, either directly or indirectly, from tracking what we look at online. Google places ads related to what you've recently searched for, Twitter serves ads based on who you follow, Facebook serves ads based on nearly everything you tell it. Separately, thanks to third-party companies you've never heard of, these internet services can easily share information about you. Think about how after do one casual search for lawnmowers on Amazon you see ads for those products follow you around the web. (Update March 2017: Now your internet service provider [may soon have the right to sell your data without your permission](https://www.nytimes.com/2017/03/29/opinion/how-the-republicans-sold-your-privacy-to-internet-providers.html?_r=0).)
 
@@ -134,7 +145,7 @@ For a variety of reasons my views have apparently shifted, mostly just from my r
 
 If you want to feel a little more paranoid, the Electronic Frontier Foundation (EFF) has a tool called [Panopticlick](https://panopticlick.eff.org/) that attempts to show you to what extent and how you're being tracked through your browser.
 
-#### What I Did
+### Multiple Browsers, Multiple Plugins
 
 First, I split my browsing activity at home between two browsers. If I was using a service that necessitated use of my real name or a credit card, I used Google Chrome. This includes online banking, GMail, Twitter, Facebook, Github, Netflix, etc. For everything else I used Firefox (or, optionally, the Tor Browser). This includes random search queries (especially about privacy issues!), most Reddit use, most Youtube watching, etc.
 
@@ -154,11 +165,11 @@ Thus on Firefox I installed the following extensions: [HTTPS Everywhere](https:/
 
 I then tweaked my Firefox to further enhance the privacy of the browser by using [these settings](https://www.privacytools.io/#about_config) recommended by [privacytools.io](https://www.privacytools.io/).
 
-You can read even more about setting up your browser for privacy and security in [the "Browser" section of the macOS Security and Privacy Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide#browser) I link to above.
+You can read even more about setting up your browser for privacy and security in [the "Browser" section of the unoffical macOS Security and Privacy Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide#browser) I link to above.
 
 In both Chrome and Firefox, these extensions rarely interfere with my normal browsing, but they're all easy to temporarily disable. I could be more intense with both by disabling JavaScript or taking other, more extreme measures, but this seems to be a good balance for me.
 
-##### The Tor Browser
+#### The Tor Browser
 
 More recently, I decided to try the [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en). I found that, from a user's perspective, it's really just a more secured version of Firefox-- nothing scarier. You can easily avoid visiting the dark/deep web by simply browsing the normal internet, or "surface web", as you normally do. The difference from using regular Firefox is that your connection uses Tor.
 
@@ -176,30 +187,32 @@ Note that when using version 0.12.9 of Brave for OS X you need to [enable "Googl
 
 ## Communication (Texts, Instant Messaging, and Email)
 
-### What I Learned
+Basically you want to communicate using tools that encrypt your communications such that not even the toolmaker can read them, even under threat from the law. This feature is generally known as "end-to-end encryption" and a number of services advertise having it. There's bonus points if the service you're using obfuscates or hides your metadata, as well as the contents of your communication, though this seems to be difficult to get from a service at this point.
 
-Basically you want to communicate using tools that encrypt your communications such that not even the toolmaker can read them, even under threat from the law. This feature is generally known as "end-to-end encryption" and a number of services advertise having it. There's bonus points if the service you're using obfuscates or hides your meta-data, as well as the contents of your communication, though this seems to be difficult to get from a service at this point.
-
-Gchat, Facebook Messenger, and normal SMS have neither of the features mentioned above, at least by default as of this writing. Facebook [now offers "Secret Conversations"](http://money.cnn.com/2016/10/05/technology/facebook-secret-conversations-mode/index.html), and Google has released Allo, which has an "incognito" mode, but neither service turns on end-to-end encryption by default (["Google's Allo won't include end-to-end encryption by default"](https://techcrunch.com/2016/05/18/googles-allo-wont-include-end-to-end-encryption-by-default/)). 
+Gchat/Google Hangouts, Google Allo, Facebook Messenger, and normal SMS have neither of the features mentioned above, at least by default, as of this writing. Facebook [now offers "Secret Conversations"](http://money.cnn.com/2016/10/05/technology/facebook-secret-conversations-mode/index.html), and Google has released Allo, which has an "incognito" mode, but neither service turns on end-to-end encryption by default (["Google's Allo won't include end-to-end encryption by default"](https://techcrunch.com/2016/05/18/googles-allo-wont-include-end-to-end-encryption-by-default/)). 
 
 Releasing software in which the encryption is not enabled by default is a bigger issue than I originally assumed. EFF wrote on their blog that, with Allo, Google is ["teaching the wrong lessons about encryption"](https://www.eff.org/deeplinks/2016/09/googles-allo-sends-wrong-message-about-encryption), not to mention confusing users about what "incognito" means. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Google&#39;s decision to disable end-to-end encryption by default in its new <a href="https://twitter.com/hashtag/Allo?src=hash">#Allo</a> chat app is dangerous, and makes it unsafe. Avoid it for now.</p>&mdash; Edward Snowden (@Snowden) <a href="https://twitter.com/Snowden/status/733253324301053952">May 19, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-#### On Your Phone
+### Metadata
 
-For phone-to-phone texting and calling, a lot of people recommend [Signal](https://whispersystems.org/). [Downloads of the application have spiked since the US election results](https://motherboard.vice.com/read/signal-downloads-spiked-after-election-results), which is good as you can only communicate with other Signal users, and it recently [passed an audit](http://www.theregister.co.uk/2016/11/08/trust_it_results_of_signals_first_formal_crypto_analysis_are_in/) (though I am not sure how legit the organization behind the audit is).
+Besides preventing anyone from reading the contents of your messages, you _may_ also be concerned about who can see different types of metadata from your conversations. One example of this metadata is who you are talking to, which may be important for whistleblowers or activists. (General Michael Hayden, former head of the NSA, [once said](http://abcnews.go.com/blogs/headlines/2014/05/ex-nsa-chief-we-kill-people-based-on-metadata/) the U.S. Government "kill[s] people based on metadata.") Metadata also includes when you send messages, who you send them to, your address book/instant messaging contact list, history of phone numbers you've called, the subject line of emails, etc.
 
-True, there are a handful of iPhone + Android apps that offer end-to-end encryption (notably [WhatsApp](https://www.whatsapp.com/download/)), but as [Micah Lee writes](https://theintercept.com/2016/11/12/surveillance-self-defense-against-the-trump-administration/) when discouraging organizers from using Facebook groups: 
+Micah Lee [gives an example services that handle metadata differently](https://theintercept.com/2016/11/12/surveillance-self-defense-against-the-trump-administration/): 
 
-> All of the messages you send to groups of people using these apps will be end-to-end encrypted. No one, not even the app developers who have access to the servers these apps use, will be able to read the plaintext of your messages, except for the other members of your group.
+> All of the messages you send to groups of people using these apps [that offer end-to-end encryption] will be end-to-end encrypted. No one, not even the app developers who have access to the servers these apps use, will be able to read the plaintext of your messages, except for the other members of your group.
 
-> But while the messages are encrypted, the list of members of the group might not be, and this is also important information to protect. [WhatsApp](https://www.whatsapp.com/download/) and Semaphor might be able to hand over group membership information if the government comes knocking.
+> But while the messages are encrypted, the list of members of the group might not be, and this is also important information to protect. WhatsApp and Semaphor might be able to hand over group membership information if the government comes knocking.
+
+He then gives an example of a service, Signal, that he says does a better job at handling user metadata:
 
 > On the other hand, the developer of Signal, Open Whisper Systems, is [way ahead of the game](https://theintercept.com/2016/06/22/battle-of-the-secure-messaging-apps-how-signal-beats-whatsapp/) here. The one time they [received](https://whispersystems.org/bigbrother/eastern-virginia-grand-jury/) a request for data about a Signal user, all they were technically able to hand over to the FBI was the account creation time and the last date that the user connected to the Signal server — they didn't have the users’ contacts, they didn't have a list of groups they were in or members of those groups. The company also successfully fought a gag order designed to keep them from publicizing the request. That said, Signal groups can be buggy, have scaling issues when groups get too big, and at the moment there are far fewer people using Signal than there are using WhatsApp.
 
-EFF also has some [concerns about WhatsApp](https://www.eff.org/deeplinks/2016/10/where-whatsapp-went-wrong-effs-four-biggest-security-concerns) as of October 2016.
+### Signal: The Current Reigning Champ
+
+For phone-to-phone texting and calling, a lot of people recommend [Signal](https://whispersystems.org/). [Downloads of the application have spiked since the US election results](https://motherboard.vice.com/read/signal-downloads-spiked-after-election-results), which is good as you can only communicate with other Signal users, and it recently [passed an audit](http://www.theregister.co.uk/2016/11/08/trust_it_results_of_signals_first_formal_crypto_analysis_are_in/) (though I am not sure how legit the organization behind the audit is). 
 
 The New York Times's [Brian X. Chen recommends Signal to his readers](http://www.nytimes.com/2016/12/07/technology/personaltech/worried-about-the-privacy-of-your-messages-download-signal.html?_r=0), and Snowden is also a fan: 
 
@@ -217,9 +230,24 @@ Signal is [open source](https://github.com/WhisperSystems/Signal-iOS) and is lic
 
 Micah Lee has recently written [a thorough guide on how to use Signal](https://theintercept.com/2017/05/01/cybersecurity-for-the-people-how-to-keep-your-chats-truly-private-with-signal/). Martin Shelton also has ["Signal for Beginners"](https://medium.com/@mshelton/signal-for-beginners-c6b44f76a1f0).
 
-As of February 2017 I've taken a serious look at Wire, an messaging app that offers end-to-end encryption similar to Signal, but has some added benefits like stand-alone native desktop applications on Mac, Windows, and [Linux](https://medium.com/@wireapp/a-step-forward-for-wire-for-linux-52f0538cac15) (no connection to Google necessary), and better GIF and video support. It was [audited in February 2017](https://techcrunch.com/2017/02/10/messaging-app-wire-now-has-an-external-audit-of-its-e2e-crypto/), and [more of its server code has been open sourced](https://medium.com/@wireapp/open-sourcing-wire-server-code-ef7866a731d5), which has ostensibly helped to it recently being [listed on privacytools.io as a suitable alternative to Signal](https://privacytoolsio.github.io/privacytools.io/#im). These encrypted communications only work if your contacts use them, so I'm hoping that the non-encryption-based benefits of Wire help sway some of my friends from things like gchat and iMessage.
+### Wire: A (debatably small) security comprise for more features
 
-#### Desktop-to-Desktop Messaging
+As of February 2017 I've taken a serious look at [Wire](https://wire.com/en/), a messaging app that offers end-to-end encryption similar to Signal, but has some added benefits like stand-alone native desktop applications on Mac, Windows, and [Linux](https://medium.com/@wireapp/a-step-forward-for-wire-for-linux-52f0538cac15) (no connection to Google necessary), and things like GIFs and drawings. It's also free and open source, promising no ads or third-party tracking.
+
+Wire was [audited in February 2017](https://techcrunch.com/2017/02/10/messaging-app-wire-now-has-an-external-audit-of-its-e2e-crypto/), and [more of its server code has been open sourced](https://medium.com/@wireapp/open-sourcing-wire-server-code-ef7866a731d5), which has ostensibly helped to it recently being [listed on privacytools.io as a suitable alternative to Signal](https://privacytoolsio.github.io/privacytools.io/#im). 
+
+Wire recently got the coveted Snowden recommendation on a ["Pod Save the People" episode](https://art19.com/shows/pod-save-the-people/episodes/cedb8657-71d7-4ab3-b41c-ce705dfa71ac) (in which he highlights the fact that, unlike Signal, you don't need to give Wire you phone number), and he's [tweeted about it since then](https://twitter.com/Snowden/status/872880404780503040).
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;If you don&#39;t want to to share your phone number […] use Wire.&quot; Thanks for recommending Wire, <a href="https://twitter.com/Snowden">@Snowden</a>! <a href="https://t.co/cq2eDH6uvY">https://t.co/cq2eDH6uvY</a></p>&mdash; Wire (@wire) <a href="https://twitter.com/wire/status/865499400021303297">May 19, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Though note that [Wire currently stores a good amount of metadata on their servers in an unencrypted state](https://motherboard.vice.com/en_us/article/secure-messaging-app-wire-stores-everyone-youve-ever-contacted-in-plain-text) to improve multi-device support-- likely more metadata than Signal. For completeness sake, here's [Wire's sort-of response](https://medium.com/@wireapp/product-design-decisions-for-secure-messengers-e8a5e7d1a373) to these metadata revelations.
+
+These encrypted communications only work if your contacts use them, so I'm hoping that the non-encryption-based benefits of Wire help sway some of my friends from things like gchat and iMessage. 
+
+I wrote [more about Wire in another blog post](https://sts10.github.io/post/goodbye-to-all-gchat/) if you want more of my thoughts on it.
+
+### Don't Need Mobile Access? Ricochet: A different approach to metadata
 
 I also found a desktop-only messaging app called [Ricochet](https://ricochet.im/) which uses the Tor network in an attempt to obfuscate or "eliminate" metadata of your conversations. From their documentation:
 
@@ -237,7 +265,7 @@ I'll also mention [Cryptocat](https://crypto.cat/), another desktop-only, open s
 
 Note that both Signal and Wire offer desktop applications as well. 
 
-#### Email
+### Encrypting Email is Hard
 
 Apparently encrypting email is (still) hard. 
 
@@ -255,11 +283,13 @@ I admit I don't have a full grasp of how to use PGP. For example, the idea of si
 
 As you might expect, it's difficult to get friends into PGP, so I haven't used it to communicate in a while. However I have found GPG Tools' "GPG Services" (included in GPG Tools) useful for quickly encrypting specific files on my Mac, either for safe storage or safely emailing to myself.
 
-To avoid Google reading my email, realistically I'd have to get off of GMail. One alternative that [many are flocking to recently](https://techcrunch.com/2016/11/11/signups-for-encrypted-mail-client-protonmail-double-after-election/) is [ProtonMail](https://protonmail.com/), a provider based in Switzerland that encrypts emails between ProtonMail users, and is [open source](https://github.com/ProtonMail/WebClient). I'm honestly not sure how difficult it would be for me to change email addresses these days, as I've had the same GMail address since 2005. But it might not be too hard, given that I doubt my email address gets typed out that often, and when it does it gets auto-completed.
+To avoid Google reading my email, realistically I'd have to get off of GMail. One alternative that [many are flocking to recently](https://techcrunch.com/2016/11/11/signups-for-encrypted-mail-client-protonmail-double-after-election/) is [ProtonMail](https://protonmail.com/), a provider based in Switzerland that encrypts emails _between ProtonMail users_, and is [open source](https://github.com/ProtonMail/WebClient). 
+
+I'm honestly not sure how difficult it would be for me to change email addresses these days, as I've had the same GMail address since 2005. But it might not be too hard, given that I doubt my email address gets typed out that often, and when it does it gets auto-completed.
 
 ### What I Did
 
-I downloaded Ricochet and Cryptocat and created a public PGP key and put all that information online in [a GitHub gist](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3). I then linked to that gist in my the bio of my Twitter account, which is verified. I also downloaded Signal on my iPhone and have started to use it with some of my privacy-minded friends-- discovery of other users is pretty easy when using Signal, as it searches your phone's contacts.
+I set myself up on Ricochet, Signal, Wire and Cryptocat and created a public PGP key and put all that information online in [a GitHub gist](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3). I then linked to that gist in my the bio of my Twitter account, which is verified. Of all of those I'm using Wire the most (which [I wrote more about here](https://sts10.github.io/post/goodbye-to-all-gchat/)). 
 
 ## Encrypting Your Hard Drive
 
