@@ -51,7 +51,7 @@ From [the Github releases page](https://github.com/syncthing/syncthing/releases/
 
 ### Verifying my Download
 
-As described on [the Syncthing Security page](https://syncthing.net/security.html), I navigated to my `~/Downloads` directory and ran `shasum -c sha1sumtxt.asc`. In a mess of "Failed"s, I did get the line `syncthing-linux-amd64-v0.14.28.tar.gz: OK`. 
+As described on [the Syncthing Security page](https://syncthing.net/security.html), I navigated to my `~/Downloads` directory and ran `shasum -c sha1sum.txt.asc`. In a mess of "Failed"s, I did get the line `syncthing-linux-amd64-v0.14.28.tar.gz: OK`. 
 
 I then imported both the new and old Syncthing public PGP keys with one nifty line: `gpg2 --keyserver pool.sks-keyservers.net --recv-key 49F5AEC0BCE524C7 D26E6ED000654A3E` then ran `gpg2 --verify sha1sum.txt.asc` and confirmed the line: `gpg: Good signature from "Syncthing Release Management <release@syncthing.net>" [unknown]`. Looking good! 
 
@@ -131,4 +131,20 @@ With Syncthing, in this scenario, I'd have to leave Syncthing running on compute
 
 In addition to the Getting Started section of the docs, which, as you can see, I found helpful, there's also [a User FAQ here](https://docs.syncthing.net/users/faq.html). 
 
+## Setting Up Syncthing on a Raspberry Pi
 
+In an effort to have a machine that functions more like an always-on server/cloud, I dusted off my old Raspberry Pi 2 and plugged it in. I hadn't turned it on in a while (I had set it up about a year before-- pretty sure I installed the default Raspberry Pi OS, [Raspbian](https://www.raspbian.org/)). Here's how I got Syncthing running on it (though there are plenty of other [blog posts](http://www.pebra.net/blog/2015/08/23/syncthing/) on this.)
+
+1. When greeted by the Terminal, run `startx` to launch the GUI.
+2. Log in. The default username is `Pi` (or `pi`?), and the default password is `raspberry`.
+3. Let's update the Raspberry Pi. Open a Terminal and run: `sudo apt-get update` then `sudo apt-get upgrade` and finally `sudo apt-get dist-upgrade`. I ran another `sudo apt-get upgrade` after that just to be sure.
+4. To find out which version of Syncthing we're going to want, I ran `uname -a` and spotted something about "ARM". So over on [Syncthing's releases page on Github](https://github.com/syncthing/syncthing/releases/) I downloaded `syncthing-linux-arm-v0.14.30.tar.gz` and `sha1sum.txt.asc`
+5. To verify the download, I first ran `shamsum -c sha1sum.txt.asc` and got an OK for the ARM file. 
+6. I then manually imported Syncthing's latest release PGP key from [their Security page](https://syncthing.net/security.html) by copying and pasting the public key into a new file called `syncthing_key.asc` and running `gpg --import syncthing_key.asc`. I then ran `gpg --verify sha1sum.txt.asc` and got a `Good signature`. 
+7. Extract the tar file by double clicking on it and clicking something like "Extract all" somewhere. 
+8. I then `cd ~/Downloads` and then ran `sudo cp syncthing /usr/bin/`. I then wanted to give the system permissions to edit the `syncthing` executable for automatic upgrading (see above), so, following part of [this blog post](http://www.pebra.net/blog/2015/08/23/syncthing/), I then ran `sudo chmod a+x /usr/bin/syncthing`. (As alternative I guess I could have just left the executable where it was and wrote an alias in my `~/.bashrc`.)
+9. Run `syncthing` anywhere in the Terminal. Configure as needed in the Web GUI, just like on any other computer. I then unplugged my keyboard, mouse, and monitor and let it run. 
+
+I'm not sure how long the Raspberry Pi 2 will run for. I didn't change any settings on the Raspberry in an attempt to ensure this... I figured I'd just unplug my keyboard, mouse, and monitor and see how long the remote device stays up to date. 
+
+Ideally I think I'd want to configure the Raspberry Pi to automatically run Syncthing whenever it boots up, but I couldn't get this work tonight.
