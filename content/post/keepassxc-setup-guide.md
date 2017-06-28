@@ -11,7 +11,7 @@ comments = true
 
 [KeePassXC](https://keepassxc.org) is a feature-rich, fully cross-platform and modern open-source password manager. It is a community fork of [KeePassX](https://www.keepassx.org/), a native cross-platform port of [KeePass Password Safe](http://keepass.info/), with the goal to extend and improve it with new features and bug fixes.
 
-This is a basic guide of how to get started with KeePassXC. This guide is **for macOS users**, though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too.
+This is a basic guide of how to get started with KeePassXC. This guide is **for OS X / macOS users**, though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too.
 
 ## Downloading KeePassXC
 
@@ -19,7 +19,7 @@ First, let's head over to the KeePassXC's [Download page](https://keepassxc.org/
 
 ![KeePassXC Download page, with OS X selected](/img/keepassxc-download-page-screenshot.png)
 
-Select your desired operating system (the current options are Linux, OS X, and Windows), or to compile KeePassXC from source code. If we're using Mac (OS X), we'll go to the "OS X" tab and click the link labeled "Binary bundle" to download the latest OS X release of KeePassXC to our computer.
+Select your desired operating system (the current options are Linux, OS X, and Windows), or to compile KeePassXC from source code. If we're using Mac (OS X), we'll go to the "OS X" tab and click the link labeled "Binary bundle for OS X 10.7 and later" to download the latest OS X release of KeePassXC to our computer.
 
 ## Verifying our Download
 
