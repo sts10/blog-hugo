@@ -31,7 +31,7 @@ You can learn how to verify your download on [the Verifying Signatures page](htt
 
 Now that we're downloaded and verified our .dmg file, simply double click it to mount the disk image. 
 
-![Installation](/img/keepassxc-install.png)
+![Installation](/img/keepassxc-install.gif)
 
 Now drag the KeePassXC icon into you Applications folder. KeePassXC should now be installed on your computer.
 
@@ -55,7 +55,7 @@ When we launch KeePassXC for the first time, we're greeted with the screen above
 
 First, we're asked to choose a name and a location to save this database file we're creating. I created a new folder called "passwords" in my Documents folder, then I named my new database "my-passwords", but you can name it whatever you want. 
 
-![Change master key](/img/keepassxc-change-master-key.png)
+![Setting master key](/img/keepassxc-entering-master-password.gif)
 
 Next, we're asked to set up a master key. For now, let's focus on the section under the "Password" section and ignore the "Key file" and "Challenge Response" sections. 
 
@@ -73,7 +73,7 @@ First, let's find the button with the key and the green downward arrow.
 
 We'll be presented with an interface to create our new entry. Let's fill in a title (Reddit), Username (our Reddit username), and our Password.
 
-![Our first entry](/img/keepassxc-reddit-entry.png)
+![Our first entry](/img/keepassxc-entry-creation.gif)
 
 If you want to view your password, you can click the button with the eye icon on the right. 
 
