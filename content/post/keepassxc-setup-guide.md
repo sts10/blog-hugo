@@ -3,13 +3,13 @@ date = "2017-06-27T20:18:05-04:00"
 title = "Getting Started With KeePassXC"
 subtitle = ""
 tags = []
-draft = false
 comments = true
+draft = false
 +++
 
 ## What is KeePassXC
 
-[KeePassXC](https://keepassxc.org) is a feature-rich, fully cross-platform and modern open-source password manager. It is a community fork of [KeePassX](https://www.keepassx.org/), a native cross-platform port of [KeePass Password Safe](http://keepass.info/), with the goal to extend and improve it with new features and bug fixes.
+[KeePassXC](https://keepassxc.org) is a cross-platform, modern open-source password manager. It is a community fork of [KeePassX](https://www.keepassx.org/), a native cross-platform port of [KeePass Password Safe](http://keepass.info/), with the goal to extend and improve it with new features and bug fixes.
 
 This is a basic guide of how to get started with KeePassXC. This guide is **for OS X / macOS users**, though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too.
 
@@ -29,19 +29,19 @@ You can learn how to verify your download on [the Verifying Signatures page](htt
 
 ## Installing KeePassXC on mac OS/OS X
 
-Now that we're downloaded and verified our .dmg file, simply double click it to mount the disk image. 
+Now that we're downloaded and verified our .dmg file, simply double click it to mount the disk image.  Next drag the KeePassXC icon into you Applications folder. 
 
 ![Installation](/img/keepassxc-install.gif)
 
-Now drag the KeePassXC icon into you Applications folder. KeePassXC should now be installed on your computer.
+KeePassXC should now be installed on your computer.
 
-## And now, a general overview of how KeePassXC works as a password manager
+## A general overview of how KeePassXC works as a password manager
 
-Before we go any further, let's learn a bit about how KeePassXC works. 
+Before we go any further, lets talk a bit about how KeePassXC works. As we have learned, KeePassXC is a password manager-- it saves your passwords (and associated usernames) securely for you. 
 
-As we have learned, KeePassXC is a password manager. We're going to use KeePassXC, an application, to create an edit KeePass password databases. It may be helpful to think of it like Microsoft Excel: You use Excel to create and edit files on our computer that are spreadsheet. Similarly, KeePassXC let's us create and edit files on our computer that are databases of usernames and passwords.
+We're going to use KeePassXC, an application, to create and edit KeePass password databases. It may be helpful to think of it like Microsoft Excel: You use Excel to create and edit files on our computer that are spreadsheets. Similarly, KeePassXC enables us create and edit files on our computer that are databases of usernames and passwords.
 
-Of course the difference here is that these database files are always encrypted when not in use. To access them, you first open the database using KeePassXC (just as you would open a spreadsheet with Excel), then you must enter the "master key", which is usually a long master password, for that database.
+Of course one significant difference here is that these database files are always encrypted when not in use. To access them, you first open the database using KeePassXC (just as you would open a spreadsheet with Excel), then you must enter the "master key", which is usually a long master password, in order to access the database.
 
 So let's create a KeePass database and see how we use it to save and manage passwords securely.
 
@@ -67,17 +67,17 @@ Enter your master password twice and then hit "OK".
 
 Let's add our first entry. As an example, let's say we want to store our Reddit username and password. 
 
-First, let's find the button with the key and the green downward arrow. 
+First, find the button with the key and the green downward arrow. 
 
 ![Add new entry button](/img/keepassxc-blank-add-new-entry.png)
 
-We'll be presented with an interface to create our new entry. Let's fill in a title (Reddit), Username (our Reddit username), and our Password.
+We'll be presented with an interface to create our new entry. Let's fill in a title (Reddit), Username (our Reddit username), our Reddit password (Password) twice, and then the URL of the site (https://www.reddit.com), which you can of course paste in.
 
 ![Our first entry](/img/keepassxc-entry-creation.gif)
 
 If you want to view your password, you can click the button with the eye icon on the right. 
 
-Note that KeePassXC has the ability to generate random passwords for us, which we can do by clicking the black die icon, but for now that outside of the scope of this little guide. 
+Note that KeePassXC has the ability to generate random passwords for us, which we can do by clicking the black die icon, but for now that's outside of the scope of this guide. 
 
 Once we've filled in this basic information, we'll click the OK button to save these changes to our database. We'll now see our new entry in our database. 
 
@@ -109,5 +109,72 @@ To invoke Auto-Type, move focus from your browser to KeePassXC, then right-click
 
 If you're stepping away from your computer, it's wise to lock your KeePass database. Do do this, go to Tools > Lock database (or hit command + l). Once locked, you'll have to enter your master password to unlock your database. 
 
-Note that you can tell KeePassXC to lock databases after a specific number of seconds of inactivity by going to KeePassXC Preference > Security.
+![locl](/img/keepassxc-lock-database.gif)
+
+Note that you can set KeePassXC to lock your databases after a specific number of seconds of inactivity by going to KeePassXC Preference > Security.
+
+![auto lock setting](/img/keepassxc-set-lock-time.png)
+
+## Level 2: More Security Tips
+
+We'll now look at some further setting and practices that can make your usage of KeePassXC even more secure. I've tried to put the required basics in the sections above-- this is the sort-of optional-but-good-to-do things.
+
+### Generating random passwords for your accounts
+
+One of the best benefits of using a password manager like KeePassXC is that you can use long unique, random passwords for each service you use. [Martin Shelton](https://twitter.com/mshelton), a user and security researcher, explained the benefits of random, unique passwords succinctly in [a Medium post about password managers](https://medium.com/@mshelton/password-managers-for-beginners-d1f49866f80f):
+
+> If you use the same password everywhere, a hacker only needs to get your password once in order to break into many of your online accounts... For example, Yahoo recently announced that [passwords for 500 million Yahoo users were breached in 2014](http://www.pbs.org/newshour/rundown/500-million-yahoo-accounts-hit-hackers-company-confirms/). Imagine if an attacker used your single, easy-to-remember password to access your health care records, your home address, credit card numbers, or your social security number... To minimize the damage from a breach, you should use unique passwords on each account. But it can be a challenge to remember each password.
+
+KeePassXC has a built-in random password generator just for this purpose. Lets say we're creating a new GitHub account and want to store our username and password in our KeePass database. First, we'll create an entry for GitHub and create a random password for our yet-to-be-created GitHub account.
+
+![Creating a new entry with a randomly generated passphrase](/img/keepassxc-new-random-entry.gif)
+
+First, we'll hit the key + green arrow button to create a new entry. Then fill out the title and username as we did above. However now, instead of just making up a password, we're going to use KeePassXC's password generator to create a random password for our yet-to-be-created GitHub account. 
+
+The password generator has a few options. First, we can chose between a "Password" (a series of random characters) and a "Passphrase" (a series of random words). Passphrases have to be longer in length to be as secures as passwords, but they are easier to remember. 
+
+If we were **creating a random password**, we have a number of options. We can increase or decrease the length, choose to include or exclude uppercase letters, lowercase letters, numbers, or special characters. And we can even choose to "exclude look-alike characters" and whether to "Pick characters from every group". Most of these options exist to help you, the user, get around password requirements like "must contain at least one number and one uppercase letter" or "cannot include any special characters", etc.
+
+If we're **creating a random passphrase**, we can only select length and the word separator. For length, 6 or 7 is usually fine (watch the password strength meter). For the word separator, I personally prefer a hyphen, but that can be your call (you likely won't ever have to type this passphrase in by hand anyway). 
+
+Once you've got a password or phrase you like and that meets the service's requirements (in our case, GitHub), hit the Apply button to set your new password or passphrase. Then hit OK to store your entry. Click the floppy disk icon to save your database. 
+
+Now go to [GitHub's sign-up page](https://github.com/join?source=header-home) and create a new account with the username and password we just saved in your database.
+
+### Generating a long, random passphrase for your master password
+
+We can also use KeePassXC's built-in password generator to generate random passphrases to be used as our master password. Since you actually have to type in this password, we're going to generate as passphrase rather than a password.
+
+To change the master password of an existing KeePass database, go to the "Database" menu and select "Change master key". Next click the black die icon to generate a new random passphrase.
+
+Switch the random generator mode from "Password" to "Passphrase", then set the Length to six words. You then may want to change the "Word Separator" from the default of a space to a hyphen, or even to no character (nothing).
+
+![randomly generating a master passphrase](/img/keepassxc-random-master-passphrase.gif)
+
+Once you've got a 6-word passphrase with your desired word separator, write your new passphrase on a piece of paper and keep it somewhere safe. 
+
+It's very important to note that you're going to need to remember this passphrase (as it's not going to be stored in your KeePass database). Basically, **don't change your master password to the generated passphrase unless you have it written down somewhere or memorized.**
+
+Now click the Copy button to copy your new passphrase to the clipboard. Then click the Close button to close the password generator. 
+
+At this point we're ready to change your master password to your new passphrase by pasting it into the "Enter password" field and the "Repeat password" field. Clicking the OK button will change your database's master password to your new passphrase. Again, don't do this unless you've written the new passphrase down somewhere safe and/or memorized it.
+
+![XKCD long passprhases](https://imgs.xkcd.com/comics/password_strength.png)
+
+One way to remember these long passphrases is to [create a little story about them](https://www.xkcd.com/936/) in your head.
+
+### Benchmarking transform rounds
+
+Another way we'll want to make our KeePass database a bit more secure is to increase the number of "transform rounds" needed to be performed for every master password guess. 
+
+The basic idea is that we want to create a time delay for every master password guess. If we can slow down the process such that it takes roughly one second per guess, we'll be able to hamper a brute force dictionary attack, in which an attacker would systematically guess every possible password. 
+
+The way KeePassXC allows for us to create this time delay is to change the way your database in encrypted such that any computer attempting to unlock it will be forced to run your master key through a high number of rounds of encryption before actually trying the password they want to try. You can read more about it in [this blog post](http://www.laurencegellert.com/2015/02/a-keepass-setting-that-might-save-your-online-identity/).
+
+How many rounds should you set? Conveniently, KeePassXC has a "Benchmark" button that tests your current machine to see how many transform rounds it can do in 1 second. It then enters that number in the "Transform rounds" field. 
+
+To set the number of transform rounds, with your database unlocked go to the Database menu and select "Database settings". Then click the "Benchmark" button, wait one second for the higher number to appear in the form, and hit OK.
+
+![Benchmarking transform round](/img/keepassxc-benchmarking.gif)
+
 
