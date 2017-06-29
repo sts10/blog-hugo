@@ -177,4 +177,4 @@ To set the number of transform rounds, with your database unlocked go to the Dat
 
 ![Benchmarking transform round](/img/keepassxc-benchmarking.gif)
 
-
+Now your database should take about one second to try a master password guess (whether it's correct or incorrect). Assuming you, knowing the passphrase, can get it in one or maybe a handful of guesses, this is not much of a delay. But to a program systematically guessing millions of passwords, it can be a road block.
