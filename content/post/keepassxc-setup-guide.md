@@ -11,7 +11,9 @@ draft = false
 
 [KeePassXC](https://keepassxc.org) is a cross-platform, modern open-source password manager. It is a community fork of [KeePassX](https://www.keepassx.org/), a native cross-platform port of [KeePass Password Safe](http://keepass.info/), with the goal to extend and improve it with new features and bug fixes.
 
-This is a basic guide of how to get started with KeePassXC. This guide is **for OS X / macOS users**, though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too.
+This is a basic guide of how to get started with KeePassXC. This guide is **for OS X / macOS users**, though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too. 
+
+(I'd like to note that I drew some inspiration and methodology from [Martin Shelton's "KeePass for Beginners" post](https://medium.com/@mshelton/keypass-for-beginners-dc8adfcdad54).)
 
 ## Downloading KeePassXC
 
@@ -77,7 +79,7 @@ We'll be presented with an interface to create our new entry. Let's fill in a ti
 
 If you want to view your password, you can click the button with the eye icon on the right. 
 
-Note that KeePassXC has the ability to generate random passwords for us, which we can do by clicking the black die icon, but for now that's outside of the scope of this guide. 
+Note that KeePassXC has the ability to generate random passwords for us, which we can do by clicking the black die icon. We'll go over that below, but for now let's pretend we're simply storing your existing password.
 
 Once we've filled in this basic information, we'll click the OK button to save these changes to our database. We'll now see our new entry in our database. 
 
