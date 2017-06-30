@@ -129,11 +129,13 @@ We'll now look at some further setting and practices that can make your usage of
 
 ### Generating random passwords for your accounts
 
-One of the best benefits of using a password manager like KeePassXC is that you can use long unique, random passwords for each service you use. [Martin Shelton](https://twitter.com/mshelton), a user and security researcher, explained the benefits of random, unique passwords succinctly in [a Medium post about password managers](https://medium.com/@mshelton/password-managers-for-beginners-d1f49866f80f):
+One of the best benefits of using a password manager like KeePassXC is that, since you only have to remember one master password and can forget your individual account passwords, you can use long unique, random passwords for each service you use. [Martin Shelton](https://twitter.com/mshelton), a user and security researcher, explained the benefits of random, unique passwords succinctly in [a Medium post about password managers](https://medium.com/@mshelton/password-managers-for-beginners-d1f49866f80f):
 
 > If you use the same password everywhere, a hacker only needs to get your password once in order to break into many of your online accounts... For example, Yahoo recently announced that [passwords for 500 million Yahoo users were breached in 2014](http://www.pbs.org/newshour/rundown/500-million-yahoo-accounts-hit-hackers-company-confirms/). Imagine if an attacker used your single, easy-to-remember password to access your health care records, your home address, credit card numbers, or your social security number... To minimize the damage from a breach, you should use unique passwords on each account. But it can be a challenge to remember each password.
 
-KeePassXC has a built-in random password generator just for this purpose. Lets say we're creating a new GitHub account and want to store our username and password in our KeePass database. First, we'll create an entry for GitHub and create a random password for our yet-to-be-created GitHub account.
+KeePassXC has a built-in random password generator just for creating passwords you'll likely never have to memorize.
+
+Let's say we're creating a new GitHub account and want to store our username and password in our KeePass database. First, we'll create an entry for GitHub and create a random password for our yet-to-be-created GitHub account.
 
 ![Creating a new entry with a randomly generated passphrase](/img/keepassxc-new-random-entry.gif)
 
