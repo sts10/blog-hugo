@@ -65,7 +65,7 @@ First, we're asked to choose a name and a location to save this database file we
 
 Next, we're asked to set up a master key. For now, let's focus on the section under the "Password" section and ignore the "Key file" and "Challenge Response" sections. 
 
-Here, we're going to enter a long password or _passphrase_ that we'll use to open this database. There are many methods for creating nice long passphrases that are difficult for attackers to guess-- ["diceware"](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/) is one such method.
+Here, we're going to enter a long password or _passphrase_ that we'll need to use every time we want to open this database. There are multiple methods for creating nice long, random passphrases that are difficult for attackers to guess-- we'll discuss how to use KeePassXC to generate a random passphrase for us below. (Another method involves [using physical dice](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/).)
 
 Enter your master password twice and then hit "OK". 
 
