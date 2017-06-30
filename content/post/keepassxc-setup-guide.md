@@ -15,7 +15,9 @@ This is a basic guide of how to get started with KeePassXC. This guide is **for 
 
 (I'd like to note that I drew some inspiration and methodology from [Martin Shelton's "KeePass for Beginners" post](https://medium.com/@mshelton/keypass-for-beginners-dc8adfcdad54).)
 
-## Downloading KeePassXC
+## Level 0: Starting Out
+
+### Downloading KeePassXC
 
 First, let's head over to the KeePassXC's [Download page](https://keepassxc.org/download).
 
@@ -23,13 +25,13 @@ First, let's head over to the KeePassXC's [Download page](https://keepassxc.org/
 
 Select your desired operating system (the current options are Linux, OS X, and Windows), or to compile KeePassXC from source code. If we're using Mac (OS X), we'll go to the "OS X" tab and click the link labeled "Binary bundle for OS X 10.7 and later" to download the latest OS X release of KeePassXC to our computer.
 
-## Verifying our Download
+### Verifying our Download
 
 Before you install KeePassXC from this downloaded file, it is recommended that you verify the signature of your download. By verifying the signatures of KeePassXC releases, you can prove the authenticity and integrity of the downloaded file. This guarantees that the file you just downloaded was originally created by the KeePassXC Team and that its contents haven't been tampered with on the way. 
 
 You can learn how to verify your download on [the Verifying Signatures page](https://keepassxc.org/verifying-signatures) of the KeePassXC website.
 
-## Installing KeePassXC on mac OS/OS X
+### Installing KeePassXC on mac OS/OS X
 
 Now that we're downloaded and verified our .dmg file, simply double click it to mount the disk image.  Next drag the KeePassXC icon into you Applications folder. 
 
@@ -47,7 +49,9 @@ Of course one significant difference here is that these database files are alway
 
 So let's create a KeePass database and see how we use it to save and manage passwords securely.
 
-## Creating a Password Database
+## Level 1: Getting Setup
+
+### Creating a Password Database
 
 ![KeePassXC 2.2.0 start screen](https://keepassxc.org/images/screenshots/macos/screen_001.png)
 
@@ -65,7 +69,7 @@ Here, we're going to enter a long password or _passphrase_ that we'll use to ope
 
 Enter your master password twice and then hit "OK". 
 
-## Creating your first entry
+### Creating your first entry
 
 Let's add our first entry. As an example, let's say we want to store our Reddit username and password. 
 
@@ -87,7 +91,7 @@ Once we've filled in this basic information, we'll click the OK button to save t
 
 Make sure to save your database at this point, either by clicking the button with floppy disk icon or going to Database > Save database.
 
-## Logging in to Reddit
+### Logging in to Reddit
 
 OK now let's actually use KeePassXC to log in to Reddit. KeePassXC has a few ways to do this-- we'll start with the simplest. 
 
@@ -95,7 +99,7 @@ Let's open [https://reddit.com/login](https://reddit.com/login) in a browser. Wi
 
 ![log in gif 1](/img/keepassxc-reddit-login.gif)
 
-### Auto-Type: A more convenient login workflow
+#### Auto-Type: A more convenient login workflow
 
 KeePassXC has a feature called Auto-Type that, as the name implies, automatically types your username and password into a form. 
 
@@ -107,11 +111,11 @@ To invoke Auto-Type, move focus from your browser to KeePassXC, then right-click
 
 ![Custom auto-type sequence](/img/keepassxc-custom-auto-type-sequence.png)
 
-## Locking your database
+### Locking your database
 
 If you're stepping away from your computer, it's wise to lock your KeePass database. Do do this, go to Tools > Lock database (or hit command + l). Once locked, you'll have to enter your master password to unlock your database. 
 
-![locl](/img/keepassxc-lock-database.gif)
+![Lock it down](/img/keepassxc-lock-database.gif)
 
 Note that you can set KeePassXC to lock your databases after a specific number of seconds of inactivity by going to KeePassXC Preference > Security.
 
@@ -165,7 +169,7 @@ At this point we're ready to change your master password to your new passphrase 
 
 One way to remember these long passphrases is to [create a little story about them](https://www.xkcd.com/936/) in your head.
 
-### Benchmarking transform rounds
+### Setting number of transform rounds by benchmark
 
 Another way we'll want to make our KeePass database a bit more secure is to increase the number of "transform rounds" needed to be performed for every master password guess. 
 
@@ -180,5 +184,17 @@ To set the number of transform rounds, with your database unlocked go to the Dat
 ![Benchmarking transform round](/img/keepassxc-benchmarking.gif)
 
 Now your database should take about one second to try a master password guess (whether it's correct or incorrect). Assuming you, knowing the passphrase, can get it in one or maybe a handful of guesses, this is not much of a delay. But to a program systematically guessing millions of passwords, it can be a road block.
+
+<!--
+## Level 3: Getting Organized
+  - Syncing options
+  - Groups
+  - Download favicon
+  - search
+
+## Level 4: Using multiple factors
+  - Key file
+  - Challenge / Response
+-->
 
 _Again, if you spot any errors or have any suggestions for this post, feel free to contact me via [Twitter](https://twitter.com/sts10) or [elsewhere](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3)._
