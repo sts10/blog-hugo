@@ -51,6 +51,8 @@ So let's create a KeePass database and see how we use it to save and manage pass
 
 ## Level 1: Getting Setup
 
+Now that KeePassXC is installed on our machine, let's create a password database.
+
 ### Creating a Password Database
 
 ![KeePassXC 2.2.0 start screen](https://keepassxc.org/images/screenshots/macos/screen_001.png)
