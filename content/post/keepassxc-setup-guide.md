@@ -11,7 +11,7 @@ draft = false
 
 [KeePassXC](https://keepassxc.org) is a cross-platform, modern open-source password manager. It is a community fork of [KeePassX](https://www.keepassx.org/), a native cross-platform port of [KeePass Password Safe](http://keepass.info/), with the goal to extend and improve it with new features and bug fixes.
 
-This is a basic guide of how to get started with KeePassXC. This guide is **for OS X / macOS users**, though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too. Note that I'm not a security expert or professional, so buyer beware from this point on. If you spot any errors or have any suggestions for this post, feel free to contact me via [Twitter](https://twitter.com/sts10) or [elsewhere](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3).
+This is a basic guide of how to get started with KeePassXC. This guide is **for OS X / macOS users** (hereto referred to as "macOS"), though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too. Note that I'm not a security expert or professional, so buyer beware from this point on. If you spot any errors or have any suggestions for this post, feel free to contact me via [Twitter](https://twitter.com/sts10) or [elsewhere](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3).
 
 (I'd like to note that I drew some inspiration and methodology from [Martin Shelton's "KeePass for Beginners" post](https://medium.com/@mshelton/keypass-for-beginners-dc8adfcdad54).)
 
@@ -21,9 +21,9 @@ This is a basic guide of how to get started with KeePassXC. This guide is **for 
 
 First, let's head over to the KeePassXC's [Download page](https://keepassxc.org/download).
 
-![KeePassXC Download page, with OS X selected](/img/keepassxc-download-page-screenshot.png)
+![KeePassXC Download page, with macOS selected](/img/keepassxc-download-page-screenshot.png)
 
-Select your desired operating system (the current options are Linux, OS X, and Windows), or to compile KeePassXC from source code. If we're using Mac (OS X), we'll go to the "OS X" tab and click the link labeled "Binary bundle for OS X 10.7 and later" to download the latest OS X release of KeePassXC to our computer.
+Select your desired operating system (the current options are Linux, macOS, and Windows), or to compile KeePassXC from source code. If we're using macOS, we'll go to the "macOS" tab and click the link labeled "Binary bundle for macOS 10.7 and later" to download the latest macOS release of KeePassXC to our computer.
 
 ### Verifying our Download
 
@@ -31,7 +31,7 @@ Before you install KeePassXC from this downloaded file, it is recommended that y
 
 You can learn how to verify your download on [the Verifying Signatures page](https://keepassxc.org/verifying-signatures) of the KeePassXC website.
 
-### Installing KeePassXC on mac OS/OS X
+### Installing KeePassXC on macOS
 
 Now that we're downloaded and verified our .dmg file, simply double click it to mount the disk image.  Next drag the KeePassXC icon into you Applications folder. 
 
@@ -61,7 +61,7 @@ When we launch KeePassXC for the first time, we're greeted with the screen above
 
 ![Save Database](/img/keepassxc-save-database-as.png)
 
-First, we're asked to choose a name and a location to save this database file we're creating. I created a new folder called "passwords" in my Documents folder, then I named my new database "my-passwords", but you can name it whatever you want. 
+First, we're asked to choose a name and a location to save this database file we're creating. I created a new folder called "passwords" in my Documents folder, then I named my new database "my-passwords" (the full file name will be `my-passwords.kdbx`), but you can name it whatever you want. 
 
 ![Setting master key](/img/keepassxc-entering-master-password.gif)
 

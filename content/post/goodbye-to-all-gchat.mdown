@@ -72,7 +72,7 @@ The alternatives that I like best and have already converted some friends to is 
 
 Wire sports a lot of the features you get with something like Slack: you can transfer files (up to 25MB), host group chats, do voice/video calls, send GIFs that display inline... all that good stuff. It's also free (from [their privacy page](https://wire.com/en/privacy/): "Wire is financed by Iconical and will introduce paid business features in the future", and [a Quora answer](https://www.quora.com/How-does-Wire-com-make-money) from their Head of Marketing that's similar in tone.)
 
-Wire also has good, standalone desktop apps, as well as mobile apps for all major operating systems (Mac, Windows, iPhone, Android, etc., even Linux). It also can run right in your browser, which can be nice for being discreet at work. 
+Wire also has good, standalone desktop apps, as well as mobile apps for all major operating systems (Mac, Windows, iPhone, Android, etc., even [Linux](https://medium.com/@wireapp/a-step-forward-for-wire-for-linux-52f0538cac15)). It also can run right in your browser, which can be nice for being discreet at work. 
 
 Like gchat and Slack, you don't need to provide Wire with your cell number, even if you want to use it on your phone (you'd just use a username, like gchat). Though you _can_ add a cell number to your Wire account if you so choose.
 
@@ -95,7 +95,7 @@ I should note that Wire stores more metadata [(as reported by Joseph Cox on Moth
 
 > [Wire] has decided to keep a list of all the users a customer contacted until they delete their account... To be clear, this isn't necessarily a security concern everyone needs to worry about: it depends on your own threat level, Wire users don't have to use a phone number to sign up, and clearly Wire has made a decision to store customer data like this. But, for some users, it may be something they want to bear in mind.
 
-Wire's CTO told Cox "We are specifically exploring alternative ways to handle connections between users in the context of multi-device messaging." (For completeness sake, here's [Wire's sort-of response](https://medium.com/@wireapp/product-design-decisions-for-secure-messengers-e8a5e7d1a373) to these metadata revelations.) My understanding is that Wire stores the contact lists of users unencrypted for as long as the account exists, which isn't good if you want the fact that you're communicating with someone to be a secret. 
+Wire's CTO told Cox "We are specifically exploring alternative ways to handle connections between users in the context of multi-device messaging." (For completeness sake, here's [Wire's sort-of response](https://medium.com/@wireapp/product-design-decisions-for-secure-messengers-e8a5e7d1a373) to these metadata revelations.) My understanding is that Wire stores the contact lists of users unencrypted for as long as the account exists, which isn't good if you want the fact that you're communicating with someone to be a secret. [Privacytools.io](https://privacytoolsio.github.io), a website that recommends tools that respect users' privacy, [recommends Wire but with the following note](https://privacytoolsio.github.io/privacytools.io/#im) which I think puts it well: "Caution: The company keeps a list of all the users you contact until you delete your account."
 
 I think this is fine for everyday conversation between friends-- it's certainly more privacy-respecting than Google Hangouts-- given that it does make for better usability. For a gchat replacement that offers end-to-end encryption of the contents of my messages, I'm OK with that.
 
@@ -112,7 +112,9 @@ Also, most times when I'm using the desktop app, I'll get a notification on my i
 
 I've sometimes, rarely, gotten duplicated messages from a contact, though this usually only happens when I'm away from my computer. It happens rarely and never when I'm actually in a back-and-forth conversation.  Similarly, a month or so ago I noticed a slow-down in message delivery when using Wire in a browser. I group these two complaints together because I'd categorize them as bugs that will likely be noticed my many users and fixed quickly, if they haven't been fixed already.
 
-Lastly, if you're looking for something more secure, I'm pretty confident that you'd be better off with Signal. 
+Of course there's also the metadata storage issue I address above. For this reason alone I'd be careful about using Wire for communicating with journalistic sources, for example.
+
+Lastly, if you're looking for something more secure in general, I have a feeling you'd be better off using Signal, but I don't have hard evidence to support that. 
 
 ## How to get Wire
 
