@@ -115,7 +115,7 @@ To invoke Auto-Type, move focus from your browser to KeePassXC, then right-click
 
 ### Locking your database
 
-If you're stepping away from your computer, it's wise to lock your KeePass database. Do do this, go to Tools > Lock database (or hit command + l). Once locked, you'll have to enter your master password to unlock your database. 
+If you're stepping away from your computer, it's wise to lock your KeePass database. To do this, go to Tools > Lock database (or hit command + l). Once locked, you'll have to enter your master password to unlock your database. 
 
 ![Lock it down](/img/keepassxc-lock-database.gif)
 
