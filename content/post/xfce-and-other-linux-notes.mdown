@@ -286,9 +286,15 @@ nnoremap <silent> <leader>ev :vs $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 ```
 
-##### Syntax Highlighting Colors
+I also made sure that the following settings were specified in my init.vim: 
 
-I also made sure that `set termguicolors` was definitely being run in my `init.vim` file-- on my Mac I ran it only conditionally based on the terminal Vim detected. For now, let's just run it, as gnome-terminal is capable of running hex color vim themes.
+```
+set termguicolors
+set guicursor=
+set mouse=
+```
+
+Instead of that last one you might need to use `autocmd BufEnter * set mouse=`. It's also a good idea to consult [Neovim's Following Head page](https://github.com/neovim/neovim/wiki/Following-HEAD) to see if anything else might break.
 
 #### System Clipboard
 
