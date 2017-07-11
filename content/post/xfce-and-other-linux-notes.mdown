@@ -244,9 +244,9 @@ Not sure how to disable the pop up notifications yet though.
 
 ### How to Install Neovim on Ubuntu 16.04
 
-I'm using Ubuntu 16.04 and we're assuming that we're going to be using gnome-terminal. I couldn't figure out how to get HEX colors in Vim when using either Xfce's default terminal or Lubuntu's default Terminal application, LXTerminal. 
+I'm using Ubuntu 16.04 and we're assuming that we're going to be using gnome-terminal. I couldn't figure out how to get HEX colors in Vim when using either Xfce's default terminal or Lubuntu's default Terminal application, LXTerminal. Plus, the version of Vim on my system didn't come with system clipboard support (???).
 
-Thus I took some steps to make Gnome terminal the default Terminal application.
+Thus I took some steps to make Gnome terminal the default Terminal application and installed Neovim.
 
 **Note:** If you're looking for info on installing plain Vim, see below.
 
@@ -339,10 +339,9 @@ autocmd BufEnter * set mouse=
 
 #### Some Notes on Vim (not Neovim)
 
-As of this writing, you can install Vim 7.4.X with something like `sudo apt-get vim`. To install, Vim 8 currently you need to use [a PPA](http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/). 
+As of this writing, you can install Vim 7.4.X with something like `sudo apt-get install vim`. To install, Vim 8 currently you need to use [a PPA](http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/). 
 
-But with both versions of Vim I was having trouble getting access to the system clipboard, so I went with Neovim. Though you can have both installed, with their own configurations, pretty easily.
-
+The 7.4.X version I got from `sudo apt-get install vim` does not come with system clipboard support, and I had trouble getting the clipboard to work with that version of 8 from the PPA, so I went with Neovim. Though you can have both installed, with their own configurations, pretty easily.
 
 ### Installing Pip and Magic Wormhole on Lubuntu 16.04
 
