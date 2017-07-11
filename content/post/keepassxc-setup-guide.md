@@ -189,13 +189,37 @@ To set the number of transform rounds, with your database unlocked go to the Dat
 
 Now your database should take about one second to try a master password guess (whether it's correct or incorrect). Assuming you, knowing the passphrase, can get it in one or maybe a handful of guesses, this is not much of a delay. But to a program systematically guessing millions of passwords, it can be a road block.
 
-<!--
 ## Level 3: Getting Organized
-  - Syncing options
-  - Groups
-  - Download favicon
-  - search
 
+### Syncing options
+
+If you want keep you KeePass database synchronized across multiple devices, you'll need to share your database between those devices. The easiest way to do that is to use a cloud storage service like [Google Drive](https://www.google.com/drive/download/) or [Dropbox](https://www.dropbox.com/). You simply move your KeePass database (which, remember, is well-encrypted) into a folder on your Google Drive or Dropbox. 
+
+To access your password from a smartphone, you'll need to use an app that can open KeePass databases. There are a handful for both iOS and Android, but I haven't used any of them so I won't comment further.
+
+### Using Groups
+
+As you've likely noticed, on the left-hand side of KeePassXC there's a folder tree. Using these folders, you can keep your accounts organized in groups like "work", "finance" and whatever other categories you like. 
+
+![groups](/img/keepassxc-groups.png)
+
+You can later drag entries in and out of groups. You can even create groups within groups.
+
+### Downloading Favicons
+
+To beautify your KeePass database even further, you can automatically download the favicon (usually the service's logo) from the website of the service. 
+
+To do this, edit an entry, then click the "icon" button on the left. While you can select from any of the given options, you can also click the "Download favicon" button in the bottom right. Be sure to have the full URL of the service in your entry (in this case `https://github.com/`), so KeePassXC knows where to download the favicon from.
+
+![custom icon](/img/keepassxc-custom-icon.png)
+
+Once the favicon downloads (it might take a second), be sure to select it and then hit "OK" to save the changes to the entry.
+
+### Search
+
+KeePassXC, as you may have already observed by this point, has search functionality via a text field in the top right of the program. As of KeePassXC v 2.2.0 it searches all of your folders, regardless of which folder you're currently in, which is nice.
+
+<!--
 ## Level 4: Using multiple factors
   - Key file
   - Challenge / Response
