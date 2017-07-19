@@ -29,7 +29,45 @@ Select your desired operating system (the current options are Linux, macOS, and 
 
 Before you install KeePassXC from this downloaded file, it is recommended that you verify the signature of your download. By verifying the signatures of KeePassXC releases, you can prove the authenticity and integrity of the downloaded file. This guarantees that the file you just downloaded was originally created by the KeePassXC Team and that its contents haven't been tampered with on the way. 
 
-You can learn how to verify your download on [the Verifying Signatures page](https://keepassxc.org/verifying-signatures) of the KeePassXC website.
+If you're comfortable using the command line, you can learn how to verify your download on [the Verifying Signatures page](https://keepassxc.org/verifying-signatures) of the KeePassXC website.
+
+If you're not comfortable pasting commands into Terminal, no worries. Here are some steps to verifying your KeePassXC download without using the command line. 
+
+#### 1. Download GPG Suite
+
+Let's head over to [gpgtools.org](https://gpgtools.org/). At the time of this writing, there's a "GPG Suite beta" (number 3) and a regular version of "GPG Suite". If you're running macOS Sierra (10.12), I'd advise you go with the beta version. If you're running an older version of macOS (10.11 or earlier), go for the not beta version. 
+
+After downloading the proper version of GPG Suite, install it as you would any other Mac application. 
+
+#### 2. Downloading the KeePassXC GPG Public Master Key
+
+Once GPG Suite is installed, go to [the KeePassXC page on verifying downloads](https://keepassxc.org/download). We're looking to download and import KeePassXC's public master key. 
+
+One way to do this is to find the link in the sentence "Manual download from our website and import with gpg". Right-click (or control + click on Mac) the link and select "Save Link As..." and save it to your Downloads folder. 
+
+![Download KeePassXC Master Public Key](/img/keepassxc-save-master-key-as.png)
+
+Now open a program called "GPG Keychain" (it should be part of the GPG Suite we installed earlier. In the top-left, click the "Import" button and select the master public key you just downloaded.
+
+If you successfully imported the key, you should get a message to that effect.
+
+#### 3. Download the GPG signature of your KeePassXC Release
+
+Now, let's head back over to [the KeePassXC download page](https://keepassxc.org/download). Click the "macOS" tab if it's not already highlighted and then click the link called "GPG signature". Save this file to your Downloads file, where you downloaded the KeePassXC dmg file earlier). It's important that they're in the same folder (this folder is likely the Downloads folder).
+
+![Signature next to DMG](/img/keepassxc-signature-same-folder.png)
+
+#### 4. Verifying your Download
+
+Now, right-click the .dmg file and go to Services > "OpenPGP: Validate". You should get a pop up that says "Signed by: KeePassXC Release <release@keepassxc.org>" and then a fingerprint in parentheses (I got `B59076A8`). Do not worry about the words "undefined trust".
+
+![Signed by Release](/img/keepassxc-signed-by.png)
+
+Now back in the GPG Keychain, double click the entry called "KeePassXC Release", and in the window pane that slides out, click the "Subkeys" tab. 
+
+![Comparing keys](/img/keepassxc-comparing-subkeys.png)
+
+It's important that the fingerprint you got in your Verification Results pop up matches one of the Subkeys. If it matches one of them, you can be more confident your KeePassXC download has not been tampered with. Congratulations! Now it's time to install KeePassXC!
 
 ### Installing KeePassXC on macOS
 
@@ -219,10 +257,30 @@ Once the favicon downloads (it might take a second), be sure to select it and th
 
 KeePassXC, as you may have already observed by this point, has search functionality via a text field in the top right of the program. As of KeePassXC v 2.2.0 it searches all of your folders, regardless of which folder you're currently in, which is nice.
 
-<!--
-## Level 4: Using multiple factors
-  - Key file
-  - Challenge / Response
--->
+On a Mac it can be invoked by the usual Command + f keyboard shortcut.
+
+## Level 4: Locking our database with multiple factors
+
+As we've learned, KeePassXC lets us lock our database behind a master password. However we can also require those who wish to open our database to have other factors as well. 
+
+### Using a Key File
+
+The simpler example is a key file. A key file is a file that needs to be present for the database to be opened. It's not your database file-- it's usually just a text file with a bunch of random characters. 
+
+On its face, this may seem not very useful. If an attacker has access to your database file, they likely have access to other files on your computer. However things get more interesting if, for example, you put your key file on a USB flash drive. With this setup, you'll need to enter your master password AND have the USB stick plugged into the computer to open your database.
+
+To assign a key file to an existing KeePass database, go to the "Database" menu and select "Change master key". First, enter your master password twice (if you want to change it you can at this juncture, or just enter your old one). 
+
+Now check the check box labeled "Key file" and then either select an existing file to be your key file, or have KeePassXC create a key file for you. I'd highly recommend that you have KeePassXC create a key file for you. 
+
+![Key file](/img/keepassxc-keyfile.png)
+
+Click the OK button for these changes to take effect. Once you have, KeePassXC will require access to that key file to unlock your database.
+
+### Challenge Response
+
+KeePassXC version 2.2.0 offers support for using a token like a YubiKey to lock your database (described as "YubiKey challenge-response support"). [YubiKey](https://www.yubico.com/) is a "smart key" that plugs into a USB port on your computer and helps you verify your identity. This is that third option for a master key labeled "Challenge Response". 
+
+This feature is relatively new to KeePassXC, and does not yet exist in KeePassX. For these reasons I'm not going to go over how to use it at this time. However if you're feeling adventurous go for it.  
 
 _Again, if you spot any errors or have any suggestions for this post, feel free to contact me via [Twitter](https://twitter.com/sts10) or [elsewhere](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3)._
