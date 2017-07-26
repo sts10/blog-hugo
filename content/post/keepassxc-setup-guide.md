@@ -31,47 +31,11 @@ Before you install KeePassXC from this downloaded file, it is recommended that y
 
 If you're comfortable using the command line, you can learn how to verify your download on [the Verifying Signatures page](https://keepassxc.org/verifying-signatures) of the KeePassXC website.
 
-If you're not comfortable pasting commands into Terminal, no worries. Here are some steps to verifying your KeePassXC download without using the command line. 
-
-#### 1. Download GPG Suite
-
-Let's head over to [gpgtools.org](https://gpgtools.org/). At the time of this writing, there's a "GPG Suite beta" (number 3) and a regular version of "GPG Suite". If you're running macOS Sierra (10.12), I'd advise you go with the beta version. If you're running an older version of macOS (10.11 or earlier), go for the not beta version. 
-
-After downloading the proper version of GPG Suite, install it as you would any other Mac application. 
-
-#### 2. Downloading the KeePassXC GPG Public Master Key
-
-Once GPG Suite is installed, go to [the KeePassXC page on verifying downloads](https://keepassxc.org/download). We're looking to download and import KeePassXC's public master key. 
-
-One way to do this is to find the link in the sentence "Manual download from our website and import with gpg". Right-click (or control + click on Mac) the link and select "Save Link As..." and save it to your Downloads folder. 
-
-![Download KeePassXC Master Public Key](/img/keepassxc-save-master-key-as.png)
-
-Now open a program called "GPG Keychain" (it should be part of the GPG Suite we installed earlier. In the top-left, click the "Import" button and select the master public key you just downloaded.
-
-If you successfully imported the key, you should get a message to that effect.
-
-#### 3. Download the GPG signature of your KeePassXC Release
-
-Now, let's head back over to [the KeePassXC download page](https://keepassxc.org/download). Click the "macOS" tab if it's not already highlighted and then click the link called "GPG signature". Save this file to your Downloads file, where you downloaded the KeePassXC dmg file earlier). It's important that they're in the same folder (this folder is likely the Downloads folder).
-
-![Signature next to DMG](/img/keepassxc-signature-same-folder.png)
-
-#### 4. Verifying your Download
-
-Now, right-click the .dmg file and go to Services > "OpenPGP: Validate". You should get a pop up that says "Signed by: KeePassXC Release <release@keepassxc.org>" and then a fingerprint in parentheses (I got `B59076A8`). Do not worry about the words "undefined trust".
-
-![Signed by Release](/img/keepassxc-signed-by.png)
-
-Now back in the GPG Keychain, double click the entry called "KeePassXC Release", and in the window pane that slides out, click the "Subkeys" tab. 
-
-![Comparing keys](/img/keepassxc-comparing-subkeys.png)
-
-It's important that the fingerprint you got in your Verification Results pop up matches one of the Subkeys. If it matches one of them, you can be more confident your KeePassXC download has not been tampered with. Congratulations! Now it's time to install KeePassXC!
+If you're not comfortable pasting commands into Terminal, no worries. Scroll down to the [Appendix](#appendix-verifying-your-keepassxc-download-without-using-the-command-line) at the bottom of this post for instructions of how to verify your KeePassXC download without using the command line. 
 
 ### Installing KeePassXC on macOS
 
-Now that we're downloaded and verified our .dmg file, simply double click it to mount the disk image.  Next drag the KeePassXC icon into you Applications folder. 
+Now that we've downloaded and verified our .dmg file, simply double click it to mount the disk image.  Next drag the KeePassXC icon into you Applications folder. 
 
 ![Installation](/img/keepassxc-install.gif)
 
@@ -135,9 +99,13 @@ Make sure to save your database at this point, either by clicking the button wit
 
 OK now let's actually use KeePassXC to log in to Reddit. KeePassXC has a few ways to do this-- we'll start with the simplest. 
 
+#### Basic Copy and Paste
+
 Let's open [https://reddit.com/login](https://reddit.com/login) in a browser. With KeePassXC open to the side and our lone entry highlighted (single clicking it), click the person + paper icon to copy your Reddit username to the clipboard. Go paste that into the Reddit login page. Then return to KeePassXC to click the lock + paper icon to copy your Reddit password to your clipboard. Paste that into the Reddit login page, and click the "LOG IN" button (or press enter).
 
 ![log in gif 1](/img/keepassxc-reddit-login.gif)
+
+There are keyboard shortcuts to make this process slightly quicker.
 
 #### Auto-Type: A more convenient login workflow
 
@@ -150,6 +118,20 @@ To invoke Auto-Type, move focus from your browser to KeePassXC, then right-click
 (Note: `{USERNAME}{TAB}{PASSWORD}{ENTER}` is the default Auto-Type sequence. However you can edit this sequence on a per-entry level. Just edit the entry by clicking the button with the key and blue pen icon, navigate to the Auto-Type section of the menu, and write a custom Auto-Type sequence. [More info on writing these custom sequences](http://keepass.info/help/base/autotype.html#autoseq).)
 
 ![Custom auto-type sequence](/img/keepassxc-custom-auto-type-sequence.png)
+
+#### KeePassHTTP: Browser autofill, with a catch
+
+In addition to Auto-Type, KeePassXC offers another way to quickly and easily enter your login information into a browser form. It's called KeePassHTTP. From my understanding, KeePassHTTP is a protocol for ferrying your login data from the program reading your KeePass database (in our case, KeePassXC) to a browser extension that will automatically fill in forms in your browser for you. (If you've ever used the 1Password or LastPass browser add-ons, it's a lot like that.)
+
+The KeePassXC developers [list](https://keepassxc.org/project) these browser extensions and add-ons as supported by KeePassXC and KeePassHTTP: [PassIFox](https://addons.mozilla.org/en-us/firefox/addon/passifox/) in Mozilla Firefox, [chromeIPass](https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) in Google Chrome and Chromium and [passafari](https://github.com/mmichaa/passafari.safariextension/) in Safari. 
+
+However it's important to note that there are some security concerns when using KeePassHTTP. On [the KeePassXC website](https://keepassxc.org/project) the developers posted a note about the security of KeePassHTTP: 
+
+> KeePassHTTP is not a highly secure protocol and has certain flaws which allow an attacker to decrypt your passwords if they manage to intercept communication between a KeePassHTTP server and PassIFox/chromeIPass over a network connection (see [here](https://github.com/pfn/keepasshttp/issues/258) and [here](https://github.com/keepassxreboot/keepassxc/issues/147)). KeePassXC therefore strictly limits communication between itself and the browser plugin to your local computer. As long as your computer is not compromised, your passwords are fairly safe that way, but use it at your own risk! 
+
+I believe it's as a result of these security concerns that KeePassHTTP is _turned off by default_ in KeePassXC (at least it is in version 2.2.0). If you'd like to enable it, go to your KeePassXC preferences, then click on the "Browser Integration" icon and check the "Enable KeePassHTTP server" option.
+
+Due to these security concerns, and the need to install the browser extensions, I prefer to use KeePassXC's Auto-Type feature rather than KeePassHTTP.
 
 ### Locking your database
 
@@ -233,7 +215,9 @@ Now your database should take about one second to try a master password guess (w
 
 If you want keep you KeePass database synchronized across multiple devices, you'll need to share your database between those devices. The easiest way to do that is to use a cloud storage service like [Google Drive](https://www.google.com/drive/download/) or [Dropbox](https://www.dropbox.com/). You simply move your KeePass database (which, remember, is well-encrypted) into a folder on your Google Drive or Dropbox. 
 
-To access your password from a smartphone, you'll need to use an app that can open KeePass databases. There are a handful for both iOS and Android, but I haven't used any of them so I won't comment further.
+If you're wary of your password database being stored on servers you don't own, you could explore [Syncthing](https://syncthing.net/), a program that keeps a folder or multiple folders "in-sync" across multiple computers that you own. (Think Dropbox but without the Dropbox server involved.) However note that Syncthing involves a bit more set up (I wrote [a getting started guide to Syncthing a few weeks ago](https://sts10.github.io/post/getting-started-with-syncthing/) if you want a quick preview of what you'd be getting into).
+
+To access your passwords from a smartphone, you'll need to use an app that can open KeePass databases. There are a handful for both iOS and Android, but I haven't used any of them so I won't comment further.
 
 ### Using Groups
 
@@ -281,6 +265,49 @@ Click the OK button for these changes to take effect. Once you have, KeePassXC w
 
 KeePassXC version 2.2.0 offers support for using a token like a YubiKey to lock your database (described as "YubiKey challenge-response support"). [YubiKey](https://www.yubico.com/) is a "smart key" that plugs into a USB port on your computer and helps you verify your identity. This is that third option for a master key labeled "Challenge Response". 
 
-This feature is relatively new to KeePassXC, and does not yet exist in KeePassX. For these reasons I'm not going to go over how to use it at this time. However if you're feeling adventurous go for it.  
+This feature is relatively new to KeePassXC, and does not yet exist in KeePassX. For these reasons I'm not going to go over how to use it at this time. However if you're feeling adventurous, go for it.  
+
+---
+
+## Appendix: Verifying Your KeePassXC Download without Using the Command Line 
+
+You should follow these steps after downloading the KeePassXC dmg file but _before_ you install it. 
+
+### 1. Download GPG Suite
+
+Let's head over to [gpgtools.org](https://gpgtools.org/). At the time of this writing, there's a "GPG Suite beta" (number 3) and a regular version of "GPG Suite". If you're running macOS Sierra (10.12), I'd advise you go with the beta version. If you're running an older version of macOS (10.11 or earlier), go for the not beta version. 
+
+After downloading the proper version of GPG Suite, install it as you would any other Mac application. 
+
+### 2. Download and Import the KeePassXC GPG Public Master Key
+
+Once GPG Suite is installed, go to [the KeePassXC page on verifying downloads](https://keepassxc.org/download). We're looking to download and import KeePassXC's public master key. 
+
+One way to do this is to find the link in the sentence "Manual download from our website and import with gpg". Right-click (or control + click on Mac) the link and select "Save Link As..." and save it to your Downloads folder. 
+
+![Download KeePassXC Master Public Key](/img/keepassxc-save-master-key-as.png)
+
+Now open a program called "GPG Keychain" (it should be part of the GPG Suite we installed earlier. In the top-left, click the "Import" button and select the master public key you just downloaded.
+
+If you successfully imported the key, you should get a message to that effect.
+
+### 3. Download the GPG signature of your KeePassXC Release
+
+Now, let's head back over to [the KeePassXC download page](https://keepassxc.org/download). Click the "macOS" tab if it's not already highlighted and then click the link called "GPG signature". Save this file to your Downloads file, where you downloaded the KeePassXC dmg file earlier). It's important that they're in the same folder (this folder is likely the Downloads folder).
+
+![Signature next to DMG](/img/keepassxc-signature-same-folder.png)
+
+### 4. Verifying your Download
+
+Now, right-click the .dmg file and go to Services > "OpenPGP: Validate". You should get a pop up that says "Signed by: KeePassXC Release <release@keepassxc.org>" and then a fingerprint in parentheses (I got `B59076A8`). Do not worry about the words "undefined trust".
+
+![Signed by Release](/img/keepassxc-signed-by.png)
+
+Now back in the GPG Keychain, double click the entry called "KeePassXC Release", and in the window pane that slides out, click the "Subkeys" tab. 
+
+![Comparing keys](/img/keepassxc-comparing-subkeys.png)
+
+It's important that the fingerprint you got in your Verification Results pop up matches one of the Subkeys. If it matches one of them, you can be more confident your KeePassXC download has not been tampered with. Congratulations! Now it's time to install KeePassXC!
+
 
 _Again, if you spot any errors or have any suggestions for this post, feel free to contact me via [Twitter](https://twitter.com/sts10) or [elsewhere](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3)._
