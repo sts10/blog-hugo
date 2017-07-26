@@ -13,6 +13,10 @@ draft = false
 
 This is a basic guide of how to get started with KeePassXC. This guide is **for OS X / macOS users** (hereto referred to as "macOS"), though note that KeePassXC is built to work with Linux and Windows as well, and this guide may be helpful for those users too. Note that I'm not a security expert or professional, so buyer beware from this point on. If you spot any errors or have any suggestions for this post, feel free to contact me via [Twitter](https://twitter.com/sts10) or [elsewhere](https://gist.github.com/sts10/4a4e01021b3a5ad42e9b73e0abd7b7e3).
 
+KeePassXC is a bit different from other password managers like [1Password](https://1password.com/) or [LastPass](https://www.lastpass.com/) in that it simply creates and manages an encrypted password database that lives on your computer like any other file. There are pretty convenient ways to "sync" your password database with other devices (I go over some options below), but "by default" your passwords simply live on your computer in an encrypted file that you can only open with a master password. 
+
+Note that, unlike 1Password and other options, KeePassXC is free (as in costs zero dollars), but also that there is no company behind the product to offer formal support.
+
 (I'd like to note that I drew some inspiration and methodology from [Martin Shelton's "KeePass for Beginners" post](https://medium.com/@mshelton/keypass-for-beginners-dc8adfcdad54).)
 
 ## Level 0: Starting Out
@@ -27,7 +31,7 @@ Select your desired operating system (the current options are Linux, macOS, and 
 
 ### Verifying our Download
 
-Before you install KeePassXC from this downloaded file, it is recommended that you verify the signature of your download. By verifying the signatures of KeePassXC releases, you can prove the authenticity and integrity of the downloaded file. This guarantees that the file you just downloaded was originally created by the KeePassXC Team and that its contents haven't been tampered with on the way. 
+Before you install KeePassXC from this downloaded file, **it is recommended that you verify your download**. By verifying the signatures of KeePassXC releases, you can prove the authenticity and integrity of the downloaded file. This guarantees that the file you just downloaded was originally created by the KeePassXC Team and that its contents haven't been tampered with on the way. 
 
 If you're comfortable using the command line, you can learn how to verify your download on [the Verifying Signatures page](https://keepassxc.org/verifying-signatures) of the KeePassXC website.
 
