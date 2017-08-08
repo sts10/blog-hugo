@@ -142,12 +142,12 @@ In an effort to have a machine that functions more like an always-on server/clou
 5. To verify the download, I first ran `shamsum -c sha1sum.txt.asc` and got an OK for the ARM file. 
 6. I then manually imported Syncthing's latest release PGP key from [their Security page](https://syncthing.net/security.html) by copying and pasting the public key into a new file called `syncthing_key.asc` and running `gpg --import syncthing_key.asc`. I then ran `gpg --verify sha1sum.txt.asc` and got a `Good signature`. 
 7. Extract the tar file by double clicking on it and clicking something like "Extract all" somewhere. 
-8. We're going to move the syncthing executable to a new "Applications" directory. So let's run `mkdir ~/Applications`, then `cd ~/Downloads` and then ran `sudo mv ~/Downloads/syncthing ~/Applications/syncthing`. 
-9. Open `~/.bashrc` with a text editor. I use vim so I ran `vim ~/.bashrc`. I then added a new line to this text file: `alias syncthing='~/Applications/syncthing`.
+8. We're going to move the syncthing executable to a new "Applications" directory. So let's run `mkdir ~/Applications`, then run `sudo mv ~/Downloads/syncthing ~/Applications/syncthing`. 
+9. Open `~/.bashrc` with a text editor. I use vim so I ran `vim ~/.bashrc`. I then added a new line to this text file: `alias syncthing='~/Applications/syncthing'`. Save and quit your text editor.
 10. Now refresh your `bashrc` by running `source ~/.bashrc`
 11. Run `syncthing` anywhere in the Terminal. Configure as needed in the Web GUI, just like on any other computer. I then unplugged my keyboard, mouse, and monitor and let it run. 
 
-Note: Apparently another way to put the `syncthing` executable into your PATH is to move it to `usr/bin`. However this route necessitates you to give the system permission to edit the `syncthing` executable for automatic upgrading (see above). So, following part of [this blog post](http://www.pebra.net/blog/2015/08/23/syncthing/), you would run (something like) `sudo chmod a+x /usr/bin/syncthing`. However when I tried this the system was unable to upgrade syncthing.
+Note: Apparently another way to put the `syncthing` executable into your PATH is to move it to `usr/bin`. However this route necessitates you to give the system permission to edit the `syncthing` executable for automatic upgrading (see above). So, following part of [this blog post](http://www.pebra.net/blog/2015/08/23/syncthing/), you would run (something like) `sudo mv ~/Downloads/syncthing /usr/bin/synthing` and then `sudo chmod a+x /usr/bin/syncthing`. However when I tried this the system was unable to upgrade syncthing.
 
 I'm not sure how long the Raspberry Pi 2 will run for. I didn't change any settings on the Raspberry in an attempt to ensure this... I figured I'd just unplug my keyboard, mouse, and monitor and see how long the remote device stays up to date. 
 
