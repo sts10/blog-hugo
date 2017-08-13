@@ -108,7 +108,9 @@ vmap <Tab> <Plug>Sneak_s
 vmap <S-Tab> <Plug>Sneak_S
 ``` 
 
-And I set vim-move to `<c-j>` and `<c-k>` with `let g:move_key_modifier = 'C'`. I switched from [vim-unimpaired](https://github.com/tpope/vim-unimpaired) to vim-move because vim-move auto-indents your code as you move it, which isn't without a speed cost sometimes, but is really nice for me visually. Plus vim-unimpaired has a bunch of other default mappings besides `[e` and `]e` that I didn't use (but that you may like!). 
+(Update from 2017: [A Reddit user points out](https://www.reddit.com/r/vim/comments/6912rf/best_of_my_vimrc/dh33shb/) that by using these mappings I'm giving up Vim's default mapping/functionality, which I must be true. That's a choice I made and I like it.)  
+
+And I set vim-move to `<c-j>` and `<c-k>` with `let g:move_key_modifier = 'C'`. Previously, I had used [vim-unimpaired](https://github.com/tpope/vim-unimpaired)'s `[e` and `]e` mappings to move lines up and down (aka "bubbling" text), but I eventually switched to vim-move because vim-move auto-indents your code as you move it, which isn't without a speed cost sometimes, but is really nice for me visually. Plus vim-unimpaired has a bunch of other default mappings besides `[e` and `]e` that I didn't use (but that you may like!). 
 
 ![vim-move in action](https://camo.githubusercontent.com/c06acab07e6bf0bb27086c9694fe2f456101d21c/687474703a2f2f692e696d6775722e636f6d2f524d76384b734a2e676966)
 
@@ -289,7 +291,19 @@ Plug 'kana/vim-textobj-line'            | Plug 'kana/vim-textobj-user'
 
 I've recently added four extra text objects, using [kana's vim-textobj-user](https://github.com/kana/vim-textobj-user) plugin. With `underscore`, `uri`, `indent`, and `line`, I get more text objects in Vim. So for example `viu` visually-selects the URI you're on, and `yil` yanks the inner "line". There's a ton more information in [the wiki](https://github.com/kana/vim-textobj-user/wiki). 
 
-Note that the `|` there is [vim-plug](https://github.com/junegunn/vim-plug) syntax for denoting [a plugin dependency](https://github.com/junegunn/vim-plug#example). (My understanding is that putting the "textobj-user" first in my vimrc is not sufficient due to vim-plug + Neovim's asynchronous plugin installing and updating.) I indented it like so to make it look nice. 
+At one point I thought that I needed the `|` there because [vim-plug](https://github.com/junegunn/vim-plug) syntax allowed it to denote [a plugin dependency](https://github.com/junegunn/vim-plug#example). (My understanding is that putting the "textobj-user" first in my vimrc is not sufficient due to vim-plug + Neovim's asynchronous plugin installing and updating.) I indented it like so to make it look nice. 
+
+But [this Reddit user points out](https://www.reddit.com/r/vim/comments/6912rf/best_of_my_vimrc/dh2ywoj/) that "`|` is just a way to simulate line breaks in vim script. Vim-plug doesn't have support for "dependencies", it's just a way of writing it so you can keep track of it."
+
+According to that Reddit comment, I think I could just have:
+
+```text
+Plug 'kana/vim-textobj-user'
+Plug 'lucapette/vim-textobj-underscore' 
+Plug 'jceb/vim-textobj-uri'            
+Plug 'kana/vim-textobj-indent'        
+Plug 'kana/vim-textobj-line'         
+```
 
 Also, with `textobj-uri`, I can remap `gx` to work better and with more type of URLs (see [this blog post for more](https://github.com/kana/vim-textobj-user/wiki)):
 
